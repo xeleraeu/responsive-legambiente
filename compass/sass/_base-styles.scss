@@ -5,6 +5,10 @@ body {
   font-family: 'Open Sans';
 }
 
+.page {
+  @include box-shadow(0 0 10px 10px #bbb);
+}
+
 .menu {
   background-color: $menu-background;
   background-image: inherit;
@@ -28,6 +32,7 @@ body {
     text-shadow: none;
     font-weight: normal;
     border-left: inherit;
+    color: black;
     
     &:hover {
       background-color: $menu-hover-background;

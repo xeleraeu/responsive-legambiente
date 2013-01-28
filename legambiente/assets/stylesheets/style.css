@@ -1,42 +1,50 @@
-/* line 4, ../sass/_base-styles.scss */
+/* line 11, ../sass/_base-styles.scss */
 body {
   font-family: "Open Sans";
 }
 
-/* line 8, ../sass/_base-styles.scss */
+/* line 15, ../sass/_base-styles.scss */
 #container {
   -webkit-box-shadow: 0 0 10px 10px #bbbbbb;
   -moz-box-shadow: 0 0 10px 10px #bbbbbb;
   box-shadow: 0 0 10px 10px #bbbbbb;
 }
 
-/* line 12, ../sass/_base-styles.scss */
+/* line 19, ../sass/_base-styles.scss */
 .menu {
   background-color: #dddddd;
   background-image: inherit;
   text-transform: uppercase;
 }
-/* line 21, ../sass/_base-styles.scss */
+/* line 28, ../sass/_base-styles.scss */
 .menu > .current_page_item, .menu > .current_page_ancestor, .menu > .current_page_parent, .menu > .current_page_item a, .menu > .current-menu-item a {
   background-color: #ffcc00;
 }
-/* line 25, ../sass/_base-styles.scss */
+/* line 32, ../sass/_base-styles.scss */
 .menu li li a {
   font-size: 110%;
 }
-/* line 30, ../sass/_base-styles.scss */
+/* line 37, ../sass/_base-styles.scss */
 .menu > li:hover a {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;
+  text-decoration: underline;
 }
-/* line 37, ../sass/_base-styles.scss */
+/* line 42, ../sass/_base-styles.scss */
 .menu a {
   font-size: 110%;
   text-shadow: none;
   font-weight: normal;
   border-left: inherit;
   color: black;
+}
+/* line 49, ../sass/_base-styles.scss */
+.menu a:hover {
+  background-color: #efefef;
+  background-image: inherit;
+  color: #00763d;
+  text-decoration: underline;
 }
 
 /* line 1, ../sass/_frontpage-slider.scss */

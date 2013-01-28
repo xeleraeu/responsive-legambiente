@@ -30,16 +30,16 @@ body {
   background-image: inherit;
   color: #00763d;
 }
-/* line 41, ../sass/_base-styles.scss */
-.menu a {
+/* line 42, ../sass/_base-styles.scss */
+.menu ul li a, .menu li li a {
   font-size: 110%;
   text-shadow: none;
   font-weight: normal;
   border-left: inherit;
   color: black;
 }
-/* line 48, ../sass/_base-styles.scss */
-.menu a:hover {
+/* line 49, ../sass/_base-styles.scss */
+.menu ul li a:hover, .menu li li a:hover {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;

@@ -38,16 +38,18 @@ body {
     }
   }
   
-  a {
-    font-size: 110%;
-    text-shadow: none;
-    font-weight: normal;
-    border-left: inherit;
-    color: black;
-    
-    &:hover {
-      @include menu-hover-item;
-      text-decoration: underline;
+  ul li, li li {
+    a {
+      font-size: 110%;
+      text-shadow: none;
+      font-weight: normal;
+      border-left: inherit;
+      color: black;
+      
+      &:hover {
+        @include menu-hover-item;
+        text-decoration: underline;
+      }
     }
   }
 }

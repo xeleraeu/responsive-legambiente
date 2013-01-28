@@ -4,7 +4,7 @@ body {
 }
 
 /* line 8, ../sass/_base-styles.scss */
-.page {
+#container {
   -webkit-box-shadow: 0 0 10px 10px #bbbbbb;
   -moz-box-shadow: 0 0 10px 10px #bbbbbb;
   box-shadow: 0 0 10px 10px #bbbbbb;
@@ -24,19 +24,19 @@ body {
 .menu li li a {
   font-size: 110%;
 }
-/* line 29, ../sass/_base-styles.scss */
+/* line 30, ../sass/_base-styles.scss */
+.menu > li:hover a {
+  background-color: #efefef;
+  background-image: inherit;
+  color: #00763d;
+}
+/* line 37, ../sass/_base-styles.scss */
 .menu a {
   font-size: 110%;
   text-shadow: none;
   font-weight: normal;
   border-left: inherit;
   color: black;
-}
-/* line 36, ../sass/_base-styles.scss */
-.menu a:hover {
-  background-color: #efefef;
-  background-image: inherit;
-  color: #00763d;
 }
 
 /* line 1, ../sass/_frontpage-slider.scss */

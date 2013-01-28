@@ -5,7 +5,6 @@
   background-color: $menu-hover-background;
   background-image: inherit;
   color: $menu-hover-color;
-  text-decoration: underline;
 }
 
 body {
@@ -34,7 +33,7 @@ body {
   }
 
   & > li:hover {
-    a {
+    & > a {
       @include menu-hover-item;
     }
   }
@@ -48,6 +47,7 @@ body {
     
     &:hover {
       @include menu-hover-item;
+      text-decoration: underline;
     }
   }
 }

@@ -31,7 +31,7 @@ body {
   color: #00763d;
 }
 /* line 42, ../sass/_base-styles.scss */
-.menu ul li a, .menu li li a {
+.menu ul li a, .menu li li a, .menu a {
   font-size: 110%;
   text-shadow: none;
   font-weight: normal;
@@ -39,7 +39,7 @@ body {
   color: black;
 }
 /* line 49, ../sass/_base-styles.scss */
-.menu ul li a:hover, .menu li li a:hover {
+.menu ul li a:hover, .menu li li a:hover, .menu a:hover {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;

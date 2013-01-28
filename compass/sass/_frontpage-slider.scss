@@ -1,0 +1,33 @@
+.flexslider.highlights {
+  @include box-sizing(border-box);
+  
+  margin-bottom: 1.25em;
+  
+	h2 {
+		font-size: 1.6em;
+	}
+  
+  .flex-control-paging li a {
+    border: 2px solid white;
+  }
+  
+  img.wp-post-image {
+    width: 75%;
+    float: left;
+    margin: 0;
+  }
+  
+  .content {
+    float: right;
+    width: 24%;
+    
+    h2 {
+      margin-top: 0;
+      color: $menu-background-color;
+    }
+  }
+  
+  .flex-control-nav {
+    bottom: 0;
+  }
+}

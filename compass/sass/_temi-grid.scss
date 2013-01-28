@@ -1,0 +1,40 @@
+.temi {
+  @include box-sizing(border-box);
+  
+  ul {
+    margin-left: inherit;
+    
+    li {
+      display: block;
+      margin-bottom: 1em;
+      @include border-radius(5px);
+      @include span-columns(6, 12);
+      background-color: white;
+      
+      &:nth-of-type(2n) {
+        @include span-columns(6 omega, 12);
+      }
+      
+      h2 {
+        background-color: $menu-background-color;
+        padding: 0.2em;
+        margin-top: 0;
+        margin-bottom: 0;
+        @include border-radius(5px 5px 0 0);
+        
+        a, a:hover, a:active, a:focus, a:visited {
+          color: white;
+        }
+      }
+      
+      img {
+        margin: 0;
+      }
+      
+      .content {
+        padding: 0 1em;
+      }
+      
+    }
+  }
+}

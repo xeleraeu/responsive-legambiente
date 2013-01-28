@@ -1,0 +1,38 @@
+// ---------------------------------------------------------------------------
+// Base styles
+
+body {
+  font-family: 'Open Sans';
+}
+
+.menu {
+  background-color: $menu-background;
+  background-image: inherit;
+  font-family: Anton;
+  text-transform: uppercase;
+  
+  & > .current_page_item,
+  & > .current_page_ancestor,
+  & > .current_page_parent,
+  & > .current_page_item a,
+  & > .current-menu-item a {
+    background-color: $menu-current-item-background;
+  }
+  
+  li li a {
+    font-size: 110%;
+  }
+
+  a {
+    font-size: 110%;
+    text-shadow: none;
+    font-weight: normal;
+    border-left: inherit;
+    
+    &:hover {
+      background-color: $menu-hover-background;
+      background-image: inherit;
+      color: $menu-hover-color;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+/*  Styles from skeleton reverie child theme */
+
+/* =Start From Here
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* =Media Print
+-------------------------------------------------------------- */
+@media print {
+
+    h1 {
+	    page-break-before: always;
+    }
+
+    h1,  h2,  h3,  h4,  h5,  h6 {
+	    page-break-after: avoid;
+    }
+
+    ul,  ol,  dl {
+	    page-break-before: avoid;
+    }
+}
+
+/*	Retina (HiDPI) Display
+    http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html
+-------------------------------------------------------------- */
+@media 
+    only screen and (-moz-min-device-pixel-ratio:1.5), 
+    only screen and (-o-min-device-pixel-ratio:3/2), 
+    only screen and (-webkit-min-device-pixel-ratio:1.5), 
+    only screen and (min-device-pixel-ratio:1.5) {
+    
+    body {}
+}
+
+/* =Responsive (Mobile) Design
+-------------------------------------------------------------- */
+@media screen and (max-width: 980px) {
+
+    body {}
+	
+    .grid, 
+	.grid-right {
+	    float: none;
+    }
+	
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+    }
+	
+	.home #widgets {
+		margin-top: 40px;
+	}
+    
+    .top-widget,
+    .home .top-widget {
+        margin-top: 0 !important;
+    }
+    
+}
+
+@media screen and (max-width: 650px) {
+
+    body {}
+
+    #logo {
+	    float: none;
+        margin: 0;
+	    text-align: center;
+    }
+
+    .grid, 
+	.grid-right {
+	    float: none;
+    }
+
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+    }
+    
+    .top-widget {
+        float: none;
+        margin: 0 auto 10px auto;
+        position: relative;
+        text-align: center;
+        width: auto;
+    }
+    
+    .top-widget .widget-title {
+        text-align: center;
+    }
+	
+    .js .menu,
+	.js .sub-header-menu {
+		display: none;
+	}
+	
+	.top-menu, 
+	.footer-menu li {
+	    float: none;
+        font-size: 11px;
+	    text-align: center;
+    }
+	
+	.tinynav { 
+	    display: block;
+		margin: 0 auto;
+		width: 100%;
+	}
+	
+	.tinynav {
+		-moz-appearance: none !important;
+		-webkit-appearance: none !important;
+		appearance: none !important;
+		background: #fff url(images/bg-select.png) no-repeat right;
+		border: 1px solid #ccc;
+        font-size: 12px;
+		overflow: hidden;
+		padding: 0.5em 1em 0.5em 0.75em;
+	}
+	
+	.ie7 .tinynav,
+	.ie8 .tinynav {
+		padding-right: 10px;
+	}
+	
+	.ie9 .tinynav  {
+		padding-right: 8px;
+	}
+	
+    #author-meta {
+        padding: 20px;
+    }
+    
+    #footer {
+	    text-align: center;
+    }
+
+    #footer .social-icons {
+        padding-bottom: 10px;
+	    text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    body {}
+
+    #logo {
+	    float: none;
+	    text-align: center;
+    }
+
+    .grid, 
+	.grid-right {
+	    float: none;
+    }
+	
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+	}
+	
+	.featured-title {
+	    font-size: 40px;
+	    padding: 40px 20px 0 20px
+    }
+    
+    .navigation .next,
+    .navigation .previous {
+        text-align: center;
+    }
+	
+    .menu ul, 
+	.menu li, 
+	.top-menu, 
+	.footer-menu li, 
+	.sub-header-menu li {
+	    float: none;
+	    text-align: center;
+        text-rendering: optimizeSpeed;
+    }
+	
+    #footer {
+	    text-align: center;
+    }
+
+    #footer .social-icons {
+	    text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+    body {}
+	
+	#featured p {
+	    font-size: 12px;
+		line-height: 1.2em;
+    }
+
+    .featured-title {
+	    font-size: 35px;
+    }
+	
+	.featured-subtitle {
+		font-size: 15px;
+	}
+
+    .call-to-action a.button {
+	    font-size: 14px;
+	    padding: 7px 17px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    
+    body {}
+	
+	#featured p {
+	    font-size: 11px;
+		line-height: 1.1em;
+    }
+
+    .featured-title {
+	    font-size: 20px;
+    }
+	
+	.featured-subtitle {
+		font-size: 11px;
+	}
+
+    .call-to-action a.button {
+	    font-size: 12px;
+	    padding: 5px 15px;
+    }
+    
+    .top-widget area,
+    .top-widget select,
+    .top-widget textarea,
+    .top-widget input[type="text"], 
+    .top-widget input[type="password"] {
+        width: 75%;
+    }
+    
+    .widget-title,
+    .widget-title-home h3 {
+        font-size: 14px;
+        height: 13px;
+        line-height: 13px;
+        text-align: center;
+    }
+}
+
+/*The last 29 days of the month are the hardest."- Nikola Tesla*/

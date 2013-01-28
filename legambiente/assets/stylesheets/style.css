@@ -1,36 +1,56 @@
-/* line 10, ../sass/_base-styles.scss */
+/* line 11, ../sass/_base-styles.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 15, ../sass/_base-styles.scss */
 body {
   font-family: "Open Sans";
 }
 
-/* line 14, ../sass/_base-styles.scss */
+/* line 19, ../sass/_base-styles.scss */
 #container {
   -webkit-box-shadow: 0 0 10px 10px #bbbbbb;
   -moz-box-shadow: 0 0 10px 10px #bbbbbb;
   box-shadow: 0 0 10px 10px #bbbbbb;
 }
 
-/* line 18, ../sass/_base-styles.scss */
+/* line 23, ../sass/_base-styles.scss */
+#logo {
+  position: relative;
+}
+
+/* line 27, ../sass/_base-styles.scss */
+#legambiente-logo {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  padding: 1em;
+  position: absolute;
+}
+
+/* line 34, ../sass/_base-styles.scss */
 .menu {
   background-color: #dddddd;
   background-image: inherit;
   text-transform: uppercase;
 }
-/* line 27, ../sass/_base-styles.scss */
+/* line 43, ../sass/_base-styles.scss */
 .menu > .current_page_item, .menu > .current_page_ancestor, .menu > .current_page_parent, .menu > .current_page_item a, .menu > .current-menu-item a {
   background-color: #ffcc00;
 }
-/* line 31, ../sass/_base-styles.scss */
+/* line 47, ../sass/_base-styles.scss */
 .menu li li a {
   font-size: 110%;
 }
-/* line 36, ../sass/_base-styles.scss */
+/* line 52, ../sass/_base-styles.scss */
 .menu > li:hover > a {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;
 }
-/* line 42, ../sass/_base-styles.scss */
+/* line 58, ../sass/_base-styles.scss */
 .menu ul li a, .menu li li a, .menu a {
   font-size: 110%;
   text-shadow: none;
@@ -38,7 +58,7 @@ body {
   border-left: none;
   color: black;
 }
-/* line 49, ../sass/_base-styles.scss */
+/* line 65, ../sass/_base-styles.scss */
 .menu ul li a:hover, .menu li li a:hover, .menu a:hover {
   background-color: #efefef;
   background-image: inherit;
@@ -48,51 +68,42 @@ body {
 
 /* line 1, ../sass/_frontpage-slider.scss */
 .flexslider.highlights {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   margin-bottom: 1.25em;
 }
-/* line 6, ../sass/_frontpage-slider.scss */
+/* line 5, ../sass/_frontpage-slider.scss */
 .flexslider.highlights h2 {
   font-size: 1.6em;
 }
-/* line 10, ../sass/_frontpage-slider.scss */
+/* line 9, ../sass/_frontpage-slider.scss */
 .flexslider.highlights .flex-control-paging li a {
   border: 2px solid white;
 }
-/* line 14, ../sass/_frontpage-slider.scss */
+/* line 13, ../sass/_frontpage-slider.scss */
 .flexslider.highlights img.wp-post-image {
   width: 75%;
   float: left;
   margin: 0;
 }
-/* line 20, ../sass/_frontpage-slider.scss */
+/* line 19, ../sass/_frontpage-slider.scss */
 .flexslider.highlights .content {
   float: right;
   width: 24%;
 }
-/* line 24, ../sass/_frontpage-slider.scss */
+/* line 23, ../sass/_frontpage-slider.scss */
 .flexslider.highlights .content h2 {
   margin-top: 0;
   color: #dddddd;
 }
-/* line 30, ../sass/_frontpage-slider.scss */
+/* line 29, ../sass/_frontpage-slider.scss */
 .flexslider.highlights .flex-control-nav {
   bottom: 0;
 }
 
-/* line 1, ../sass/_temi-grid.scss */
-.temi {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 4, ../sass/_temi-grid.scss */
+/* line 3, ../sass/_temi-grid.scss */
 .temi ul {
   margin-left: inherit;
 }
-/* line 7, ../sass/_temi-grid.scss */
+/* line 6, ../sass/_temi-grid.scss */
 .temi ul li {
   display: block;
   margin-bottom: 1em;
@@ -107,7 +118,7 @@ body {
   display: inline;
   background-color: white;
 }
-/* line 14, ../sass/_temi-grid.scss */
+/* line 13, ../sass/_temi-grid.scss */
 .temi ul li:nth-of-type(2n) {
   width: 49.15254%;
   float: right;
@@ -115,7 +126,7 @@ body {
   #margin-left: -1em;
   display: inline;
 }
-/* line 18, ../sass/_temi-grid.scss */
+/* line 17, ../sass/_temi-grid.scss */
 .temi ul li h2 {
   background-color: #dddddd;
   padding: 0.2em;
@@ -127,15 +138,15 @@ body {
   -o-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-/* line 25, ../sass/_temi-grid.scss */
+/* line 24, ../sass/_temi-grid.scss */
 .temi ul li h2 a, .temi ul li h2 a:hover, .temi ul li h2 a:active, .temi ul li h2 a:focus, .temi ul li h2 a:visited {
   color: white;
 }
-/* line 30, ../sass/_temi-grid.scss */
+/* line 29, ../sass/_temi-grid.scss */
 .temi ul li img {
   margin: 0;
 }
-/* line 34, ../sass/_temi-grid.scss */
+/* line 33, ../sass/_temi-grid.scss */
 .temi ul li .content {
   padding: 0 1em;
 }

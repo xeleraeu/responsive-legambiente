@@ -7,12 +7,28 @@
   color: $menu-hover-color;
 }
 
+// border-box everything (see http://paulirish.com/2012/box-sizing-border-box-ftw)
+* {
+  @include box-sizing(border-box);
+}
+
 body {
   font-family: $body-font-family;
 }
 
 #container {
   @include box-shadow(0 0 10px 10px #bbb);
+}
+
+#logo {
+  position: relative;
+}
+
+#legambiente-logo {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  padding: 1em;
+  position: absolute;
 }
 
 .menu {

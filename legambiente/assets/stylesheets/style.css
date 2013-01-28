@@ -1,6 +1,6 @@
 /* line 4, ../sass/_base-styles.scss */
 body {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
 }
 
 /* line 8, ../sass/_base-styles.scss */
@@ -14,18 +14,17 @@ body {
 .menu {
   background-color: #dddddd;
   background-image: inherit;
-  font-family: Anton;
   text-transform: uppercase;
 }
-/* line 22, ../sass/_base-styles.scss */
+/* line 21, ../sass/_base-styles.scss */
 .menu > .current_page_item, .menu > .current_page_ancestor, .menu > .current_page_parent, .menu > .current_page_item a, .menu > .current-menu-item a {
   background-color: #ffcc00;
 }
-/* line 26, ../sass/_base-styles.scss */
+/* line 25, ../sass/_base-styles.scss */
 .menu li li a {
   font-size: 110%;
 }
-/* line 30, ../sass/_base-styles.scss */
+/* line 29, ../sass/_base-styles.scss */
 .menu a {
   font-size: 110%;
   text-shadow: none;
@@ -33,7 +32,7 @@ body {
   border-left: inherit;
   color: black;
 }
-/* line 37, ../sass/_base-styles.scss */
+/* line 36, ../sass/_base-styles.scss */
 .menu a:hover {
   background-color: #efefef;
   background-image: inherit;

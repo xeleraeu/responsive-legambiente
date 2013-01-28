@@ -2,7 +2,7 @@
 // Base styles
 
 body {
-  font-family: 'Open Sans';
+  font-family: $body-font-family;
 }
 
 .page {
@@ -12,7 +12,6 @@ body {
 .menu {
   background-color: $menu-background;
   background-image: inherit;
-  font-family: Anton;
   text-transform: uppercase;
   
   & > .current_page_item,

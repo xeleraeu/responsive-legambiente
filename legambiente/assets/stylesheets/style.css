@@ -21,29 +21,32 @@ body {
   height: 100%;
   padding: 1em;
   position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 29, ../sass/_base-styles.scss */
+/* line 30, ../sass/_base-styles.scss */
 .menu {
   background-color: #dddddd;
   background-image: inherit;
   text-transform: uppercase;
 }
-/* line 38, ../sass/_base-styles.scss */
+/* line 39, ../sass/_base-styles.scss */
 .menu > .current_page_item, .menu > .current_page_ancestor, .menu > .current_page_parent, .menu > .current_page_item a, .menu > .current-menu-item a {
   background-color: #ffcc00;
 }
-/* line 42, ../sass/_base-styles.scss */
+/* line 43, ../sass/_base-styles.scss */
 .menu li li a {
   font-size: 110%;
 }
-/* line 47, ../sass/_base-styles.scss */
+/* line 48, ../sass/_base-styles.scss */
 .menu > li:hover > a {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;
 }
-/* line 53, ../sass/_base-styles.scss */
+/* line 54, ../sass/_base-styles.scss */
 .menu ul li a, .menu li li a, .menu a {
   font-size: 110%;
   text-shadow: none;
@@ -51,7 +54,7 @@ body {
   border-left: none;
   color: black;
 }
-/* line 60, ../sass/_base-styles.scss */
+/* line 61, ../sass/_base-styles.scss */
 .menu ul li a:hover, .menu li li a:hover, .menu a:hover {
   background-color: #efefef;
   background-image: inherit;

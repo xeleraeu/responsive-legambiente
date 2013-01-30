@@ -7,11 +7,6 @@
   color: $menu-hover-color;
 }
 
-// border-box everything (see http://paulirish.com/2012/box-sizing-border-box-ftw)
-* {
-  @include box-sizing(border-box);
-}
-
 body {
   font-family: $body-font-family;
 }

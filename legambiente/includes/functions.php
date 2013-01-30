@@ -35,7 +35,7 @@ if(!function_exists('legambiente_logo_overlay') ) {
 }
 
 // hook in custom logo overlay
-add_action('responsive_in_logo', 'legambiente_logo_overlay');
+add_action('responsive_in_header', 'legambiente_logo_overlay');
 
 /*
  * select posts for a slider

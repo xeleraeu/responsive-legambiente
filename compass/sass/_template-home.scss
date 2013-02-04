@@ -20,8 +20,11 @@ body.home {
           background-color: rgba(0, 0, 0, 0.5);
           float: none;
           padding: 1em;
+          color: white;
           
-          font-size: 1em;
+          * {
+            font-size: 1em;
+          }
           
           h2 {
             color: $flexslider-title-color;

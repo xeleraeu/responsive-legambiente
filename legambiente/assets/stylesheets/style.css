@@ -96,9 +96,13 @@ body.home #features .flexslider.highlights li .content {
   background-color: rgba(0, 0, 0, 0.5);
   float: none;
   padding: 1em;
+  color: white;
+}
+/* line 25, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights li .content * {
   font-size: 1em;
 }
-/* line 26, ../sass/_template-home.scss */
+/* line 29, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights li .content h2 {
   color: #ffcc00;
 }

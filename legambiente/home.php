@@ -27,68 +27,37 @@ if ( !defined('ABSPATH')) exit;
         
         <div class="flexslider highlights">
 
-            <?php $options = get_option('responsive_theme_options');
-			// First let's check if headline was set
-			    if ($options['home_headline']) {
-                    echo '<h1 class="featured-title">'; 
-				    echo $options['home_headline'];
-				    echo '</h1>'; 
-			// If not display dummy headline for preview purposes
-			      } else { 
-			        echo '<h1 class="featured-title">';
-				    echo __('Hello, World!','responsive');
-				    echo '</h1>';
-				  }
-			?>
-                    
-            <?php $options = get_option('responsive_theme_options');
-			// First let's check if headline was set
-			    if ($options['home_subheadline']) {
-                    echo '<h2 class="featured-subtitle">'; 
-				    echo $options['home_subheadline'];
-				    echo '</h2>'; 
-			// If not display dummy headline for preview purposes
-			      } else { 
-			        echo '<h2 class="featured-subtitle">';
-				    echo __('Your H2 subheadline here','responsive');
-				    echo '</h2>';
-				  }
-			?>
-            
-            <?php $options = get_option('responsive_theme_options');
-			// First let's check if content is in place
-			    if (!empty($options['home_content_area'])) {
-                    echo '<p>'; 
-					echo do_shortcode($options['home_content_area']);
-				    echo '</p>'; 
-			// If not let's show dummy content for demo purposes
-			      } else { 
-			        echo '<p>';
-				    echo __('Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like.','responsive');
-				    echo '</p>';
-				  }
-			?>
-            
-            <?php $options = get_option('responsive_theme_options'); ?>
-		    <?php if ($options['cta_button'] == 0): ?>     
-            <div class="call-to-action">
-
-            <?php $options = get_option('responsive_theme_options');
-			// First let's check if headline was set
-			    if (!empty($options['cta_url']) && $options['cta_text']) {
-					echo '<a href="'.$options['cta_url'].'" class="blue button">'; 
-					echo $options['cta_text'];
-				    echo '</a>';
-			// If not display dummy headline for preview purposes
-			      } else { 
-					echo '<a href="#nogo" class="blue button">'; 
-					echo __('Call to Action','responsive');
-				    echo '</a>';
-				  }
-			?>  
-            
-            </div><!-- end of .call-to-action -->
-            <?php endif; ?>         
+              <?php
+  global $post;
+  $original_post = $post;
+  $slider_posts = do_flex_slider();
+  if(count($slider_posts)):
+  ?>
+  <div class="flexslider highlights">
+      <ul class="slides">
+        <?php
+        foreach($slider_posts as $post): setup_postdata($post);
+        ?>
+        <li>
+          <a href="<?php the_permalink(); ?>">
+            <?php echo get_the_post_thumbnail($slide->ID, 'large'); ?>
+          </a>
+          <div class="content">
+            <h2><?php the_title(); ?></h2>
+            <div><?php the_time(get_option('date_format')); ?></div>
+            <div><?php the_excerpt(); ?></div>
+          </div>
+        </li>
+        <?php
+        endforeach;
+        ?>
+      </ul>
+  </div>
+  <script>jQuery('.flexslider.highlights').flexslider({slideshowSpeed: 10000, pauseOnHover: true});</script>
+  <?php
+  endif; // (count($slider_posts))
+  $post = $original_post;
+  ?>
             
         </div><!-- end of .flexslider.highlights -->
         

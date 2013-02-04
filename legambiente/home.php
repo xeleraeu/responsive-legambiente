@@ -60,8 +60,7 @@ if ( !defined('ABSPATH')) exit;
             
         </div><!-- end of .flexslider.highlights -->
         
-        </div><!-- end of #features -->
-
+        
 
         <div id="content">
         
@@ -84,11 +83,6 @@ if ( !defined('ABSPATH')) exit;
                 </div><!-- end of .post-meta -->
                 
                 <div class="post-entry">
-                    <?php if ( has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail(); ?>
-                        </a>
-                    <?php endif; ?>
                     <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
@@ -128,7 +122,11 @@ if ( !defined('ABSPATH')) exit;
         
 <?php endif; ?>  
       
-        </div><!-- end of #content -->
+        </div><!-- end of #content -->        
+        
+        
+        
+        </div><!-- end of #features -->
         
                        
 <?php get_sidebar('home'); ?>

@@ -24,8 +24,6 @@ if ( !defined('ABSPATH')) exit;
 <?php get_header(); ?>
 
         <div id="features">
-        
-        <div class="flexslider highlights">
 
               <?php
   global $post;
@@ -57,10 +55,6 @@ if ( !defined('ABSPATH')) exit;
   endif; // (count($slider_posts))
   $post = $original_post;
   ?>
-            
-        </div><!-- end of .flexslider.highlights -->
-        
-        
 
         <div id="content">
         

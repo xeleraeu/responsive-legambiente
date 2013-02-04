@@ -66,7 +66,7 @@ if ( !defined('ABSPATH')) exit;
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
-                <?php the_date(); ?>
+                <?php the_date('j M Y'); ?>
                 </div><!-- end of .post-meta -->
                 
                 <div class="post-entry">

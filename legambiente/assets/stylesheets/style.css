@@ -115,12 +115,13 @@ body.home #features .flexslider.highlights li .content h2 {
 /* line 37, ../sass/_template-home.scss */
 body.home #features #content .post {
   border-top: 3px dotted #ddd;
+  padding-top: 1em;
 }
-/* line 40, ../sass/_template-home.scss */
+/* line 41, ../sass/_template-home.scss */
 body.home #features #content .post, body.home #features #content .post * {
   font-size: 1em;
 }
-/* line 44, ../sass/_template-home.scss */
+/* line 45, ../sass/_template-home.scss */
 body.home #features #content .post .post-title {
   color: black;
   width: 74.35897%;
@@ -128,13 +129,18 @@ body.home #features #content .post .post-title {
   margin-right: 2.5641%;
   display: inline;
 }
-/* line 49, ../sass/_template-home.scss */
+/* line 50, ../sass/_template-home.scss */
 body.home #features #content .post .post-meta {
+  clear: none;
   width: 23.07692%;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
   display: inline;
+  font-weight: bold;
+  color: white;
+  background-color: #9f9f9f;
+  text-align: center;
 }
 
 /* line 1, ../sass/_frontpage-slider.scss */

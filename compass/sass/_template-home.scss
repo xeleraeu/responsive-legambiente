@@ -43,6 +43,11 @@ body.home {
         
         .post-title {
           color: black;
+          @include span-columns(6, 8);
+        }
+        
+        .post-meta {
+          @include span-columns(2 omega, 8);
         }
       }
     }

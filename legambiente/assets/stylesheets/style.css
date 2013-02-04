@@ -123,6 +123,18 @@ body.home #features #content .post, body.home #features #content .post * {
 /* line 44, ../sass/_template-home.scss */
 body.home #features #content .post .post-title {
   color: black;
+  width: 74.35897%;
+  float: left;
+  margin-right: 2.5641%;
+  display: inline;
+}
+/* line 49, ../sass/_template-home.scss */
+body.home #features #content .post .post-meta {
+  width: 23.07692%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -1em;
+  display: inline;
 }
 
 /* line 1, ../sass/_frontpage-slider.scss */

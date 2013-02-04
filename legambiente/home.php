@@ -44,7 +44,6 @@ if ( !defined('ABSPATH')) exit;
           </a>
           <div class="content">
             <h2><?php the_title(); ?></h2>
-            <div><?php the_time(get_option('date_format')); ?></div>
             <div><?php the_excerpt(); ?></div>
           </div>
         </li>

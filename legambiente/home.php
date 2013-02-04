@@ -50,7 +50,7 @@ if ( !defined('ABSPATH')) exit;
         ?>
       </ul>
   </div>
-  <script>jQuery('.flexslider.highlights').flexslider({slideshowSpeed: 10000, pauseOnHover: true});</script>
+  <script>jQuery(document).ready(function($) { $('.flexslider.highlights').flexslider({slideshowSpeed: 10000, pauseOnHover: true}); });</script>
   <?php
   endif; // (count($slider_posts))
   $post = $original_post;

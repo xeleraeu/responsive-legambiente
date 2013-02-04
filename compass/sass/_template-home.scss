@@ -36,7 +36,10 @@ body.home {
     #content {
       .post {
         border-top: 3px dotted #ddd;
-        font-size: 1em;
+        
+        &, & * {
+          font-size: 1em;
+        }
         
         .post-title {
           color: black;

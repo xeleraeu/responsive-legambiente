@@ -115,9 +115,12 @@ body.home #features .flexslider.highlights li .content h2 {
 /* line 37, ../sass/_template-home.scss */
 body.home #features #content .post {
   border-top: 3px dotted #ddd;
+}
+/* line 40, ../sass/_template-home.scss */
+body.home #features #content .post, body.home #features #content .post * {
   font-size: 1em;
 }
-/* line 41, ../sass/_template-home.scss */
+/* line 44, ../sass/_template-home.scss */
 body.home #features #content .post .post-title {
   color: black;
 }

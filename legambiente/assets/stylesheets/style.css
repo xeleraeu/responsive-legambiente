@@ -1,21 +1,22 @@
 /* line 10, ../sass/_base-styles.scss */
 body {
   font-family: "Open Sans";
+  background: #fefefe;
 }
 
-/* line 14, ../sass/_base-styles.scss */
+/* line 15, ../sass/_base-styles.scss */
 #container {
   -webkit-box-shadow: 0 0 10px 10px #bbbbbb;
   -moz-box-shadow: 0 0 10px 10px #bbbbbb;
   box-shadow: 0 0 10px 10px #bbbbbb;
 }
 
-/* line 18, ../sass/_base-styles.scss */
+/* line 19, ../sass/_base-styles.scss */
 #logo {
   position: relative;
 }
 
-/* line 22, ../sass/_base-styles.scss */
+/* line 23, ../sass/_base-styles.scss */
 #legambiente-logo {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 1em;
@@ -23,38 +24,38 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 27, ../sass/_base-styles.scss */
+/* line 28, ../sass/_base-styles.scss */
 #legambiente-logo img {
   width: 40px;
   vertical-align: bottom;
 }
-/* line 32, ../sass/_base-styles.scss */
+/* line 33, ../sass/_base-styles.scss */
 #legambiente-logo h1 {
   font-size: 2em;
   display: inline;
 }
 
-/* line 38, ../sass/_base-styles.scss */
+/* line 39, ../sass/_base-styles.scss */
 .menu {
   background-color: #dddddd;
   background-image: inherit;
   text-transform: uppercase;
 }
-/* line 47, ../sass/_base-styles.scss */
+/* line 48, ../sass/_base-styles.scss */
 .menu > .current_page_item, .menu > .current_page_ancestor, .menu > .current_page_parent, .menu > .current_page_item a, .menu > .current-menu-item a {
   background-color: #ffcc00;
 }
-/* line 51, ../sass/_base-styles.scss */
+/* line 52, ../sass/_base-styles.scss */
 .menu li li a {
   font-size: 110%;
 }
-/* line 56, ../sass/_base-styles.scss */
+/* line 57, ../sass/_base-styles.scss */
 .menu > li:hover > a {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;
 }
-/* line 62, ../sass/_base-styles.scss */
+/* line 63, ../sass/_base-styles.scss */
 .menu ul li a, .menu li li a, .menu a {
   font-size: 110%;
   text-shadow: none;
@@ -62,12 +63,17 @@ body {
   border-left: none;
   color: black;
 }
-/* line 69, ../sass/_base-styles.scss */
+/* line 70, ../sass/_base-styles.scss */
 .menu ul li a:hover, .menu li li a:hover, .menu a:hover {
   background-color: #efefef;
   background-image: inherit;
   color: #00763d;
   text-decoration: underline;
+}
+
+/* line 78, ../sass/_base-styles.scss */
+a, a:hover, a:active, a:visited {
+  color: #555;
 }
 
 /* line 2, ../sass/_template-home.scss */
@@ -106,9 +112,19 @@ body.home #features .flexslider.highlights li .content * {
 body.home #features .flexslider.highlights li .content h2 {
   color: #ffcc00;
 }
+/* line 37, ../sass/_template-home.scss */
+body.home #features #content .post {
+  border-top: 3px dotted #ddd;
+  font-size: 1em;
+}
+/* line 41, ../sass/_template-home.scss */
+body.home #features #content .post .post-title {
+  color: black;
+}
 
 /* line 1, ../sass/_frontpage-slider.scss */
 .flexslider.highlights {
+  box-shadow: none;
   margin-bottom: 1.25em;
 }
 /* line 5, ../sass/_frontpage-slider.scss */

@@ -41,7 +41,7 @@ if ( !defined('ABSPATH')) exit;
             <?php echo get_the_post_thumbnail($slide->ID, 'large'); ?>
           </a>
           <div class="content">
-            <h2><?php the_title(); ?></h2>
+            <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
             <div><?php the_excerpt(); ?></div>
           </div>
         </li>
@@ -82,7 +82,8 @@ if ( !defined('ABSPATH')) exit;
 
                 
                 <div class="post-entry">
-                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
+                    <?php #the_content(__('Read more &#8250;', 'responsive')); ?>
+                    <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
                 

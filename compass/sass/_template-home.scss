@@ -27,6 +27,14 @@ body.home {
         bottom: $home-flexslider-blurb-height;
       }
       
+      p {
+        margin: 0;
+      }
+      
+      .read-more {
+        display: none;
+      }
+      
       li {
         position: relative;
         

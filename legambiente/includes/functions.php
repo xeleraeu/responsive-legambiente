@@ -1,9 +1,9 @@
 <?php
 /* ONE TRUE GLOBAL VAR */
 
-$_GLOBALS['LEGAMBIENTE'] = array();
-$_GLOBALS['LEGAMBIENTE']['webfonts']['collection_uri'] = 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic|Open+Sans+Condensed:300,700|Droid+Sans:400,700';
-$_GLOBALS['LEGAMBIENTE']['frontpage_slider']['category'] = 'fp';
+$GLOBALS['LEGAMBIENTE'] = array();
+$GLOBALS['LEGAMBIENTE']['webfonts']['collection_uri'] = 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic|Open+Sans+Condensed:300,700|Droid+Sans:400,700';
+$GLOBALS['LEGAMBIENTE']['frontpage_slider']['category'] = 'fp';
 
 /* setup */
 
@@ -15,7 +15,7 @@ $_GLOBALS['LEGAMBIENTE']['frontpage_slider']['category'] = 'fp';
 add_post_type_support('page', 'excerpt');
 
 function enable_webfonts_collection() {
-  wp_enqueue_style('legambiente-webfonts', $_GLOBALS['LEGAMBIENTE']['webfonts']['collection_uri']);
+  wp_enqueue_style('legambiente-webfonts', $GLOBALS['LEGAMBIENTE']['webfonts']['collection_uri']);
 }
 
 add_action('wp_enqueue_scripts', 'enable_webfonts_collection', '', '');

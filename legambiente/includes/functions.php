@@ -37,6 +37,15 @@ if(!function_exists('legambiente_logo_overlay') ) {
 // hook in custom logo overlay
 add_action('responsive_in_header', 'legambiente_logo_overlay');
 
+if(!function_exists('deprecate_internet_explorer')) {
+  function deprecate_internet_explorer() {
+    locate_template('templates/deprecate-internet-explorer.php', true, false);
+  }
+}
+
+// hook in responsive container
+add_action('responsive_container', 'deprecate_internet_explorer');
+
 /*
  * select posts for a slider
  * 

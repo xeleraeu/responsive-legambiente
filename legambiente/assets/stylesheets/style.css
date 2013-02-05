@@ -142,6 +142,10 @@ body.home #features #content .post .post-meta {
   background-color: #9f9f9f;
   text-align: center;
 }
+/* line 59, ../sass/_template-home.scss */
+body.home #features #content .post .post-data {
+  display: none;
+}
 
 /* line 1, ../sass/_frontpage-slider.scss */
 .flexslider.highlights {

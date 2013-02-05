@@ -37,7 +37,7 @@ body.home {
       
       ul.slides > li {
         position: relative;
-        min-height: $home-flexslider-blurb-height;
+        min-height: $home-flexslider-blurb-height + ($home-flexslider-blurb-height / 2);
         
         .content {
           position: absolute;

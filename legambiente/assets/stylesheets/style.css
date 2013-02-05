@@ -120,7 +120,7 @@ body.home #features .flexslider.highlights .read-more {
 /* line 38, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights ul.slides > li {
   position: relative;
-  min-height: 90px;
+  min-height: 135px;
 }
 /* line 42, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights ul.slides > li .content {

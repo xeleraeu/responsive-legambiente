@@ -35,8 +35,9 @@ body.home {
         display: none;
       }
       
-      li {
+      ul.slides > li {
         position: relative;
+        min-height: $home-flexslider-blurb-height;
         
         .content {
           position: absolute;

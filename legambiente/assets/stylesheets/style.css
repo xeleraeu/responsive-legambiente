@@ -118,11 +118,12 @@ body.home #features .flexslider.highlights .read-more {
   display: none;
 }
 /* line 38, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li {
+body.home #features .flexslider.highlights ul.slides > li {
   position: relative;
+  min-height: 90px;
 }
-/* line 41, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li .content {
+/* line 42, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights ul.slides > li .content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -133,32 +134,32 @@ body.home #features .flexslider.highlights li .content {
   padding: 1em;
   color: white;
 }
-/* line 52, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li .content * {
+/* line 53, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights ul.slides > li .content * {
   font-size: 1em;
 }
-/* line 56, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li .content a, body.home #features .flexslider.highlights li .content a:hover, body.home #features .flexslider.highlights li .content a:active, body.home #features .flexslider.highlights li .content a:visited {
+/* line 57, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights ul.slides > li .content a, body.home #features .flexslider.highlights ul.slides > li .content a:hover, body.home #features .flexslider.highlights ul.slides > li .content a:active, body.home #features .flexslider.highlights ul.slides > li .content a:visited {
   color: white;
 }
-/* line 61, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li .content h2 a, body.home #features .flexslider.highlights li .content h2 a:hover, body.home #features .flexslider.highlights li .content h2 a:active, body.home #features .flexslider.highlights li .content h2 a:visited {
+/* line 62, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights ul.slides > li .content h2 a, body.home #features .flexslider.highlights ul.slides > li .content h2 a:hover, body.home #features .flexslider.highlights ul.slides > li .content h2 a:active, body.home #features .flexslider.highlights ul.slides > li .content h2 a:visited {
   color: #ffcc00;
 }
-/* line 64, ../sass/_template-home.scss */
-body.home #features .flexslider.highlights li .content h2 a:hover {
+/* line 65, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights ul.slides > li .content h2 a:hover {
   text-decoration: underline;
 }
-/* line 73, ../sass/_template-home.scss */
+/* line 74, ../sass/_template-home.scss */
 body.home #features #content .post {
   border-top: 3px dotted #ddd;
   padding-top: 1em;
 }
-/* line 77, ../sass/_template-home.scss */
+/* line 78, ../sass/_template-home.scss */
 body.home #features #content .post, body.home #features #content .post * {
   font-size: 1em;
 }
-/* line 81, ../sass/_template-home.scss */
+/* line 82, ../sass/_template-home.scss */
 body.home #features #content .post .post-title {
   color: black;
   width: 74.35897%;
@@ -166,7 +167,7 @@ body.home #features #content .post .post-title {
   margin-right: 2.5641%;
   display: inline;
 }
-/* line 86, ../sass/_template-home.scss */
+/* line 87, ../sass/_template-home.scss */
 body.home #features #content .post .post-meta {
   clear: none;
   width: 23.07692%;
@@ -179,7 +180,7 @@ body.home #features #content .post .post-meta {
   background-color: #9f9f9f;
   text-align: center;
 }
-/* line 95, ../sass/_template-home.scss */
+/* line 96, ../sass/_template-home.scss */
 body.home #features #content .post .post-data, body.home #features #content .post .post-discussion {
   display: none;
 }

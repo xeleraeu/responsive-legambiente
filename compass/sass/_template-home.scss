@@ -52,9 +52,18 @@ body.home {
           * {
             font-size: 1em;
           }
+
+          a, a:hover, a:active, a:visited {
+            color: white;
+          }
           
           h2 {
-            color: $flexslider-title-color;
+            a, a:hover, a:active, a:visited {
+              color: $flexslider-title-color;
+            }
+            a:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -90,5 +99,6 @@ body.home {
     }
   }
 }
+
 
 

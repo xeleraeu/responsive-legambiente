@@ -66,16 +66,20 @@ if ( !defined('ABSPATH')) exit;
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
-                <?php responsive_post_meta_data(); ?>
-                
-                                   <?php if ( comments_open() ) : ?>
+                <?php # responsive_post_meta_data(); ?>          
+                <?php the_date('j M Y'); ?>
+                </div><!-- end of .post-meta -->
+
+                <div class="post-discussion">
+                    <?php if ( comments_open() ) : ?>
                         <span class="comments-link">
                         <span class="mdash">&mdash;</span>
                     <?php comments_popup_link(__('No Comments &darr;', 'responsive'), __('1 Comment &darr;', 'responsive'), __('% Comments &darr;', 'responsive')); ?>
                         </span>
                     <?php endif; ?>                  
                 <?php the_date('j M Y'); ?>
-                </div><!-- end of .post-meta -->
+                </div><!-- end of .post-discussion -->
+
                 
                 <div class="post-entry">
                     <?php the_content(__('Read more &#8250;', 'responsive')); ?>

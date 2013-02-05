@@ -76,7 +76,7 @@ a, a:hover, a:active, a:visited {
   color: #555;
 }
 
-/* line 2, ../sass/_template-home.scss */
+/* line 4, ../sass/_template-home.scss */
 body.home #widgets {
   width: 32.20339%;
   float: right;
@@ -84,23 +84,36 @@ body.home #widgets {
   #margin-left: -1em;
   display: inline;
 }
-/* line 6, ../sass/_template-home.scss */
+/* line 8, ../sass/_template-home.scss */
+body.home #widgets.home-widgets {
+  width: 100%;
+}
+/* line 12, ../sass/_template-home.scss */
 body.home #features {
   width: 66.10169%;
   float: left;
   margin-right: 1.69492%;
   display: inline;
 }
-/* line 10, ../sass/_template-home.scss */
+/* line 16, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights img.wp-post-image {
   float: none;
   width: 100%;
 }
-/* line 15, ../sass/_template-home.scss */
+/* line 21, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights .flex-control-nav {
+  bottom: 85px;
+}
+/* line 25, ../sass/_template-home.scss */
+body.home #features .flexslider.highlights .flex-direction-nav a {
+  top: inherit;
+  bottom: 90px;
+}
+/* line 30, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights li {
   position: relative;
 }
-/* line 18, ../sass/_template-home.scss */
+/* line 33, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights li .content {
   position: absolute;
   bottom: 0;
@@ -112,24 +125,24 @@ body.home #features .flexslider.highlights li .content {
   padding: 1em;
   color: white;
 }
-/* line 29, ../sass/_template-home.scss */
+/* line 44, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights li .content * {
   font-size: 1em;
 }
-/* line 33, ../sass/_template-home.scss */
+/* line 48, ../sass/_template-home.scss */
 body.home #features .flexslider.highlights li .content h2 {
   color: #ffcc00;
 }
-/* line 41, ../sass/_template-home.scss */
+/* line 56, ../sass/_template-home.scss */
 body.home #features #content .post {
   border-top: 3px dotted #ddd;
   padding-top: 1em;
 }
-/* line 45, ../sass/_template-home.scss */
+/* line 60, ../sass/_template-home.scss */
 body.home #features #content .post, body.home #features #content .post * {
   font-size: 1em;
 }
-/* line 49, ../sass/_template-home.scss */
+/* line 64, ../sass/_template-home.scss */
 body.home #features #content .post .post-title {
   color: black;
   width: 74.35897%;
@@ -137,7 +150,7 @@ body.home #features #content .post .post-title {
   margin-right: 2.5641%;
   display: inline;
 }
-/* line 54, ../sass/_template-home.scss */
+/* line 69, ../sass/_template-home.scss */
 body.home #features #content .post .post-meta {
   clear: none;
   width: 23.07692%;
@@ -150,7 +163,7 @@ body.home #features #content .post .post-meta {
   background-color: #9f9f9f;
   text-align: center;
 }
-/* line 63, ../sass/_template-home.scss */
+/* line 78, ../sass/_template-home.scss */
 body.home #features #content .post .post-data, body.home #features #content .post .post-discussion {
   display: none;
 }

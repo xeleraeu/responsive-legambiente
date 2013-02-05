@@ -1,6 +1,12 @@
+$home-flexslider-blurb-height: 90px;
+
 body.home {
   #widgets {
     @include span-columns(4 omega, 12);
+  }
+  
+  #widgets.home-widgets {
+    width: 100%;
   }
   
   #features {
@@ -12,6 +18,15 @@ body.home {
         width: 100%;
       }
       
+      .flex-control-nav {
+        bottom: $home-flexslider-blurb-height - 5px;
+      }
+      
+      .flex-direction-nav a {
+        top: inherit;
+        bottom: $home-flexslider-blurb-height;
+      }
+      
       li {
         position: relative;
         
@@ -20,7 +35,7 @@ body.home {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 90px;
+          height: $home-flexslider-blurb-height;
           background-color: rgba(0, 0, 0, 0.5);
           float: none;
           padding: 1em;

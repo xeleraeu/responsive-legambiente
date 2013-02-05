@@ -21,7 +21,7 @@ function enable_webfonts_collection() {
 add_action('wp_enqueue_scripts', 'enable_webfonts_collection', '', '');
 
 function enable_plugin_flexslider() {
-  wp_enqueue_script('jquery-plugin-flexslider', get_stylesheet_directory_uri() . '/assets/javascripts/jquery.flexslider.js', 'jquery'); // TODO: use .min.js in production
+  wp_enqueue_script('jquery-plugin-flexslider', get_stylesheet_directory_uri() . '/assets/javascripts/jquery.flexslider.js', array('jquery'), false, true); // TODO: use .min.js in production
   wp_enqueue_style('jquery-plugin-flexslider', get_stylesheet_directory_uri() . '/assets/stylesheets/plugins/jquery.flexslider/flexslider.css');
 }
 

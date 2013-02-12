@@ -90,14 +90,15 @@ a, a:hover, a:active, a:visited {
   padding: 7px 4px;
   border-top: 0px;
   font-weight: normal;
+  margin-top: 0px;
 }
-/* line 16, ../sass/_flashes.scss */
+/* line 17, ../sass/_flashes.scss */
 .flash.top span[role='link'] {
   color: #15c;
   cursor: pointer;
   text-decoration: underline;
 }
-/* line 24, ../sass/_flashes.scss */
+/* line 25, ../sass/_flashes.scss */
 .flash.chromeframe a, .flash.chromeframe a:link, .flash.chromeframe a:active, .flash.chromeframe a:hover, .flash.chromeframe a:visited {
   color: #0000ff !important;
 }

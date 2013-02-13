@@ -1,9 +1,9 @@
 
 <!--[if lt IE 9 ]>
   <p class='flash top chromeframe'>
-    You are using an outdated browser.
-    <a href="http://browsehappy.com/">Upgrade your browser today</a> or
-    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
-    to better experience this site.
+    State utilizzando un browser internet obsolete.
+    <a href="http://browsehappy.com/">Aggiornatelo</a> o
+    <a href="http://www.google.com/chromeframe/?redirect=true">installate Google Chrome Frame</a>
+    per visualizzare questo sito correttamente.
   </p>
 <![endif]-->

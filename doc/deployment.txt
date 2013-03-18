@@ -1,0 +1,20 @@
+Deployment notes for a Legambiente WP site
+==========================================
+
+Events
+------
+
+* enable "All-in-One Event Calendar" plugin (all-in-one-event-calendar)
+* the plugin needs to be configured site by site with standard settings
+* create event category: "Attività", which is used to filter events
+  marked as activities
+  
+Contact forms
+-------------
+
+* enable "Contact Form 7" plugin (contact-form-7)
+
+Petitions
+---------
+
+* enable "SpeakUp! Email Petitions" plugin (speakup-email-petitions)

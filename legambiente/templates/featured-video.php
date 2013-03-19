@@ -1,3 +1,3 @@
-<?php if(isset($featured_video)): ?>
+<?php if($featured_video->exists()): ?>
 <?php echo $featured_video->field('name'); ?>
-<?php endif; // (isset($featured_video)) ?>
+<?php endif; // ($featured_video->exists()) ?>

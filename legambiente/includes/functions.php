@@ -46,6 +46,20 @@ if(!function_exists('deprecate_internet_explorer')) {
 // hook in responsive container
 add_action('responsive_container', 'deprecate_internet_explorer');
 
+if(!function_exists('legambiente_featured_video')) {
+  $post_type = get_post_type();
+  $featured_video_id = get_post_meta(get_the_ID(), 'featured_video', true);
+  if(($post_type === 'page' or $post_type === 'post') and $featured_video_id) {
+    
+    $featured_video = pods('video', $featured_video_id, true);
+    
+    locate_template('templates/featured-video.php', true, true);
+  }
+}
+
+// plug into hook in sidebar
+add_action('responsive_widgets', 'legambiente_featured_video');
+
 /*
  * select posts for a slider
  * 

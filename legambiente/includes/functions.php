@@ -57,6 +57,7 @@ if(!function_exists('legambiente_featured_video')) {
       $featured_video = pods('video', $featured_video_meta['id'], true);
       if($featured_video->exists()) {
         error_log('featured_video title: ' . $featured_video->field('name'));
+        set_query_var('featured_video', $featured_video);
         locate_template('templates/featured-video.php', true, true);
       }
     }

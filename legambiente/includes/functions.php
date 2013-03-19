@@ -49,7 +49,7 @@ add_action('responsive_container', 'deprecate_internet_explorer');
 if(!function_exists('legambiente_featured_video')) {
   function legambiente_featured_video() {
     $post_type = get_post_type();
-    error_log(get_the_ID());
+    error_log('post ID: ' . get_the_ID());
     $featured_video_id = get_post_meta(get_the_ID(), 'featured_video', true);
     if(($post_type === 'page' or $post_type === 'post') and $featured_video_id) {
       

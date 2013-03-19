@@ -34,6 +34,16 @@ if(!function_exists('legambiente_logo_overlay') ) {
   }
 }
 
+// enable mediaelement plugin
+if(!function_exists('enable_plugin_mediaelement')) {
+  function enable_plugin_mediaelement() {
+      wp_enqueue_script('plugin-mediaelement-js', get_stylesheet_directory_uri() . '/assets/javascripts/medialement/mediaelement-and-player.min.js', array('jquery'), false, true);
+      wp_enqueue_style('plugin-mediaelement-js', get_stylesheet_directory_uri() . '/assets/stylesheets/plugins/mediaelement/mediaelementplayer.min.css');
+  }
+}
+
+add_action('wp_enqueue_scripts', 'enable_plugin_mediaelement', '', '');
+
 // hook in custom logo overlay
 add_action('responsive_in_header', 'legambiente_logo_overlay');
 

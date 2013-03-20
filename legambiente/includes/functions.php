@@ -95,7 +95,7 @@ add_action('responsive_widgets', 'legambiente_featured_gallery');
 if(!function_exists('legambiente_featured_gallery')) {
   function legambiente_featured_gallery() {
     $post_type = get_post_type();
-    $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_gallery', true);
+    $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_photo_gallery', true);
     error_log('featured_gallery_meta: ' . $featured_gallery_meta);
     if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
       

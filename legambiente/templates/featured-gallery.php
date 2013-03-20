@@ -5,7 +5,7 @@
 </div>
 <script>
 jQuery(document).ready(function($) {
-    Galleria.loadTheme(get_stylesheet_directory_uri() . '/assets/vendor/galleria/themes/classic/galleria.classic.js'');
+    Galleria.loadTheme('<?php get_stylesheet_directory_uri(); ?>/assets/vendor/galleria/themes/classic/galleria.classic.js');
     <?php if($featured_gallery->field('photo')): ?>
     Galleria.run('#legambiente-featured-gallery-<?php echo $featured_gallery->field('id'); ?>');
     <?php elseif($featured_gallery->field('flickr_code')): ?>  

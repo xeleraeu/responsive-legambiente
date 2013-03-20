@@ -69,6 +69,7 @@ if(!function_exists('deprecate_internet_explorer')) {
 // hook in responsive container
 add_action('responsive_container', 'deprecate_internet_explorer');
 
+// Pods component: featured video
 if(!function_exists('legambiente_featured_video')) {
   function legambiente_featured_video() {
     $post_type = get_post_type();
@@ -82,6 +83,26 @@ if(!function_exists('legambiente_featured_video')) {
         error_log('featured_video title: ' . $featured_video->field('name'));
         set_query_var('featured_video', $featured_video);
         locate_template('templates/featured-video.php', true, true);
+      }
+    }
+  }
+}
+
+// plug into hook in sidebar
+add_action('responsive_widgets', 'legambiente_featured_gallery');
+
+// Pods component: featured gallery
+if(!function_exists('legambiente_featured_gallery')) {
+  function legambiente_featured_gallery() {
+    $post_type = get_post_type();
+    $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_gallery', true);
+
+    if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
+      
+      $featured_gallery = pods('photo_gallery', $featured_gallery_meta['id'], true);
+      if($featured_gallery->exists()) {
+        set_query_var('featured_gallery', $featured_gallery);
+        locate_template('templates/featured-gallery.php', true, true);
       }
     }
   }

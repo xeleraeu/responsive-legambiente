@@ -1,6 +1,6 @@
 <?php if($featured_video->exists()): ?>
 <div id="legambiente-featured-video-<?php echo $featured_video->field('id'); ?>" class="pods-video">
-  <video id="legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player" width="640" height="360" preload="none">
+  <video id="legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player" preload="none">
   <?php if($featured_video->field('youtube_id')): ?>
     <source type="video/youtube" src="http://www.youtube.com/watch?v=<?php echo $featured_video->field('youtube_id'); ?>" />
   <?php elseif($featured_video->field('video_file_uri')): ?>

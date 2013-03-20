@@ -96,7 +96,7 @@ if(!function_exists('legambiente_featured_gallery')) {
   function legambiente_featured_gallery() {
     $post_type = get_post_type();
     $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_photo_gallery', true);
-    error_log('featured_gallery_meta: ' . $featured_gallery_meta);
+    error_log('featured_gallery_meta: ' . var_export($featured_gallery_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
       
       $featured_gallery = pods('photo_gallery', $featured_gallery_meta['id'], true);

@@ -10,7 +10,7 @@
 </div>
 <script>
 jQuery(document).ready(function($) {
-    $('#legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player').mediaelementplayer();
+    $('#legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player').mediaelementplayer({ videoWidth: '100%' });
 });
 </script>
 <?php endif; // ($featured_video->exists()) ?>

@@ -12,6 +12,9 @@ body {
   background: #fefefe;
 }
 
+/* sidebar widgets */
+$sidebar-widget-spacing: 20px; // match responsive base theme's value
+
 #container {
   @include box-shadow(0 0 10px 10px #bbb);
 }

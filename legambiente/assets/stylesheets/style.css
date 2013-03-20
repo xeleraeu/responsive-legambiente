@@ -304,6 +304,12 @@ body.home #features #content .post .post-data, body.home #features #content .pos
   padding: 0 1em;
 }
 
+/* line 2, ../sass/_pods-video.scss */
+.pods-video video {
+  width: 100%;
+  height: 100%;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Layout */
 /* line 9, ../sass/screen.scss */

@@ -1,0 +1,12 @@
+CMS Legambiente x Circoli - Guida per gli editors
+=================================================
+
+Album fotografico
+-----------------
+
+L'album fotografico visualizza un gruppo di foto dalla Media Library di
+WordPress, oppure da un set di flickr.com o da un album di picasaweb.com.
+
+Utilizzando foto dalla Media Library di WordPress, il titolo dell'immagine e
+la "Descrizione" dell'immagine vengono aggiunte a ciascuna slide dell'album.
+

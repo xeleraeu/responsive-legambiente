@@ -5,7 +5,7 @@
       $photos = $featured_gallery->field('photo');
       foreach($photos as $photo):
   ?>
-  <img src="<?php echo wp_get_attachment_url($photo['ID']); ?>"<?php if($photo['post_title']) { ?> data-title="<?php echo $photo['post_title']; ?>"<?php }; if($photo['post_content']) { ?> data-content="<?php echo $photo['post_content']; ?>"<?php }; ?> />
+  <img src="<?php echo wp_get_attachment_url($photo['ID']); ?>"<?php if($photo['post_title']) { ?> data-title="<?php echo $photo['post_title']; ?>"<?php }; if($photo['post_content']) { ?> data-description="<?php echo $photo['post_content']; ?>"<?php }; ?> />
   <?php
       endforeach; // ($photos as $photo)
     endif; // ($featured_gallery->field('photo'))

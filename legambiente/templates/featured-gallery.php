@@ -1,7 +1,14 @@
 <?php if($featured_gallery->exists()): ?>
 <div id="legambiente-featured-gallery-<?php echo $featured_gallery->field('id'); ?>" class="pods-photo-gallery">
-  <?php if($featured_gallery->field('photo')): ?>
-  <?php endif; // ($featured_gallery->field('photo')) ?>
+  <?php
+    if($photos = $featured_gallery->field('photo')):
+      foreach($photos as $photo):
+  ?>
+  <img src="<?php echo wp_get_attachment_url($photo->ID); ?>" />
+  <?php
+      endforeach; // ($photos as $photo)
+    endif; // ($featured_gallery->field('photo'))
+  ?>
 </div>
 <script>
 jQuery(document).ready(function($) {

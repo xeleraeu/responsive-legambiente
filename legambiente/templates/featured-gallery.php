@@ -1,7 +1,8 @@
 <?php if($featured_gallery->exists()): ?>
 <div id="legambiente-featured-gallery-<?php echo $featured_gallery->field('id'); ?>" class="pods-photo-gallery">
   <?php
-    if($photos = $featured_gallery->field('photo')):
+    if($featured_gallery->field('photo')):
+      $photos = $featured_gallery->field('photo');
       foreach($photos as $photo):
   ?>
   <img src="<?php echo wp_get_attachment_url($photo->ID); ?>" />

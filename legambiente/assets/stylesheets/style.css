@@ -315,6 +315,11 @@ body.home #features #content .post .post-data, body.home #features #content .pos
   height: 100%;
 }
 
+/* line 1, ../sass/_pods-photo-gallery.scss */
+.pods-photo-gallery {
+  margin-bottom: 20px;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Layout */
 /* line 9, ../sass/screen.scss */

@@ -8,7 +8,7 @@
   <?php
       foreach($photos as $photo):
   ?>
-  <img src="<?php echo wp_get_attachment_url($photo->ID); ?>" />
+  <img src="<?php echo wp_get_attachment_url($photo['ID']); ?>" />
   <?php
       endforeach; // ($photos as $photo)
     endif; // ($featured_gallery->field('photo'))

@@ -89,7 +89,7 @@ if(!function_exists('legambiente_featured_video')) {
 }
 
 // plug into hook in sidebar
-add_action('responsive_widgets', 'legambiente_featured_gallery');
+add_action('responsive_widgets', 'legambiente_featured_video');
 
 // Pods component: featured gallery
 if(!function_exists('legambiente_featured_gallery')) {
@@ -109,7 +109,7 @@ if(!function_exists('legambiente_featured_gallery')) {
 }
 
 // plug into hook in sidebar
-add_action('responsive_widgets', 'legambiente_featured_video');
+add_action('responsive_widgets', 'legambiente_featured_gallery');
 
 /*
  * select posts for a slider

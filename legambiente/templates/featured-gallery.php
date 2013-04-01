@@ -1,5 +1,5 @@
 <?php if($featured_gallery->exists()): ?>
-<div id="legambiente-featured-gallery-<?php echo $featured_gallery->field('id'); ?>" class="pods-photo-gallery">
+<div id="legambiente-featured-gallery-<?php echo $featured_gallery->field('id'); ?>" class="pods-photo-gallery fullbleed">
   <?php
     if($featured_gallery->field('photo')):
       $photos = $featured_gallery->field('photo');

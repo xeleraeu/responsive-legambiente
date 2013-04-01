@@ -320,6 +320,20 @@ body.home #features #content .post .post-data, body.home #features #content .pos
   margin-bottom: 20px;
 }
 
+/* line 6, ../sass/_pods-photo-gallery.scss */
+.pods-photo-gallery.fullbleed .galleria-stage {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+}
+/* line 15, ../sass/_pods-photo-gallery.scss */
+.pods-photo-gallery.fullbleed .galleria-thumbnails-container {
+  display: none;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Layout */
 /* line 9, ../sass/screen.scss */

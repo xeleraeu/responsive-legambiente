@@ -92,24 +92,40 @@ if(!function_exists('legambiente_featured_video')) {
 add_action('responsive_widgets', 'legambiente_featured_video');
 
 // Pods component: featured gallery
+if(!function_exists('legambiente_do_featured_gallery')) {
+  function legambiente_do_featured_gallery($gallery_id = null) {
+    $featured_gallery = pods('photo_gallery', $gallery_id, true);
+    if($featured_gallery->exists()) {
+      set_query_var('featured_gallery', $featured_gallery);
+      locate_template('templates/featured-gallery.php', true, true);
+    }
+  }
+}
+
+if(!function_exists('legambiente_shortcode_featured_gallery')) {
+  function legambiente_shortcode_featured_gallery($attributes) {
+    extract(shortcode_atts(array('id' => null), $attributes));
+    ob_start();
+    legambiente_do_featured_gallery($id);
+    return ob_get_clean(); 
+  }
+}
+
 if(!function_exists('legambiente_featured_gallery')) {
   function legambiente_featured_gallery() {
     $post_type = get_post_type();
     $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_photo_gallery', true);
     error_log('featured_gallery_meta: ' . var_export($featured_gallery_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
-      
-      $featured_gallery = pods('photo_gallery', $featured_gallery_meta['id'], true);
-      if($featured_gallery->exists()) {
-        set_query_var('featured_gallery', $featured_gallery);
-        locate_template('templates/featured-gallery.php', true, true);
-      }
+      legambiente_do_featured_gallery($featured_gallery_meta['id']);
     }
   }
 }
 
 // plug into hook in sidebar
 add_action('responsive_widgets', 'legambiente_featured_gallery');
+// and add shortcode
+add_shortcode('la_album', 'legambiente_shortcode_featured_gallery');
 
 /*
  * select posts for a slider

@@ -107,7 +107,7 @@ if(!function_exists('legambiente_shortcode_featured_gallery')) {
     extract(shortcode_atts(array('id' => null), $attributes));
     ob_start();
     legambiente_do_featured_gallery($id);
-    return ob_get_clean(); 
+    return ob_get_clean();
   }
 }
 

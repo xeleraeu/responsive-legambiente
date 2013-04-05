@@ -239,13 +239,15 @@ if(!function_exists('legambiente_shortcode_collection')) {
 }
 
 function legambiente_featured_post_collection() {
-  $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true);
-  legambiente_featured_collection($featured_collection_meta, 'posts');
+  if($featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true)) {
+    legambiente_featured_collection($featured_collection_meta, 'posts');
+  }
 }
 
 function legambiente_featured_page_collection() {
-  $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_page_collection', true);
-  legambiente_featured_collection($featured_collection_meta, 'pages');
+  if($featured_collection_meta = get_post_meta(get_the_ID(), 'featured_page_collection', true)) {
+    legambiente_featured_collection($featured_collection_meta, 'pages');
+  }
 }
 
 if(!function_exists('legambiente_featured_collection')) {

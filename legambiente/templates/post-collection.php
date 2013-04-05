@@ -1,6 +1,7 @@
 <div>DILUDENDO</div>
 <?php
   global $post;
+  echo '<div>diludendo</div>';
   error_log('post-collection template: count slider_posts: ' . count($slider_posts));
   // if(count($slider_posts)):
 ?>

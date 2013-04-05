@@ -209,13 +209,13 @@ if(!function_exists('legambiente_do_featured_collection')) {
 
 if(!function_exists('legambiente_shortcode_featured_post_collection')) {
   function legambiente_shortcode_featured_post_collection($attributes) {
-    legambiente_shortcode_featured_collection('posts', $attributes);
+    legambiente_shortcode_featured_collection($attributes, 'posts');
   }
 }
 
 if(!function_exists('legambiente_shortcode_featured_page_collection')) {
   function legambiente_shortcode_featured_page_collection($attributes) {
-    legambiente_shortcode_featured_collection('pages', $attributes);
+    legambiente_shortcode_featured_collection($attributes, 'pages');
   }
 }
 

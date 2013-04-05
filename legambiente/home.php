@@ -25,7 +25,7 @@ if ( !defined('ABSPATH')) exit;
 
         <div id="features">
 
-        <?php legambiente_featured_collection(); ?>
+        <?php legambiente_do_featured_collection(); ?>
 
         <div id="content">
         

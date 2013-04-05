@@ -157,6 +157,7 @@ add_shortcode('la_album', 'legambiente_shortcode_featured_gallery');
 if(!function_exists('legambiente_do_featured_collection')) {
   function legambiente_do_featured_collection($collection_data) {
     $default_settings = array(
+      'widget_type' => 'slider',
       'item_type' => 'posts',
       'collection_id' => null,
       'use_featured_posts' => false,
@@ -206,7 +207,11 @@ if(!function_exists('legambiente_do_featured_collection')) {
     global $post;
     $original_post = $post;
     set_query_var('slider_posts', $slider_posts);
-    locate_template('templates/post-collection.php', true, false);
+    if($collection_data['widget_type'] === 'sidebar') {
+      locate_template('templates/post-collection.php', true, false);
+    } elseif($collection_data['widget_type'] === 'slider') {
+      locate_template('templates/post-collection-sidebar-widget.php', true, true);
+    }
     $post = $original_post;
   }
 }
@@ -238,7 +243,7 @@ if(!function_exists('legambiente_featured_collection')) {
     $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true);
     error_log('featured_collection_meta: ' . var_export($featured_collection_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
-      legambiente_do_featured_collection(array('collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
+      legambiente_do_featured_collection('widget_type' => 'sidebar', array('collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
     }
   }
 }

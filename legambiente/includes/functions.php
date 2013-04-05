@@ -181,7 +181,7 @@ if(!function_exists('legambiente_do_featured_collection')) {
         case 'posts': $item_type = 'post'; break;
         case 'pages': $item_type = 'page'; break;
       }
-      $featured_collection = pods($item_type . '_collection', $collection_id, true);
+      $featured_collection = pods($item_type . '_collection', $collection_data['collection_id'], true);
       if($featured_collection->exists()) {
         foreach($featured_collection->field('posts') as $item) {
           $post__in[] = $item['ID'];

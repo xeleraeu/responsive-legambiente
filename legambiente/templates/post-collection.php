@@ -1,3 +1,4 @@
+<div><?php echo count($slider_posts)); ?></div>
 <?php
   global $post;
   error_log('post-collection template: count slider_posts: ' . count($slider_posts));

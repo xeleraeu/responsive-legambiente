@@ -2,7 +2,7 @@
   error_log('post-collection template: slider_posts: ' . var_export($slider_posts, true));
   if(count($slider_posts)):
 ?>
-  <div class="widget_wrapper widget_la_post_collection">
+  <div class="widget-wrapper widget_la_post_collection">
       <ul class="items">
         <?php
         foreach($slider_posts as $post): setup_postdata($post);

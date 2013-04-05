@@ -193,12 +193,11 @@ if(!function_exists('legambiente_do_featured_collection')) {
       'post__in' => $post__in
     );
   
-    $posts_array = get_posts($args);
+    $slider_posts = get_posts($args);
   
     global $post;
     $original_post = $post;
-    $slider_posts = do_flex_slider();
-    set_query_var('featured_collection', $featured_collection);
+    set_query_var('slider_posts', $slider_posts);
     locate_template('templates/post-collection.php', true, true);
     $post = $original_post;
   }

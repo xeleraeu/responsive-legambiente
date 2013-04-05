@@ -113,6 +113,7 @@ if(!function_exists('legambiente_insert_gallery')) {
     $featured_gallery = pods('photo_gallery', $gallery_id, true);
     if($featured_gallery->exists()) {
       set_query_var('featured_gallery', $featured_gallery);
+      set_query_var('featured_gallery_uniqid', uniqid('legambiente-featured-gallery-' . $featured_gallery->field('id')));
       locate_template('templates/featured-gallery.php', true, false);
     }
   }

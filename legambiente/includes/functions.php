@@ -155,7 +155,7 @@ add_shortcode('la_album', 'legambiente_shortcode_gallery');
  * otherwise use category
  */
 if(!function_exists('legambiente_insert_collection')) {
-  function legambiente_insert_collection($collection_data) {
+  function legambiente_insert_collection($collection_data = array()) {
     $default_settings = array(
       'widget_type' => 'slider',
       'item_type' => 'posts',

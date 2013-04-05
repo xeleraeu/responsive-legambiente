@@ -237,22 +237,38 @@ if(!function_exists('legambiente_shortcode_featured_collection')) {
   }
 }
 
+function legambiente_featured_post_collection() {
+  $featured_collection_id = get_post_meta(get_the_ID(), 'featured_post_collection', true);
+  legambiente_featured_collection($featured_collection_id, 'posts');
+}
+
+function legambiente_featured_page_collection() {
+  $featured_collection_id = get_post_meta(get_the_ID(), 'featured_page_collection', true);
+  legambiente_featured_collection($featured_collection_id, 'pages');
+}
+
 if(!function_exists('legambiente_featured_collection')) {
-  function legambiente_featured_collection() {
+  function legambiente_featured_collection($feature_collection_meta, $item_type) {
     $post_type = get_post_type();
-    $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true);
     error_log('featured_collection_meta: ' . var_export($featured_collection_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
-      legambiente_do_featured_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
+      switch($item_type) {
+        case 'posts':
+          legambiente_do_featured_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
+          break;
+        case 'pages':
+          legambiente_do_featured_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'pages'));
+          break;
+      }
     }
   }
 }
 
 // plug into hook in sidebar
-add_action('responsive_widgets', 'legambiente_featured_collection');
-// and add shortcode
+add_action('responsive_widgets', 'legambiente_featured_post_collection');
+add_action('responsive_widgets', 'legambiente_featured_page_collection');
+// and add shortcodes
 add_shortcode('la_raccolta_articoli', 'legambiente_shortcode_featured_post_collection');
-// and add shortcode
 add_shortcode('la_raccolta_pagine', 'legambiente_shortcode_featured_page_collection');
 
 /*

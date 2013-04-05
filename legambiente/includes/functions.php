@@ -193,7 +193,7 @@ if(!function_exists('legambiente_do_featured_collection')) {
     }
     
     error_log('legambiente_do_featured_collection: category: ' . $collection_data['category']);
-    error_log('legambiente_do_featured_collection: post__in: ' . $post__in);
+    error_log('legambiente_do_featured_collection: post__in: ' . var_export($post__in, true));
     
     $args = array(
       'numberposts' => $collection_data['max_items'],

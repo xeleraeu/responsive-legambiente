@@ -93,7 +93,7 @@ if(!function_exists('legambiente_shortcode_video')) {
 if(!function_exists('legambiente_featured_video')) {
   function legambiente_featured_video() {
     $post_type = get_post_type();
-    error_log('post ID: ' . get_the_ID());
+    error_log('legambiente_featured_video: post ID: ' . get_the_ID());
     $featured_video_meta = get_post_meta(get_the_ID(), 'featured_video', true);
     if(($post_type === 'page' or $post_type === 'post') and $featured_video_meta['id']) {
       legambiente_insert_video($featured_video_meta['id']);

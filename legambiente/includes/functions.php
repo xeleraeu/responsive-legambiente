@@ -194,7 +194,7 @@ if(!function_exists('legambiente_insert_collection')) {
       $category_id = $category_object->term_id;
     }
     
-    error_log('legambiente_insert_collection: category: ' . $collection_data['category']);
+    error_log('legambiente_insert_collection: category: ' . $collection_data['category_slug']);
     error_log('legambiente_insert_collection: post__in: ' . var_export($post__in, true));
     
     $args = array(

@@ -1,6 +1,6 @@
 <?php if($featured_video->exists()): ?>
-<div id="legambiente-featured-video-<?php echo $featured_video->field('id'); ?>" class="pods-video">
-  <video id="legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player" preload="none" width="320" height="180" style="width: 100%; height: 100%; max-width: 100%;">
+<div id="<?php echo $featured_video_uniqid; ?>" class="pods-video">
+  <video id="<?php echo $featured_video_uniqid; ?>-player" preload="none" width="320" height="180" style="width: 100%; height: 100%; max-width: 100%;">
   <?php if($featured_video->field('youtube_id')): ?>
     <source type="video/x-youtube" src="https://www.youtube.com/watch?v=<?php echo $featured_video->field('youtube_id'); ?>" />
   <?php elseif($featured_video->field('vimeo_id')): ?>
@@ -12,7 +12,7 @@
 </div>
 <script>
 jQuery(document).ready(function($) {
-    $('#legambiente-featured-video-<?php echo $featured_video->field('id'); ?>-player').mediaelementplayer({ videoWidth: '100%' });
+    $('#<?php echo $featured_video_uniqid; ?>-player').mediaelementplayer({ videoWidth: '100%' });
 });
 </script>
 <?php endif; // ($featured_video->exists()) ?>

@@ -219,7 +219,7 @@ if(!function_exists('legambiente_featured_collection')) {
     $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true);
     error_log('featured_collection_meta: ' . var_export($featured_collection_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
-      legambiente_do_featured_collection(array('collection_id' => $featured_collection_meta['id']);
+      legambiente_do_featured_collection(array('collection_id' => $featured_collection_meta['id']));
     }
   }
 }

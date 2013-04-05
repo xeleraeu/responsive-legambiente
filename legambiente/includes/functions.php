@@ -165,6 +165,7 @@ if(!function_exists('legambiente_do_featured_collection')) {
     );
     
     $collection_data = array_merge($default_settings, $collection_data);
+    error_log('legambiente_do_featured_collection: collection_data: ' . var_export($collection_data, true));
     
     // if no selection has been set, default to featured posts
     if($collection_data['collection_id'] === null and $collection_data['use_featured_posts'] === false and $collection_data['category_slug'] === null) {

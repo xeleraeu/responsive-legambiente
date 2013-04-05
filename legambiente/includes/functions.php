@@ -191,10 +191,13 @@ if(!function_exists('legambiente_do_featured_collection')) {
       $category_object = get_category_by_slug($category_slug); 
       $category_id = $category_object->term_id;
     }
-  
+    
+    error_log('legambiente_do_featured_collection: category: ' . $collection_data['category']);
+    error_log('legambiente_do_featured_collection: post__in: ' . $post__in);
+    
     $args = array(
       'numberposts' => $collection_data['max_items'],
-      'category' => $collection_data['category_id'],
+      'category' => $collection_data['category_slug'],
       'post__in' => $post__in
     );
   

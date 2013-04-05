@@ -71,8 +71,8 @@ add_action('responsive_container', 'deprecate_internet_explorer');
 
 // Pods component: featured video
 
-if(!function_exists('legambiente_do_featured_video')) {
-  function legambiente_do_featured_video($video_id = null) {      
+if(!function_exists('legambiente_insert_video')) {
+  function legambiente_insert_video($video_id = null) {      
     $featured_video = pods('video', $featured_video_meta['id'], true);
     if($featured_video->exists()) {
       error_log('featured_video title: ' . $featured_video->field('name'));
@@ -82,11 +82,11 @@ if(!function_exists('legambiente_do_featured_video')) {
   }
 }
 
-if(!function_exists('legambiente_shortcode_featured_video')) {
-  function legambiente_shortcode_featured_video($attributes) {
+if(!function_exists('legambiente_shortcode_video')) {
+  function legambiente_shortcode_video($attributes) {
     extract(shortcode_atts(array('id' => null), $attributes));
     ob_start();
-    legambiente_do_featured_video($id);
+    legambiente_insert_video($id);
     return ob_get_clean();
   }
 }
@@ -95,9 +95,8 @@ if(!function_exists('legambiente_featured_video')) {
     $post_type = get_post_type();
     error_log('post ID: ' . get_the_ID());
     $featured_video_meta = get_post_meta(get_the_ID(), 'featured_video', true);
-
     if(($post_type === 'page' or $post_type === 'post') and $featured_video_meta['id']) {
-      legambiente_do_featured_video($featured_video_meta['id']);
+      legambiente_insert_video($featured_video_meta['id']);
     }
   }
 }
@@ -105,12 +104,12 @@ if(!function_exists('legambiente_featured_video')) {
 // plug into hook in sidebar
 add_action('responsive_widgets', 'legambiente_featured_video');
 // and add shortcode
-add_shortcode('la_video', 'legambiente_shortcode_featured_video');
+add_shortcode('la_video', 'legambiente_shortcode_video');
 
 
 // Pods component: featured gallery
-if(!function_exists('legambiente_do_featured_gallery')) {
-  function legambiente_do_featured_gallery($gallery_id = null) {
+if(!function_exists('legambiente_insert_gallery')) {
+  function legambiente_insert_gallery($gallery_id = null) {
     $featured_gallery = pods('photo_gallery', $gallery_id, true);
     if($featured_gallery->exists()) {
       set_query_var('featured_gallery', $featured_gallery);
@@ -119,11 +118,11 @@ if(!function_exists('legambiente_do_featured_gallery')) {
   }
 }
 
-if(!function_exists('legambiente_shortcode_featured_gallery')) {
-  function legambiente_shortcode_featured_gallery($attributes) {
+if(!function_exists('legambiente_shortcode_gallery')) {
+  function legambiente_shortcode_gallery($attributes) {
     extract(shortcode_atts(array('id' => null), $attributes));
     ob_start();
-    legambiente_do_featured_gallery($id);
+    legambiente_insert_gallery($id);
     return ob_get_clean();
   }
 }
@@ -134,7 +133,7 @@ if(!function_exists('legambiente_featured_gallery')) {
     $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_photo_gallery', true);
     error_log('featured_gallery_meta: ' . var_export($featured_gallery_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
-      legambiente_do_featured_gallery($featured_gallery_meta['id']);
+      legambiente_insert_gallery($featured_gallery_meta['id']);
     }
   }
 }
@@ -142,7 +141,7 @@ if(!function_exists('legambiente_featured_gallery')) {
 // plug into hook in sidebar
 add_action('responsive_widgets', 'legambiente_featured_gallery');
 // and add shortcode
-add_shortcode('la_album', 'legambiente_shortcode_featured_gallery');
+add_shortcode('la_album', 'legambiente_shortcode_gallery');
 
 
 
@@ -154,8 +153,8 @@ add_shortcode('la_album', 'legambiente_shortcode_featured_gallery');
  * if no category is provider, use sticky posts
  * otherwise use category
  */
-if(!function_exists('legambiente_do_featured_collection')) {
-  function legambiente_do_featured_collection($collection_data) {
+if(!function_exists('legambiente_insert_collection')) {
+  function legambiente_insert_collection($collection_data) {
     $default_settings = array(
       'widget_type' => 'slider',
       'item_type' => 'posts',
@@ -166,7 +165,7 @@ if(!function_exists('legambiente_do_featured_collection')) {
     );
     
     $collection_data = array_merge($default_settings, $collection_data);
-    error_log('legambiente_do_featured_collection: collection_data: ' . var_export($collection_data, true));
+    error_log('legambiente_insert_collection: collection_data: ' . var_export($collection_data, true));
     
     // if no selection has been set, default to featured posts
     if($collection_data['collection_id'] === null and $collection_data['use_featured_posts'] === false and $collection_data['category_slug'] === null) {
@@ -193,8 +192,8 @@ if(!function_exists('legambiente_do_featured_collection')) {
       $category_id = $category_object->term_id;
     }
     
-    error_log('legambiente_do_featured_collection: category: ' . $collection_data['category']);
-    error_log('legambiente_do_featured_collection: post__in: ' . var_export($post__in, true));
+    error_log('legambiente_insert_collection: category: ' . $collection_data['category']);
+    error_log('legambiente_insert_collection: post__in: ' . var_export($post__in, true));
     
     $args = array(
       'numberposts' => $collection_data['max_items'],
@@ -216,23 +215,23 @@ if(!function_exists('legambiente_do_featured_collection')) {
   }
 }
 
-if(!function_exists('legambiente_shortcode_featured_post_collection')) {
-  function legambiente_shortcode_featured_post_collection($attributes) {
-    legambiente_shortcode_featured_collection($attributes, 'posts');
+if(!function_exists('legambiente_shortcode_post_collection')) {
+  function legambiente_shortcode_post_collection($attributes) {
+    legambiente_shortcode_collection($attributes, 'posts');
   }
 }
 
-if(!function_exists('legambiente_shortcode_featured_page_collection')) {
-  function legambiente_shortcode_featured_page_collection($attributes) {
-    legambiente_shortcode_featured_collection($attributes, 'pages');
+if(!function_exists('legambiente_shortcode_page_collection')) {
+  function legambiente_shortcode_page_collection($attributes) {
+    legambiente_shortcode_collection($attributes, 'pages');
   }
 }
 
-if(!function_exists('legambiente_shortcode_featured_collection')) {
-  function legambiente_shortcode_featured_collection($attributes, $item_type) {
+if(!function_exists('legambiente_shortcode_collection')) {
+  function legambiente_shortcode_collection($attributes, $item_type) {
     extract(shortcode_atts(array('id' => null), $attributes));
     ob_start();
-    legambiente_do_featured_collection(array('collection_id' => $id, 'item_type' => $item_type));
+    legambiente_insert_collection(array('collection_id' => $id, 'item_type' => $item_type));
     return ob_get_clean();
   }
 }
@@ -254,10 +253,10 @@ if(!function_exists('legambiente_featured_collection')) {
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
       switch($item_type) {
         case 'posts':
-          legambiente_do_featured_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
+          legambiente_insert_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'posts'));
           break;
         case 'pages':
-          legambiente_do_featured_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'pages'));
+          legambiente_insert_collection(array('widget_type' => 'sidebar', 'collection_id' => $featured_collection_meta['id'], 'item_type' => 'pages'));
           break;
       }
     }
@@ -268,8 +267,8 @@ if(!function_exists('legambiente_featured_collection')) {
 add_action('responsive_widgets', 'legambiente_featured_post_collection');
 add_action('responsive_widgets', 'legambiente_featured_page_collection');
 // and add shortcodes
-add_shortcode('la_raccolta_articoli', 'legambiente_shortcode_featured_post_collection');
-add_shortcode('la_raccolta_pagine', 'legambiente_shortcode_featured_page_collection');
+add_shortcode('la_raccolta_articoli', 'legambiente_shortcode_post_collection');
+add_shortcode('la_raccolta_pagine', 'legambiente_shortcode_page_collection');
 
 /*
  * select posts for front page, one per category

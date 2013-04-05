@@ -207,9 +207,9 @@ if(!function_exists('legambiente_do_featured_collection')) {
     global $post;
     $original_post = $post;
     set_query_var('slider_posts', $slider_posts);
-    if($collection_data['widget_type'] === 'sidebar') {
+    if($collection_data['widget_type'] === 'sidebar' and count($slider_posts)) {
       locate_template('templates/post-collection-sidebar-widget.php', true, false);
-    } elseif($collection_data['widget_type'] === 'slider') {
+    } elseif($collection_data['widget_type'] === 'slider' and count($slider_posts)) {
       locate_template('templates/post-collection.php', true, true);
     }
     $post = $original_post;

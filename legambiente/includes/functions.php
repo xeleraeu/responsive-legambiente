@@ -147,17 +147,60 @@ add_shortcode('la_album', 'legambiente_shortcode_featured_gallery');
 
 
 // Pods component: featured items collection
+
+/*
+ * select posts or pages for a slider
+ * 
+ * if no category is provider, use sticky posts
+ * otherwise use category
+ */
 if(!function_exists('legambiente_do_featured_collection')) {
-  function legambiente_do_featured_collection($collection_id = null, $use_featured_posts = false) {
-    $featured_collection = pods('post_collection', $collection_id, true);
-    if($featured_collection->exists()) {
-      global $post;
-      $original_post = $post;
-      $slider_posts = do_flex_slider();
-      set_query_var('featured_collection', $featured_collection);
-      locate_template('templates/post-collection.php', true, true);
-      $post = $original_post;
+  function legambiente_do_featured_collection($collection_data) {
+    $default_settings = array(
+      'item_type' => 'posts',
+      'collection_id' => null,
+      'use_featured_posts' => false,
+      'category_slug' => null,
+      'max_items' => 5
+    );
+    
+    $collection_data = array_merge($default_settings, $collection_data);
+    
+    // if no selection has been set, default to featured posts
+    if($collection_data['collection_id'] === null and $collection_data['use_featured_posts'] === false and $collection_data['category_slug'] === null) {
+      $collection_data['use_featured_posts'] = true;
     }
+    
+    $post__in = array();
+    
+    if($collection_data['use_featured_posts']) {
+      $post__in = get_option('sticky_posts');
+    } elseif($collection_data['collection_id'] {
+      $featured_collection = pods('post_collection', $collection_id, true);
+      if($featured_collection->exists()) {
+        foreach($featured_collection->field('posts') as $item) {
+          $post__in[] = $item['ID'];
+        }
+      }
+    } elseif($collection_data['category_slug']) {
+      $category_object = get_category_by_slug($category_slug); 
+      $category_id = $category_object->term_id;
+    }
+  
+    $args = array(
+      'numberposts' => $collection_data['max_items'],
+      'category' => $collection_data['category_id'],
+      'post__in' => $post__in
+    );
+  
+    $posts_array = get_posts($args);
+  
+    global $post;
+    $original_post = $post;
+    $slider_posts = do_flex_slider();
+    set_query_var('featured_collection', $featured_collection);
+    locate_template('templates/post-collection.php', true, true);
+    $post = $original_post;
   }
 }
 
@@ -165,7 +208,7 @@ if(!function_exists('legambiente_shortcode_featured_collection')) {
   function legambiente_shortcode_featured_collection($attributes) {
     extract(shortcode_atts(array('id' => null), $attributes));
     ob_start();
-    legambiente_do_featured_collection($id);
+    legambiente_do_featured_collection(array('collection_id' => $id));
     return ob_get_clean();
   }
 }
@@ -173,10 +216,10 @@ if(!function_exists('legambiente_shortcode_featured_collection')) {
 if(!function_exists('legambiente_featured_collection')) {
   function legambiente_featured_collection() {
     $post_type = get_post_type();
-    $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_photo_collection', true);
+    $featured_collection_meta = get_post_meta(get_the_ID(), 'featured_post_collection', true);
     error_log('featured_collection_meta: ' . var_export($featured_collection_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
-      legambiente_do_collection_gallery($featured_collection_meta['id']);
+      legambiente_do_featured_collection(array('collection_id' => $featured_collection_meta['id']);
     }
   }
 }
@@ -185,32 +228,6 @@ if(!function_exists('legambiente_featured_collection')) {
 add_action('responsive_widgets', 'legambiente_featured_collection');
 // and add shortcode
 add_shortcode('la_raccolta', 'legambiente_shortcode_featured_collection');
-
-
-/*
- * select posts for a slider
- * 
- * if no category is provider, use sticky posts
- * otherwise use category
- */
-function do_flex_slider($category_slug = '', $max = 5) {
-  if($category_slug) {
-    $category_object = get_category_by_slug($category_slug); 
-    $category_id = $category_object->term_id;
-  } else {
-    $post__in = get_option('sticky_posts');
-  }
-  
-  $args = array(
-    'numberposts' => $max,
-    'category' => $category_id,
-    'post__in' => $post__in
-  );
-  
-  $posts_array = get_posts($args);
-  
-  return $posts_array;
-}
 
 /*
  * select posts for front page, one per category

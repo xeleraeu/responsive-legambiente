@@ -210,7 +210,7 @@ if(!function_exists('legambiente_insert_collection')) {
     if($collection_data['widget_type'] === 'sidebar' and count($slider_posts)) {
       locate_template('templates/post-collection-sidebar-widget.php', true, false);
     } elseif($collection_data['widget_type'] === 'slider' and count($slider_posts)) {
-      error_log('loading post-collection.php template');
+      error_log('loading post-collection.php template with collection_data: ' . var_export($collection_data, true));
       locate_template('templates/post-collection.php', true, false);
     }
     $post = $original_post;

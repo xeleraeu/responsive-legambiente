@@ -77,7 +77,7 @@ if(!function_exists('legambiente_do_featured_video')) {
     if($featured_video->exists()) {
       error_log('featured_video title: ' . $featured_video->field('name'));
       set_query_var('featured_video', $featured_video);
-      locate_template('templates/featured-video.php', true, true);
+      locate_template('templates/featured-video.php', true, false);
     }
   }
 }
@@ -114,7 +114,7 @@ if(!function_exists('legambiente_do_featured_gallery')) {
     $featured_gallery = pods('photo_gallery', $gallery_id, true);
     if($featured_gallery->exists()) {
       set_query_var('featured_gallery', $featured_gallery);
-      locate_template('templates/featured-gallery.php', true, true);
+      locate_template('templates/featured-gallery.php', true, false);
     }
   }
 }

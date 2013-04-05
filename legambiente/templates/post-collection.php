@@ -1,4 +1,5 @@
 <?php
+  error_log('post-collection template: slider_posts: ' . var_export($slider_posts, true));
   if(count($slider_posts)):
 ?>
   <div class="flexslider highlights">

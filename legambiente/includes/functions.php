@@ -175,7 +175,7 @@ if(!function_exists('legambiente_do_featured_collection')) {
     
     if($collection_data['use_featured_posts']) {
       $post__in = get_option('sticky_posts');
-    } elseif($collection_data['collection_id'] {
+    } elseif($collection_data['collection_id']) {
       $featured_collection = pods('post_collection', $collection_id, true);
       if($featured_collection->exists()) {
         foreach($featured_collection->field('posts') as $item) {

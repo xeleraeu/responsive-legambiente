@@ -201,11 +201,12 @@ if(!function_exists('legambiente_insert_collection')) {
     $args = array(
       'numberposts' => $collection_data['max_items'],
       'category' => $collection_data['category_slug'],
+      'post_type' => $item_type,
       'post__in' => $post__in
     );
   
     $slider_posts = get_posts($args);
-  
+   
     global $post;
     $original_post = $post;
     set_query_var('slider_posts', $slider_posts);

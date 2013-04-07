@@ -222,13 +222,13 @@ if(!function_exists('legambiente_insert_collection')) {
 
 if(!function_exists('legambiente_shortcode_post_collection')) {
   function legambiente_shortcode_post_collection($attributes) {
-    legambiente_shortcode_collection($attributes, 'posts');
+    return legambiente_shortcode_collection($attributes, 'posts');
   }
 }
 
 if(!function_exists('legambiente_shortcode_page_collection')) {
   function legambiente_shortcode_page_collection($attributes) {
-    legambiente_shortcode_collection($attributes, 'pages');
+    return legambiente_shortcode_collection($attributes, 'pages');
   }
 }
 

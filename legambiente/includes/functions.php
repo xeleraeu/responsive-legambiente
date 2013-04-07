@@ -73,7 +73,7 @@ add_action('responsive_container', 'deprecate_internet_explorer');
 
 if(!function_exists('legambiente_insert_video')) {
   function legambiente_insert_video($video_id = null) {      
-    $featured_video = pods('video', $featured_video_meta['id'], true);
+    $featured_video = pods('video', $video_id, true);
     if($featured_video->exists()) {
       error_log('featured_video title: ' . $featured_video->field('name'));
       set_query_var('featured_video', $featured_video);

@@ -16,6 +16,7 @@ body.home {
       img.wp-post-image {
         float: none;
         width: 100%;
+        @include experimental-value(width, calc(height * 0.75));
       }
       
       .flex-control-nav {

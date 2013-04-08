@@ -108,7 +108,7 @@ if(!function_exists('legambiente_insert_medialementjs_trigger')) {
   function legambiente_insert_medialementjs_trigger() {
     error_log('legambiente_insert_mediaelementjs_trigger: mediaelementjs_count: ' . $GLOBALS['LEGAMBIENTE']['mediaelementjs_count']);
     if($GLOBALS['LEGAMBIENTE']['mediaelementjs_count'] > 0) {
-      locate_template('templates/featured-video-mediaelementjs-trigger.php');
+      locate_template('templates/featured-video-mediaelementjs-trigger.php', true, true);
     }
   }
 }

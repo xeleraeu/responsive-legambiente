@@ -31,7 +31,8 @@ body.home #features #content .post .post-title { color: black; width: 74.35897%;
 body.home #features #content .post .post-meta { clear: none; width: 23.07692%; float: right; margin-right: 0; #margin-left: -1em; display: inline; font-weight: bold; color: white; background-color: #9f9f9f; text-align: center; }
 body.home #features #content .post .post-data, body.home #features #content .post .post-discussion { display: none; }
 
-.flexslider.highlights img.wp-post-image { float: none; width: 100%; width: -webkit-calc(height * 0.75); width: -moz-calc(height * 0.75); width: -ms-calc(height * 0.75); width: -o-calc(height * 0.75); width: calc(height * 0.75); }
+.flexslider.highlights { width: 100%; width: -webkit-calc(height * 0.75); width: -moz-calc(height * 0.75); width: -ms-calc(height * 0.75); width: -o-calc(height * 0.75); width: calc(height * 0.75); }
+.flexslider.highlights img.wp-post-image { float: none; width: 100%; }
 .flexslider.highlights .flex-control-nav { bottom: 85px; }
 .flexslider.highlights .flex-direction-nav a { top: inherit; bottom: 90px; }
 .flexslider.highlights p { margin: 0; }

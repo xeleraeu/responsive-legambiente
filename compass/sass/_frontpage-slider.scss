@@ -1,7 +1,8 @@
 .flexslider.highlights {
-  width: 100%;
-  @include experimental-value(height, calc(width * 0.75));
-          
+  * {
+    @include box-sizing(border-box);
+  }
+  
   img.wp-post-image {
     float: none;
     width: 100%;
@@ -27,6 +28,8 @@
   ul.slides > li {
     position: relative;
     min-height: $home-flexslider-blurb-height + ($home-flexslider-blurb-height / 2);
+    width: 100%;
+    @include experimental-value(height, calc(width * 0.75));
     
     .content {
       position: absolute;

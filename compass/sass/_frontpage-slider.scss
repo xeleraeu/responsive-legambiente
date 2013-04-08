@@ -1,6 +1,6 @@
 .flexslider.highlights {
   width: 100%;
-  @include experimental-value(width, calc(height * 0.75));
+  @include experimental-value(height, calc(width * 0.75));
           
   img.wp-post-image {
     float: none;

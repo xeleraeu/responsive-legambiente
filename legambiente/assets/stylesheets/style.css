@@ -52,6 +52,9 @@ body.home #features #content .post .post-data, body.home #features #content .pos
 .temi ul li img { margin: 0; }
 .temi ul li .content { padding: 0 1em; }
 
+/* if in main content area, set minimum width to a sensible minimum for desktop screens */
+#content .pods-video { min-height: 400px; }
+
 .pods-video { margin-bottom: 20px; }
 .pods-video video { width: 100%; height: 100%; }
 

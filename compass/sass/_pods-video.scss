@@ -1,3 +1,11 @@
+/* if in main content area, set minimum width to a sensible minimum for
+   desktop screens */
+#content {
+  .pods-video {
+    min-height: 400px;
+  }
+}
+
 .pods-video {
   margin-bottom: $sidebar-widget-spacing;
   

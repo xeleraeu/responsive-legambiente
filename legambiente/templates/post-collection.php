@@ -1,12 +1,11 @@
 <?php
-  global $post;
-  error_log('post-collection template: count slider_posts: ' . count($slider_posts));
-  // if(count($slider_posts)):
+  error_log('post-collection template: count la_slider_posts: ' . count($la_slider_posts));
+  if(count($la_slider_posts)):
 ?>
   <div class="flexslider highlights">
       <ul class="slides">
         <?php
-        foreach($slider_posts as $post): setup_postdata($post);
+        foreach($la_slider_posts as $post): setup_postdata($post);
         ?>
         <li>
           <a href="<?php the_permalink(); ?>">
@@ -27,5 +26,5 @@
   </div>
   <script>jQuery(document).ready(function($) { $('.flexslider.highlights').flexslider({slideshowSpeed: 10000, pauseOnHover: true,  animation: 'slide'}); });</script>
 <?php
-  // endif; // (count($slider_posts))
+  endif; // (count($la_slider_posts))
 ?>

@@ -192,8 +192,8 @@ if(!function_exists('legambiente_insert_collection')) {
       $post__in = get_option('sticky_posts');
     } elseif($collection_data['collection_id']) {
       switch($collection_data['item_type']) {
-        case 'posts': $item_type = 'post'; break;
-        case 'pages': $item_type = 'page'; break;
+        case 'posts': $item_type = 'post'; $section_title='Articoli in evidenza'; break;
+        case 'pages': $item_type = 'page'; $section_title='Pagine in evidenza'; break;
       }
       $featured_collection = pods($item_type . '_collection', $collection_data['collection_id'], true);
       if($featured_collection->exists()) {
@@ -220,7 +220,9 @@ if(!function_exists('legambiente_insert_collection')) {
    
     global $post;
     $original_post = $post;
-    set_query_var('slider_posts', $slider_posts);
+    set_query_var('la_slider_posts', $slider_posts);
+    set_query_var('la_section_title', $section_title);
+    
     if($collection_data['widget_type'] === 'sidebar' and count($slider_posts)) {
       locate_template('templates/post-collection-sidebar-widget.php', true, false);
     } elseif($collection_data['widget_type'] === 'slider' and count($slider_posts)) {

@@ -7,12 +7,7 @@
     <source type="video/x-vimeo" src="https://www.vimeo.com/<?php echo $featured_video->field('vimeo_id'); ?>" />
   <?php elseif($featured_video->field('video_file_uri')): ?>
     <source type="video/webm" src="<?php echo $featured_video->field('video_file_uri'); ?>" />
-  <?php endif; // ($featured_video->field('youtube_id')) ?>
+  <?php endif; ?>
   </video>
 </div>
-<script>
-jQuery(document).ready(function($) {
-    $('#<?php echo $featured_video_uniqid; ?>-player').mediaelementplayer({ videoWidth: '100%' });
-});
-</script>
 <?php endif; // ($featured_video->exists()) ?>

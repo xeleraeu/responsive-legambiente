@@ -9,7 +9,7 @@
   }
   
   .flex-control-nav {
-    bottom: 20px;
+    bottom: 5px;
   }
   
   .flex-direction-nav a {
@@ -30,6 +30,7 @@
     min-height: $home-flexslider-blurb-height + ($home-flexslider-blurb-height / 2);
     width: 100%;
     @include experimental-value(height, calc(width * 0.75));
+    padding-bottom: 2.5em;
     
     img {
       margin: 0;
@@ -44,7 +45,6 @@
       background-color: rgba(0, 0, 0, 0.5);
       float: none;
       padding: 1em;
-      padding-bottom: 2.5em;
       color: white;
       
       * {

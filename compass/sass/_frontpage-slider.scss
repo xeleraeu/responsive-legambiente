@@ -9,7 +9,7 @@
   }
   
   .flex-control-nav {
-    bottom: $home-flexslider-blurb-height - 5px;
+    bottom: 20px;
   }
   
   .flex-direction-nav a {
@@ -33,10 +33,10 @@
     
     .content {
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       width: 100%;
-      height: $home-flexslider-blurb-height;
+      height: auto;
       background-color: rgba(0, 0, 0, 0.5);
       float: none;
       padding: 1em;

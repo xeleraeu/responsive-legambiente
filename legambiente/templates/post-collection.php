@@ -11,7 +11,7 @@
         <li>
           <a href="<?php the_permalink(); ?>">
             <?php
-            if(has_post_thumbnail($post->ID):
+            if(has_post_thumbnail($post->ID)):
               echo get_the_post_thumbnail($post->ID, 'large');
             else: ?>
               <div class="placeholder">&nbsp;</div>

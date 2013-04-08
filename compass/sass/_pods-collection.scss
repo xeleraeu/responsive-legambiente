@@ -1,6 +1,8 @@
 .flexslider.highlights {
   border: none;
   margin: 1.5em 0 3em;
+  @include box-shadow(none);
+  @include border-radius(none);
   
   * {
     @include box-sizing(border-box);

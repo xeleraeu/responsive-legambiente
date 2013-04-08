@@ -39,6 +39,7 @@ body.home #features #content .post .post-data, body.home #features #content .pos
 .temi ul li img { margin: 0; }
 .temi ul li .content { padding: 0 1em; }
 
+.flexslider.highlights { border: none; margin: 1.5em 0 3em; }
 .flexslider.highlights * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .flexslider.highlights img.wp-post-image { float: none; width: 100%; }
 .flexslider.highlights .flex-control-nav { bottom: 5px; }

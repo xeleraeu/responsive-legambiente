@@ -45,7 +45,8 @@ body.home #features #content .post .post-data, body.home #features #content .pos
 .flexslider.highlights .flex-direction-nav a { top: inherit; bottom: 90px; }
 .flexslider.highlights p { margin: 0; }
 .flexslider.highlights .read-more { display: none; }
-.flexslider.highlights ul.slides > li { position: relative; min-height: 135px; width: 100%; height: -webkit-calc(width * 0.75); height: -moz-calc(width * 0.75); height: -ms-calc(width * 0.75); height: -o-calc(width * 0.75); height: calc(width * 0.75); padding-bottom: 2.5em; }
+.flexslider.highlights ul.slides { padding-bottom: 2.5em; }
+.flexslider.highlights ul.slides > li { position: relative; min-height: 135px; width: 100%; height: -webkit-calc(width * 0.75); height: -moz-calc(width * 0.75); height: -ms-calc(width * 0.75); height: -o-calc(width * 0.75); height: calc(width * 0.75); }
 .flexslider.highlights ul.slides > li img { margin: 0; }
 .flexslider.highlights ul.slides > li .content { position: absolute; top: 0; left: 0; width: 100%; height: auto; background-color: rgba(0, 0, 0, 0.5); float: none; padding: 1em; color: white; }
 .flexslider.highlights ul.slides > li .content * { font-size: 1em; }

@@ -1,18 +1,13 @@
 <?php if($featured_video->exists()): ?>
 <div id="<?php echo $featured_video_uniqid; ?>" class="pods-video">
-  <video id="<?php echo $featured_video_uniqid; ?>-player" preload="none" width="320" height="180" style="width: 100%; height: 100%; max-width: 100%;">
   <?php if($featured_video->field('youtube_id')): ?>
-    <source type="video/x-youtube" src="https://www.youtube.com/watch?v=<?php echo $featured_video->field('youtube_id'); ?>" />
+    <iframe type="text/html" src="https://www.youtube.com/embed/<?php echo $featured_video->field('youtube_id'); ?>?autoplay=0&origin=http://<?php echo $_SERVER['HTTP_HOST']; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   <?php elseif($featured_video->field('vimeo_id')): ?>
-    <source type="video/x-vimeo" src="https://www.vimeo.com/<?php echo $featured_video->field('vimeo_id'); ?>" />
+    <iframe type="text/html" src="https://player.vimeo.com/video/<?php echo $featured_video->field('vimeo_id'); ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   <?php elseif($featured_video->field('video_file_uri')): ?>
-    <source type="video/webm" src="<?php echo $featured_video->field('video_file_uri'); ?>" />
-  <?php endif; // ($featured_video->field('youtube_id')) ?>
-  </video>
+    <video id="<?php echo $featured_video_uniqid; ?>-player" preload="none" width="320" height="180" style="width: 100%; height: 100%; max-width: 100%;">
+      <source type="video/webm" src="<?php echo $featured_video->field('video_file_uri'); ?>" />
+    </video>
+  <?php endif; ?>
 </div>
-<script>
-jQuery(document).ready(function($) {
-    $('#<?php echo $featured_video_uniqid; ?>-player').mediaelementplayer({ videoWidth: '100%' });
-});
-</script>
 <?php endif; // ($featured_video->exists()) ?>

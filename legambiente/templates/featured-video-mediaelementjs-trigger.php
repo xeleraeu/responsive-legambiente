@@ -1,5 +1,5 @@
 <script>
 jQuery(document).ready(function($) {
-    $('.pods-video').mediaelementplayer({ videoWidth: '100%' });
+    $('.pods-video > video').mediaelementplayer({ videoWidth: '100%' });
 });
 </script>

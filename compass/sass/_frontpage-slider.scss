@@ -31,6 +31,10 @@
     width: 100%;
     @include experimental-value(height, calc(width * 0.75));
     
+    img {
+      margin: 0;
+    }
+    
     .content {
       position: absolute;
       top: 0;

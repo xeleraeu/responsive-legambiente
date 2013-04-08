@@ -31,6 +31,14 @@ body.home #features #content .post .post-title { color: black; width: 74.35897%;
 body.home #features #content .post .post-meta { clear: none; width: 23.07692%; float: right; margin-right: 0; #margin-left: -1em; display: inline; font-weight: bold; color: white; background-color: #9f9f9f; text-align: center; }
 body.home #features #content .post .post-data, body.home #features #content .post .post-discussion { display: none; }
 
+.temi ul { margin-left: inherit; }
+.temi ul li { display: block; margin-bottom: 1em; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; width: 49.15254%; float: left; margin-right: 1.69492%; display: inline; background-color: white; }
+.temi ul li:nth-of-type(2n) { width: 49.15254%; float: right; margin-right: 0; #margin-left: -1em; display: inline; }
+.temi ul li h2 { background-color: #dddddd; padding: 0.2em; margin-top: 0; margin-bottom: 0; -webkit-border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; -ms-border-radius: 5px 5px 0 0; -o-border-radius: 5px 5px 0 0; border-radius: 5px 5px 0 0; }
+.temi ul li h2 a, .temi ul li h2 a:hover, .temi ul li h2 a:active, .temi ul li h2 a:focus, .temi ul li h2 a:visited { color: white; }
+.temi ul li img { margin: 0; }
+.temi ul li .content { padding: 0 1em; }
+
 .flexslider.highlights * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .flexslider.highlights img.wp-post-image { float: none; width: 100%; }
 .flexslider.highlights .flex-control-nav { bottom: 20px; }
@@ -44,14 +52,6 @@ body.home #features #content .post .post-data, body.home #features #content .pos
 .flexslider.highlights ul.slides > li .content a, .flexslider.highlights ul.slides > li .content a:hover, .flexslider.highlights ul.slides > li .content a:active, .flexslider.highlights ul.slides > li .content a:visited { color: white; }
 .flexslider.highlights ul.slides > li .content h2 a, .flexslider.highlights ul.slides > li .content h2 a:hover, .flexslider.highlights ul.slides > li .content h2 a:active, .flexslider.highlights ul.slides > li .content h2 a:visited { color: #ffcc00; }
 .flexslider.highlights ul.slides > li .content h2 a:hover { text-decoration: underline; }
-
-.temi ul { margin-left: inherit; }
-.temi ul li { display: block; margin-bottom: 1em; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; width: 49.15254%; float: left; margin-right: 1.69492%; display: inline; background-color: white; }
-.temi ul li:nth-of-type(2n) { width: 49.15254%; float: right; margin-right: 0; #margin-left: -1em; display: inline; }
-.temi ul li h2 { background-color: #dddddd; padding: 0.2em; margin-top: 0; margin-bottom: 0; -webkit-border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; -ms-border-radius: 5px 5px 0 0; -o-border-radius: 5px 5px 0 0; border-radius: 5px 5px 0 0; }
-.temi ul li h2 a, .temi ul li h2 a:hover, .temi ul li h2 a:active, .temi ul li h2 a:focus, .temi ul li h2 a:visited { color: white; }
-.temi ul li img { margin: 0; }
-.temi ul li .content { padding: 0 1em; }
 
 /* if in main content area, set minimum width to a sensible minimum for desktop screens */
 #content .pods-video { min-height: 400px; }

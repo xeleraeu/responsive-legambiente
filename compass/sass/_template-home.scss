@@ -12,65 +12,6 @@ body.home {
   #features {
     @include span-columns(8, 12);
     
-    .flexslider.highlights {
-      img.wp-post-image {
-        float: none;
-        width: 100%;
-        @include experimental-value(width, calc(height * 0.75));
-      }
-      
-      .flex-control-nav {
-        bottom: $home-flexslider-blurb-height - 5px;
-      }
-      
-      .flex-direction-nav a {
-        top: inherit;
-        bottom: $home-flexslider-blurb-height;
-      }
-      
-      p {
-        margin: 0;
-      }
-      
-      .read-more {
-        display: none;
-      }
-      
-      ul.slides > li {
-        position: relative;
-        min-height: $home-flexslider-blurb-height + ($home-flexslider-blurb-height / 2);
-        
-        .content {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: $home-flexslider-blurb-height;
-          background-color: rgba(0, 0, 0, 0.5);
-          float: none;
-          padding: 1em;
-          color: white;
-          
-          * {
-            font-size: 1em;
-          }
-
-          a, a:hover, a:active, a:visited {
-            color: white;
-          }
-          
-          h2 {
-            a, a:hover, a:active, a:visited {
-              color: $flexslider-title-color;
-            }
-            a:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
-    
     #content {
       .post {
         border-top: 3px dotted #ddd;

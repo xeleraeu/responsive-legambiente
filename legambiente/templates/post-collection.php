@@ -10,7 +10,12 @@
         ?>
         <li>
           <a href="<?php the_permalink(); ?>">
-            <?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
+            <?php
+            if(has_post_thumbnail($post->ID):
+              echo get_the_post_thumbnail($post->ID, 'large');
+            else: ?>
+              <div class="placeholder">&nbsp;</div>
+            <?php endif; // (has_post_thumbnail($post->ID) ?>
           </a>
           <div class="content">
             <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>

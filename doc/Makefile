@@ -10,10 +10,10 @@
 all: html html5 pdf
 
 html5:
-	rst2html5 -l it user-manual-it.rst > user-manual-it-html5.html
+	rst2html5 -l it --strip-comments user-manual-it.rst > user-manual-it-html5.html
 
 html:
-	rst2html -l it user-manual-it.rst > user-manual-it.html
+	rst2html -l it --strip-comments user-manual-it.rst > user-manual-it.html
 
 pdf:
 	rst2latex --strip-comments -l it --no-section-numbering --use-latex-toc --stylesheet xelera-rst.sty --table-style=booktabs -i utf-8 -o utf-8 user-manual-it.rst > user-manual-it.latex

@@ -9,7 +9,6 @@ CMS Circoli Legambiente Lombardia - Guida utente
 :copyright: Copyright © 2013 Semantica di Giovanni Biscuolo.
 
 :abstract:  Il presente documento rappresenta la guida utente per l'utilizzo del CMS dei circoli di Legambiente Lombardia fornito da Xelera. Questa guida illustra specificamente le funzioni aggiuntive rispetto a quelle base di WordPress, di cui si richiama la documentazione e l'help in linea per la guida generale.
-            Lombardia
 
 .. sectnum::    :depth: 4
 
@@ -28,12 +27,26 @@ Glossario dei termini utilizzati
 permalink
   è un acronimo per "permanent link" ovverro collegamento permanente. Questo significa che qualsiasi tipo di contenuto (articolo, pagina, ecc.) verrà univocamente identificato all'interno di WordPress e sul web attraverso il suo permalink. Il ``permalink`` viene automaticamente generato e se necessario può essere modificato, anche se in genere è una operazione sconsigliata.
 
-.. Configurazione ambiente di lavoro
-.. ===================================
+shortcode
+  ove definito, è un codice attraverso il quale alcuni contenuti speciali possono essere inseriti nl corpo degli ``Articoli`` o delle ``Pagine``; esempio di shortcode: ``[la_album id='agricoltura']``. Nel caso la sintassi con il quale è inserito fosse errata, lo shortcode viene ignorato.
 
-.. profilo utente
-.. impostazioni schermo
-.. ruoli utenti (e roba specifica tipo niente gestione categorie, solo tag)
+Configurazione ambiente di lavoro
+===================================
+
+Profilo utente
+...............
+
+La pagina ``Profilo`` permette di impostare alcune preferenze dell'interfaccia di WordPress e le informazioni relative al proprio utente.
+
+Per questa pagina è disponibile la guida in linea ``Aiuto``, in alto a sinistra.
+
+.. Impostazioni schermo
+.. .....................
+
+.. Ruoli utenti
+.. .............
+..
+.. (e roba specifica tipo niente gestione categorie, solo tag)
 
 Gestione contenuti standard
 ============================
@@ -53,15 +66,15 @@ forniti da WordPress è a vostra disposizione la funzione di **aiuto in linea** 
 Articoli e Pagine
 ------------------
 
-In aggiunta al contenuto standard, nella sezione ``More Fields`` che trovate in fondo alla pagina è possibile aggiungere uno di questi contenuti speciali:
+Per gli `Articoli` e le `pagine`, nella sezione ``More Fields`` che trovate in fondo alla pagina è possibile aggiungere uno di questi contenuti speciali, le cui funzioni sono descritte nei paragrafi elencati:
 
-* ``Video in evidenza``, descritto nel paragrafo `Video`_
+* ``Video in evidenza``: paragrafo `Video`_
 
-* ``Album in evidenza``, descritto nel paragrafo `Album fotografici`_
+* ``Album in evidenza``: paragrafo `Album fotografici`_
 
-* ``Rassegna articoli``, descritto nel paragrafo `Raccolta notizie`_
+* ``Rassegna articoli``: paragrafo `Raccolta notizie`_
 
-* ``Rassegna pagine``, descritto nel paragrafo `Raccolta pagine`_
+* ``Rassegna pagine``: paragrafo `Raccolta pagine`_
 
 Gestione contenuti speciali
 ===========================
@@ -73,12 +86,105 @@ Gestione contenuti speciali
 
 .. altrimenti va impostata d'ufficio uguele per tutti... si potrà via wp-cli?!?
 
-Eventi
--------
+.. Eventi
+.. -------
 
+.. FIXME
+
+.. praticamente zero documentazione upstream, ma le opzioni sono autoesplicative
 
 CF7 - Moduli di contatto
 -------------------------
+
+Questa funzione permette di raccogliere informazioni dagli utenti che visitano una ``Pagina`` o un ``Articolo`` all'interno del quale è inserito il modulo di contatto.
+
+.. figure:: images/medium/page-contact-form-view.png
+   :target: images/page-contact-form-view.png
+   :scale: 100 %
+   :align: center
+   :alt: Modulo di contatto in una pagina
+
+   Esempio di modulo di contatto inserito nel corpo di una pagina.
+
+Le informazioni raccolte attraverso il modulo di contatto sono inviate via email ad uno o più contatti definiti per ciascun modulo.
+
+Questa funzione viene fornita attraverso l'utilizzo di una apposita estensione di WordPress, ``Contact Form 7``, la cui documentazione completa - in inglese- è disponibile seguendo il link ``Documentazione`` in alto a destra.
+
+Inserimento del modulo di contatto
+....................................
+
+Il modulo di contatto può essere inserito in una ``Pagina`` o in un ``Articolo`` utilizzando lo *shortcode* ad esso associato; lo *shortcode* è presente sia nell'elenco dei moduli ``CF7`` che in testa alla pagina di ciascun modulo.
+
+Esempio di shortcode::
+
+  [contact-form-7 id="71" title="Modulo di contatto 1"]
+
+Definizione del modulo di contatto
+...................................
+
+Il modulo di contatto viene definito nella sezione ``Modulo`` attraverso la compilazione di codice HTML *facilitato*. I campi da raccogliere sono definiti attraverso uno speciale ``tag`` [#]_ attraveso l'apposito pulsante ``Genera tag`` che guida l'utente nella definizione del tipo di campo da inserire nel modulo.
+
+Il ``codice tag`` generato, indicato chiaramente nella relativa sezione, deve quindi essere copiato nel codice HTML facilitato del modulo.
+
+.. ATTENTION::
+   Prendere nota o copiare nella sezione ``Mail`` il codice per il campo email
+
+.. sarebbe utile capcha ma manca il necessario plugin
+
+Al termine del codice HTML facilitato non deve mancare un tasto per inviare le informazioni.
+
+.. _`esempio di modulo`:
+
+Un esempio di modulo di contatto - che potete usare come modello - è il seguente::
+
+  <p>Il tuo nome (richiesto)<br />
+    [text* your-name] </p>
+
+  <p>La tua email (richiesto)<br />
+  [email* your-email] </p>
+
+  <p>Oggetto<br />
+    [text your-subject] </p>
+
+  <p>Le tue opzioni preferite (possibile scelta multipla)<br />
+    [select menu-578 multiple "uno" "due" "tre"] </p>
+
+  <p>Il tuo messaggio<br />
+    [textarea your-message] </p>
+
+  <p>[submit "Invia"]</p>
+
+.. [#] da non confondere con il tag di un ``Articolo``
+
+Definizione invio email
+........................
+
+Le informazioni raccolte attraverso il modulo sono inviate via email ad uno o più contatti definiti nell sezione ``Mail``.
+
+Occorre impostare le intastazioni email ``A:``, ``Da:`` e ``Oggetto`` e defnire il corpo del messaggio email da inviare attraverso un modello di testo in cui possono essere inseriti i codici ``tag per email`` definiti durante la fase ``Definizione del modulo di contatto``.
+
+.. ATTENTION::
+   In caso di smarrimento del codice tag per l'email, questo può essere facilmente recuperato dal modulo di definizione testo. Ad es. se il ``codice tag`` nel modulo è definito come ``[text oggetto-email]`` il ``codice tag`` per l'email è ``[oggetto-email]``
+
+È possibile utilizzare codice HTML per la definizione del copro dell'email, in questo caso occorre selezionare l'opzione ``Utilizza contenuti in HTML``.
+
+Un esempio di corpo dell'email corrispondente all'`esempio di modulo`_ - che potete usare come modello **adattandolo** alla definizione del modulo - è il seguente:
+
+::
+
+ Nome: [your-name]
+ Email: [your-email]
+ Oggetto: [your-subject]
+
+ Scelte utente:
+ [menu-578]
+
+ Corpo del messaggio:
+ [your-message]
+
+ --
+ Email inviata tramite "Modulo di conttato 1"
+ CircoloZero http://circolozero.wpmu.xelera.eu
 
 Album fotografici
 ------------------
@@ -183,6 +289,14 @@ Lo shortcode è::
 
 Petizioni
 ---------
+
+.. aiuto in linea in italiano
+
+.. figura: post-petition-view.png
+
+.. shortcode in elenco petizioni e in 
+..	[emailpetition id="1"]
+..  [signaturelist id="1"]
 
 .. Ulteriore documentazione
 .. =========================

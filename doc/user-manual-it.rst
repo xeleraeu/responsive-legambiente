@@ -34,7 +34,7 @@ Configurazione ambiente di lavoro
 ===================================
 
 Profilo utente
-...............
+---------------
 
 La pagina ``Profilo`` permette di impostare alcune preferenze dell'interfaccia di WordPress e le informazioni relative al proprio utente.
 

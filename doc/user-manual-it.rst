@@ -59,13 +59,11 @@ Gestione contenuti standard
 
 Per i tipi di contenuto standard di WordPress ``Articoli``, ``Pagine``, ``Media`` e ``Commenti`` è disponibile la `Guida in linea`_.
 
-.. Immagini in evidenza
-.. ---------------------
-.. FIXME
-
+Articoli e pagine
+------------------
 
 Sezione ``More Fields``
-------------------------
+.........................
 
 Nella sezione ``More Fields`` di ``Articoli`` e ``Pagine``, che trovate in fondo alla pagina, è possibile aggiungere uno di questi contenuti speciali:
 
@@ -80,12 +78,13 @@ Nella sezione ``More Fields`` di ``Articoli`` e ``Pagine``, che trovate in fondo
 .. ATTENTION::
    Verificate che la visualizzazione di ``More fields`` sia correttamente impostata in `Impostazioni schermo`_.
 
-.. Immagine della testata
-.. -----------------------
-..
-.. si può abilitare il ruolo la_editor (o comesichiama) a modificare l'immagine della testata??? se sì spiegare come si fa e quali sono i requisiti dell'immagine (960x200 in JPG).
+Media
+------
 
-.. altrimenti va impostata d'ufficio uguale per tutti... si potrà via wp-cli?!?
+Immagini in evidenza
+......................
+
+Le immagini utilizzate come ``immagini in evidenza`` devono avere dimensione di 560 x 320 pixel.
 
 Gestione contenuti speciali
 ===========================

@@ -4,3 +4,6 @@
 *.log
 *.out
 *.pdf
+*.rst.bak
+*.toc
+

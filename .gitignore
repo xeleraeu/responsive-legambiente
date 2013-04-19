@@ -1,0 +1,9 @@
+*.aux
+*.html
+*.latex
+*.log
+*.out
+*.pdf
+*.rst.bak
+*.toc
+

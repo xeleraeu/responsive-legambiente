@@ -10,7 +10,7 @@
 all: html html5 pdf
 
 html5:
-	rst2html5 -l it --strip-comments --embed-stylesheet user-manual-it.rst > user-manual-it-html5.html
+	rst2html5 -l it --strip-comments user-manual-it.rst > user-manual-it-html5.html
 
 html:
 	rst2html -l it --strip-comments --embed-stylesheet user-manual-it.rst > user-manual-it.html

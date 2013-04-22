@@ -31,6 +31,8 @@ if ( !defined('ABSPATH')) exit;
 
 <title><?php wp_title('&#124;', true, 'right'); ?></title>
 
+<meta name="description" content="<?php bloginfo('description'); ?>" />
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
@@ -77,7 +79,6 @@ if ( !defined('ABSPATH')) exit;
             <?php responsive_in_logo(); // extra logo hook ?>
             
             <span class="site-name"><a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></span>
-            <span class="site-description"><?php bloginfo('description'); ?></span>
         </div><!-- end of #logo -->  
 
     <?php endif; // header image was removed (again) ?>

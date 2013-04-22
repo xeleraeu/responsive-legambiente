@@ -4,8 +4,7 @@
 #
 
 # the optput directories
-#ITDIR=templates/xelera
-#ENDIR=$(ITDIR)/EN
+WEBDIR='node103:/home/sites/www.xelera.eu/web/html/static/doc/legambiente-lombardia'
 
 all: html html5 pdf
 
@@ -22,3 +21,6 @@ pdf:
 	pdflatex user-manual-it.latex
 	pdflatex user-manual-it.latex
 
+deploy:
+	scp user-manual-it.html $(WEBDIR)/cms-circoli-user-manual-it.html
+	scp terms+conditions-it.html $(WEBDIR)/cms-circoli-terms+conditions-it.html

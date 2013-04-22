@@ -31,8 +31,6 @@ if ( !defined('ABSPATH')) exit;
 
 <title><?php wp_title('&#124;', true, 'right'); ?></title>
 
-<meta name="description" content="<?php bloginfo('description'); ?>" />
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 

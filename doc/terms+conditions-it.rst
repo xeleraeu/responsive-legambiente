@@ -47,14 +47,14 @@ Xelera fornisce il servizio di hosting e si occupa delle seguenti attività:
 
 * supporto **via email**, per quanto definito nel paragrafo `Supporto`_
 
-.. [#] plugins, tipi di cocumento avanzati, templates, fogli di stile CSS
+.. [#] plugins, tipi di documento avanzati, templates, fogli di stile CSS
 
 Caratteristiche del servizio
 -----------------------------
 
 Xelera fornisce il ``CMS Circoli Legambiente Lombardia`` - in modalità hosting - basato sul software `WordPress`_ con l'estensione `Pods Framework`_.  Il manuale per l'utilizzo del CMS è definito nella `Guida Utente`_.
 
-Le attivtà ad-hoc consistono in:
+Le attività ad-hoc consistono in:
 
 * analisi, sviluppo e mantenimento della `Struttura dei documenti`_ stabiliti
 * progettazione. sviluppo e mantenimento del `Layout`_ stabilito
@@ -84,7 +84,7 @@ Layout
 
 Il `layout`_ dei siti è analogo a quello utilizzato [#]_ per il sito regionale.
 
-Ogni modifica del `layout`_ dovrà essere approvata dalla sede regionale secondo quanto stablito nel paragrafo `Ruolo di Legambiente Lombardia ONLUS`_.
+Ogni modifica del `layout`_ dovrà essere approvata dalla sede regionale secondo quanto stabilito nel paragrafo `Ruolo di Legambiente Lombardia ONLUS`_.
 
 .. [#] alla data del 18 Aprile 2013
 

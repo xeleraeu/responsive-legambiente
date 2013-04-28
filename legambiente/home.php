@@ -23,12 +23,10 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php get_header(); ?>
 
-        <div id="features">
+        <div id="content" class="grid col-620">
 
         <?php legambiente_insert_collection(); ?>
-
-        <div id="content">
-        
+                
 <?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
@@ -93,11 +91,7 @@ if ( !defined('ABSPATH')) exit;
         
 <?php endif; ?>  
       
-        </div><!-- end of #content -->        
-        
-        
-        
-        </div><!-- end of #features -->
+        </div><!-- end of #content -->
 
 <?php get_sidebar(); ?>        
                        

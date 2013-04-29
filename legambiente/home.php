@@ -22,7 +22,7 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 <?php get_header(); ?>
-
+      <div id="features">
         <div id="content">
 
         <?php legambiente_insert_collection(); ?>
@@ -92,7 +92,7 @@ if ( !defined('ABSPATH')) exit;
 <?php endif; ?>  
       
         </div><!-- end of #content -->
-
+      </div><!-- end of #features -->
 <?php get_sidebar(); ?>        
                        
 <?php get_sidebar('home'); ?>

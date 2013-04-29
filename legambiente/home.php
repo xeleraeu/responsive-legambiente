@@ -94,6 +94,5 @@ if ( !defined('ABSPATH')) exit;
         </div><!-- end of #content -->
       </div><!-- end of #features -->
 <?php get_sidebar(); ?>        
-                       
-<?php get_sidebar('home'); ?>
+
 <?php get_footer(); ?>

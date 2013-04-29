@@ -23,7 +23,7 @@ a, a:hover, a:active, a:visited { color: #555; }
 .flash.chromeframe a, .flash.chromeframe a:link, .flash.chromeframe a:active, .flash.chromeframe a:hover, .flash.chromeframe a:visited { color: #0000ff !important; }
 
 body.home #widgets { width: 32.20339%; float: right; margin-right: 0; #margin-left: -1em; display: inline; }
-body.home #widgets.home-widgets { display: none; width: 100%; }
+body.home #widgets.home-widgets { width: 100%; }
 body.home #features { width: 66.10169%; float: left; margin-right: 1.69492%; display: inline; }
 body.home #features #content .post { border-top: 3px dotted #ddd; padding-top: 1em; }
 body.home #features #content .post, body.home #features #content .post * { font-size: 1em; }

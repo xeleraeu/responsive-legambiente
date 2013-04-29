@@ -9,6 +9,7 @@ function legambiente_unregister_sidebars() {
   unregister_sidebar( 'left-sidebar-half' );
   unregister_sidebar( 'right-sidebar-half' );
   unregister_sidebar( 'gallery-widget' );
+  unregister_sidebar( 'top-widget' );
 }
 
 add_action( 'widgets_init', 'legambiente_unregister_sidebars', 20 );

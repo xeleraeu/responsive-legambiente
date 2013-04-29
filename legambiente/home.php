@@ -23,7 +23,7 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php get_header(); ?>
 
-        <div id="content" class="grid col-620">
+        <div id="content">
 
         <?php legambiente_insert_collection(); ?>
                 

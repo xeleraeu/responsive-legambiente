@@ -6,6 +6,7 @@ body.home {
   }
   
   #widgets.home-widgets {
+    display: none; // MONKEYPATCH: see #7 and remove this properly
     width: 100%;
   }
   

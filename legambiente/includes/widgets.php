@@ -6,6 +6,6 @@ function legambiente_unregister_sidebars() {
 	unregister_sidebar( 'home-widget-3' );
 }
 
-add_action( 'widgets_init', 'legambiente_unregister_sidebars', 11 );
+add_action( 'widgets_init', 'legambiente_unregister_sidebars', 20 );
 
 ?>

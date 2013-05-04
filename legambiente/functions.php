@@ -10,6 +10,8 @@ if ( !defined('ABSPATH')) exit;
  * load the theme function files
  */
 require ( get_stylesheet_directory() . '/includes/hooks.php' );
+require ( get_stylesheet_directory() . '/includes/utils.php' );
+require ( get_stylesheet_directory() . '/includes/admin-menu-permissions.php' );
 require ( get_stylesheet_directory() . '/includes/functions.php' );
 require ( get_stylesheet_directory() . '/includes/taxonomies.php' );
 require ( get_stylesheet_directory() . '/includes/widgets.php' );

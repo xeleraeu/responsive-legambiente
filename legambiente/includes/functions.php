@@ -7,6 +7,12 @@ $GLOBALS['LEGAMBIENTE']['frontpage_slider']['category'] = 'fp';
 
 /* setup */
 
+if(current_user_can('install_themes') {
+  @ini_set('log_errors', 'On'); // enable or disable php error logging (use 'On' or 'Off')
+  @ini_set('display_errors', 'Off'); // enable or disable public display of errors (use 'On' or 'Off')
+  @ini_set('error_log', LEGAMBIENTE_THEME_LOG_FILE); // path to server-writable log file, defined preferably in wp-config.php
+}
+
 /**
  * enable excerpt field for pages
  * (see http://lewayotte.com/2010/07/01/easily-add-excerpt-support-for-pages-in-wordpress/)

@@ -24,7 +24,18 @@ function admin_menu_access_for_editors() {
     global $menu, $submenu;
     var_trace(var_export($menu, true), 'admin menu data structure');
     var_trace(var_export($submenu, true), 'admin submenu data structure');
-    $menu[60][1] = 'read';
+    // $menu[60][1] = 'read';
+    if(!current_user_can('switch_themes')) {
+        remove_menu_page('themes.php');
+        add_menu_page(
+            __('Appearance'),
+            __('Appearance'),
+            'read',
+            'themes.php',
+            '',
+            '',
+            60);
+    }
 }
    
 add_action('admin_menu', 'admin_menu_access_for_editors', 1111);

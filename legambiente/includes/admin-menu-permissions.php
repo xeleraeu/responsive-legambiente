@@ -46,5 +46,13 @@ function admin_menu_access_for_editors() {
     }
 }
    
-// add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
+add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
+
+function page_access_for_editors($allcaps, $cap, $args) {
+  var_trace(var_export($allcaps, true), 'all user capabilities');
+  var_trace(var_export($cap, true), 'required capability');
+  var_trace(var_export($args, true), 'requested capability');
+}
+
+add_filter( 'user_has_cap', 'page_access_for_editors', 10, 3 );
 ?>

@@ -36,17 +36,13 @@ function admin_menu_access_for_editors() {
             '',
             '',
             60);
-        /*
         add_submenu_page(
             'themes.php',
             __('Header'),
             __('Header'),
             'read',
-            'custom-header');
-        */
-        if ( current_theme_supports( 'custom-header' ) )
-          $wp_admin_bar->add_menu( array( 'parent' => 'appearance', 'id' => 'header', 'title' => __('Header'), 'href' => admin_url('themes.php?page=custom-header') ) );
-
+            'custom-header',
+            'admin_page');
     }
 }
    

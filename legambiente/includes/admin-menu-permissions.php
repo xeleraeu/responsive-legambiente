@@ -49,10 +49,11 @@ function admin_menu_access_for_editors() {
 add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
 
 function page_access_for_editors($allcaps, $cap, $args) {
+  global $current_screen
   var_trace(var_export($allcaps, true), 'all user capabilities');
   var_trace(var_export($cap, true), 'required capability');
   var_trace(var_export($args, true), 'requested capability');
-  var_trace(var_export(get_current_screen(), true), 'this screen');
+  var_trace(var_export($current_screen, true), 'this screen');
 
   return $allcaps;
 }

@@ -60,7 +60,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
   var_trace(var_export($admin_area, true), 'PHP_SELF');
   var_trace(var_export($admin_area_page, true), 'action page');
   
-  if($admin_area === 'themes.php' and $admin_area_page === 'custom-header') {
+  if($admin_area === '/wp-admin/themes.php' and $admin_area_page === 'custom-header') {
     $allcaps[$cap[0]] = true;
   }
 

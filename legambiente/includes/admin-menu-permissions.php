@@ -52,6 +52,8 @@ function page_access_for_editors($allcaps, $cap, $args) {
   var_trace(var_export($allcaps, true), 'all user capabilities');
   var_trace(var_export($cap, true), 'required capability');
   var_trace(var_export($args, true), 'requested capability');
+  
+  return $allcaps;
 }
 
 add_filter( 'user_has_cap', 'page_access_for_editors', 10, 3 );

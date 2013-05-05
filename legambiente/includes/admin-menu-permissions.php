@@ -48,12 +48,19 @@ function admin_menu_access_for_editors() {
     
     if(!current_user_can('switch_themes')) {
       $menu[60][1] = 'antani-manage-header';
+      /*
       foreach ($submenu['themes.php'] as $dashboard => $key) {
           var_trace($key[0], 'current submenu item');
           if ($key[0] == __('Header')) {
               $submenu['themes.php'][$dashboard][1] = 'antani-manage-header';
           }
-      }
+      }*/
+      add_submenu_page(
+            'themes.php',
+            __('Header'),
+            __('Header'),
+            'antani-manage-header',
+            'themes.php?page=custom-header');
     }
 
     var_trace(var_export($menu, true), 'admin menu data structure -- after update');

@@ -40,8 +40,8 @@ function admin_menu_access_for_editors() {
             'themes.php',
             __('Header'),
             __('Header'),
-            'read',
-            'custom-header');
+            'antani-custom-header',
+            'themes.php?page=custom-header');
     }
     
     var_trace(var_export($menu, true), 'admin menu data structure -- after update');
@@ -52,11 +52,18 @@ add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
 
 function page_access_for_editors($allcaps, $cap, $args) {
   global $current_screen;
+  $admin_area = $_SERVER['PHP_SELF'];
+  $admin_area_page = $_GET['page'];
   var_trace(var_export($allcaps, true), 'all user capabilities');
   var_trace(var_export($cap, true), 'required capability');
   var_trace(var_export($args, true), 'requested capability');
-  var_trace(var_export($_SERVER['PHP_SELF'], true), 'PHP_SELF');
-  var_trace(var_export($_GET['page'], true), 'action page');
+  var_trace(var_export($admin_area, true), 'PHP_SELF');
+  var_trace(var_export($admin_area_page, true), 'action page');
+  
+  if($admin_area === 'themes.php' and $admin_area_page === 'custom-header') {
+    $allcaps[$cap[0]] = true;
+  }
+  
   return $allcaps;
 }
 

@@ -41,8 +41,7 @@ function admin_menu_access_for_editors() {
             __('Header'),
             __('Header'),
             'read',
-            'custom-header',
-            'admin_page');
+            'custom-header');
     }
 }
    

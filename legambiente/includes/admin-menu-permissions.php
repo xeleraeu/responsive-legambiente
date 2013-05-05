@@ -75,7 +75,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = true;
   }
   
-  if($args[0] == 'antani-manage-header' and current_user_can('read') {
+  if($args[0] == 'antani-manage-header' and current_user_can('read')) {
     $allcaps[$cap[0]] = true;
   }
 

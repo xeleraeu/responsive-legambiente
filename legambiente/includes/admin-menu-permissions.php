@@ -40,7 +40,7 @@ function admin_menu_access_for_editors() {
             'themes.php',
             __('Header'),
             __('Header'),
-            'antani-custom-header',
+            'read',
             'themes.php?page=custom-header');
     }
     

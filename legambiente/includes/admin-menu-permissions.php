@@ -21,22 +21,12 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php
 function admin_menu_access_for_editors() {
-    global $menu, $submenu, $wp_admin_bar;
+    global $menu, $submenu;
     var_trace(var_export($menu, true), 'admin menu data structure');
     var_trace(var_export($submenu, true), 'admin submenu data structure');
 
-    // $menu[60][1] = 'read';
     /*
     if(!current_user_can('switch_themes')) {
-        remove_menu_page('themes.php');
-        add_menu_page(
-            __('Appearance'),
-            __('Appearance'),
-            'read',
-            'themes.php',
-            '',
-            '',
-            60);
         add_submenu_page(
             'themes.php',
             __('Header'),

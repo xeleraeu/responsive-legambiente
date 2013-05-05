@@ -35,7 +35,8 @@ function admin_menu_access_for_editors() {
             '',
             '',
             60);
-        add_theme_page(
+        add_submenu_page(
+            'themes.php',
             __('Header'),
             __('Header'),
             'read',

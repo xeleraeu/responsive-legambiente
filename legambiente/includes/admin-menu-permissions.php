@@ -93,8 +93,13 @@ function filter_menu($parent_file = '') {
   //and ensure the rest are visible.
   foreach ($submenu as $parent => $items) {
     foreach ($items as $index => $data) {
-      if($parent == 'themes.php' and $data[2] == __('Header')) {
-        $submenu[$parent][$index][1] = 'antani-manage-header';
+      if($parent == 'themes.php') {
+        if($data[2] == __('Header')) {
+          $submenu[$parent][$index][1] = 'antani-manage-header';
+        }
+        else {
+          unset($submenu[$parent][$index]);
+        }
       } elseif ( ! current_user_can($data[1]) ) {
         unset($submenu[$parent][$index]);
         $_wp_submenu_nopriv[$parent][$data[2]] = true;

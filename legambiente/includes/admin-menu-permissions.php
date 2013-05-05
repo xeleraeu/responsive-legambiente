@@ -21,8 +21,9 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php
 function admin_menu_access_for_editors() {
-    global $menu;
+    global $menu, $submenu;
     var_trace(var_export($menu, true), 'admin menu data structure');
+    var_trace(var_export($submenu, true), 'admin submenu data structure');
 }
    
 add_action('admin_menu', 'admin_menu_access_for_editors', 1111);

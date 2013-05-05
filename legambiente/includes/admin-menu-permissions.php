@@ -46,7 +46,7 @@ function admin_menu_access_for_editors() {
           }
       }
       */
-      unset($submenu['temes.php']);
+      unset($submenu['themes.php']);
       add_submenu_page(
             'themes.php',
             __('Header'),

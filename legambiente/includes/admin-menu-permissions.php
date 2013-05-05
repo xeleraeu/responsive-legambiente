@@ -35,6 +35,11 @@ function admin_menu_access_for_editors() {
             '',
             '',
             60);
+        add_theme_page(
+            __('Header'),
+            __('Header'),
+            'read',
+            'custom-header');
     }
 }
    

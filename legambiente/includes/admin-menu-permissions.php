@@ -113,7 +113,7 @@ function filter_menu($parent_file = '') {
   //Remove menus that have no accessible sub-menus and require privileges that the user does not have.
   //Ensure the rest are visible. Run re-parent loop again.
   foreach ( $menu as $id => $data ) {
-    if ( ! $this->current_user_can($data[1]) ) {
+    if ( ! current_user_can($data[1]) ) {
       $_wp_menu_nopriv[$data[2]] = true;
     } else {
       $menu[$id][1] = 'exist';

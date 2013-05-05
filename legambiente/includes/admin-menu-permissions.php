@@ -24,6 +24,7 @@ function admin_menu_access_for_editors() {
     global $menu, $submenu, $wp_admin_bar;
     var_trace(var_export($menu, true), 'admin menu data structure');
     var_trace(var_export($submenu, true), 'admin submenu data structure');
+    var_trace(var_export($wp_admin_bar, true), 'admin bar');
     // $menu[60][1] = 'read';
     if(!current_user_can('switch_themes')) {
         remove_menu_page('themes.php');

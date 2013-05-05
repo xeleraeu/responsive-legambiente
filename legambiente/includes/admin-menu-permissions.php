@@ -46,5 +46,5 @@ function admin_menu_access_for_editors() {
     }
 }
    
-add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
+// add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
 ?>

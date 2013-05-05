@@ -59,6 +59,6 @@ function admin_menu_access_for_editors() {
     var_trace(var_export($submenu, true), 'admin submenu data structure -- after update');
 }
    
-add_action('admin_menu', 'admin_menu_access_for_editors');
+add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
 
 ?>

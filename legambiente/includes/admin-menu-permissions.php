@@ -26,6 +26,7 @@ function admin_menu_access_for_editors() {
     var_trace(var_export($submenu, true), 'admin submenu data structure');
 
     // $menu[60][1] = 'read';
+    /*
     if(!current_user_can('switch_themes')) {
         remove_menu_page('themes.php');
         add_menu_page(
@@ -43,7 +44,17 @@ function admin_menu_access_for_editors() {
             'read',
             'themes.php?page=custom-header');
     }
+    */
     
+    if(!current_user_can('switch_themes')) {
+      $menu[60][1] = 'antani-manage-header';
+      foreach ($submenu['themes.php'] as $dashboard => $key) {
+          if ($key[0] == __('Header')) {
+              $submenu['themes.php'][$dashboard][1] = 'antani-manage-header';
+          }
+      }
+    }
+
     var_trace(var_export($menu, true), 'admin menu data structure -- after update');
     var_trace(var_export($submenu, true), 'admin submenu data structure -- after update');
 }
@@ -61,6 +72,10 @@ function page_access_for_editors($allcaps, $cap, $args) {
   var_trace(var_export($admin_area_page, true), 'action page');
   
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page === 'custom-header') {
+    $allcaps[$cap[0]] = true;
+  }
+  
+  if($args[0] == 'antani-manage-header' and current_user_can('read') {
     $allcaps[$cap[0]] = true;
   }
 

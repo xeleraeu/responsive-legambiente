@@ -7,7 +7,7 @@ $GLOBALS['LEGAMBIENTE']['frontpage_slider']['category'] = 'fp';
 
 /* setup */
 
-if(current_user_can('install_themes')) {
+if(is_user_logged_in()) {
   @ini_set('log_errors', 'On'); // enable or disable php error logging (use 'On' or 'Off')
   @ini_set('display_errors', 'Off'); // enable or disable public display of errors (use 'On' or 'Off')
   @ini_set('error_log', LEGAMBIENTE_THEME_LOG_FILE); // path to server-writable log file, defined preferably in wp-config.php

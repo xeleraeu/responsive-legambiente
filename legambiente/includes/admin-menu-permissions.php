@@ -21,7 +21,7 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php
 function admin_menu_access_for_editors() {
-    global $menu, $submenu;
+    global $menu, $submenu, $wp_admin_bar;
     var_trace(var_export($menu, true), 'admin menu data structure');
     var_trace(var_export($submenu, true), 'admin submenu data structure');
     // $menu[60][1] = 'read';
@@ -35,12 +35,17 @@ function admin_menu_access_for_editors() {
             '',
             '',
             60);
+        /*
         add_submenu_page(
             'themes.php',
             __('Header'),
             __('Header'),
             'read',
             'custom-header');
+        */
+        if ( current_theme_supports( 'custom-header' ) )
+          $wp_admin_bar->add_menu( array( 'parent' => 'appearance', 'id' => 'header', 'title' => __('Header'), 'href' => admin_url('themes.php?page=custom-header') ) );
+
     }
 }
    

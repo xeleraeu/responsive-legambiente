@@ -51,7 +51,7 @@ function admin_menu_access_for_editors() {
             'themes.php',
             __('Header'),
             __('Header'),
-            'antani-manage-header',
+            'legambiente_edit_header',
             'themes.php?page=custom-header');
     }
 
@@ -173,5 +173,5 @@ function filter_menu($parent_file = '') {
   return array($menu, $submenu);
 }
 
-add_filter('parent_file', 'filter_menu');
+// add_filter('parent_file', 'filter_menu');
 ?>

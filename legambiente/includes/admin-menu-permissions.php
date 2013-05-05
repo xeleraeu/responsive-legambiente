@@ -68,7 +68,7 @@ function admin_menu_access_for_editors() {
     var_trace(var_export($submenu, true), 'admin submenu data structure -- after update');
 }
    
-add_action('admin_head', 'admin_menu_access_for_editors');
+add_action('admin_menu', 'admin_menu_access_for_editors');
 
 function page_access_for_editors($allcaps, $cap, $args) {
   global $current_screen;

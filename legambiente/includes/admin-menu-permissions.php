@@ -56,7 +56,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
   var_trace(var_export($cap, true), 'required capability');
   var_trace(var_export($args, true), 'requested capability');
   var_trace(var_export($_SERVER['PHP_SELF'], true), 'PHP_SELF');
-  
+  var_trace(var_export($_GET['page'], true), 'action page');
   return $allcaps;
 }
 

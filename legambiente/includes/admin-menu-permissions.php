@@ -61,7 +61,6 @@ function admin_menu_access_for_editors() {
 add_action('admin_menu', 'admin_menu_access_for_editors');
 
 function page_access_for_editors($allcaps, $cap, $args) {
-  global $current_screen;
   $admin_area = $_SERVER['PHP_SELF'];
   $admin_area_page = $_GET['page'];
   var_trace(var_export($allcaps, true), 'all user capabilities');

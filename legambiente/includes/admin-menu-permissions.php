@@ -42,7 +42,8 @@ function admin_menu_access_for_editors() {
             'widgets.php',
             __('Widgets'),
             __('Widgets'),
-            'legambiente_edit_widgets');
+            'legambiente_edit_widgets',
+            null);
     }
 
     var_trace(var_export($menu, true), 'admin menu data structure -- after update', $TRACE_ENABLED);

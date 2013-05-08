@@ -28,28 +28,9 @@ function admin_menu_access_for_editors() {
     global $menu, $submenu;
     var_trace(var_export($menu, true), 'admin menu data structure', $TRACE_ENABLED);
     var_trace(var_export($submenu, true), 'admin submenu data structure', $TRACE_ENABLED);
-
-    /*
-    if(!current_user_can('switch_themes')) {
-        add_submenu_page(
-            'themes.php',
-            __('Header'),
-            __('Header'),
-            'read',
-            'themes.php?page=custom-header');
-    }
-    */
     
     if(!current_user_can('switch_themes')) {
       $menu[60][1] = 'legambiente_edit_header';
-      /*
-      foreach ($submenu['themes.php'] as $dashboard => $key) {
-          var_trace($key[0], 'current submenu item');
-          if ($key[0] == __('Header')) {
-              $submenu['themes.php'][$dashboard][1] = 'antani-manage-header';
-          }
-      }
-      */
       unset($submenu['themes.php']);
       add_submenu_page(
             'themes.php',
@@ -57,6 +38,12 @@ function admin_menu_access_for_editors() {
             __('Header'),
             'legambiente_edit_header',
             'themes.php?page=custom-header');
+      add_submenu_page(
+            'widgets.php',
+            __('Widgets'),
+            __('Widgets'),
+            'legambiente_edit_widgets',
+            'widgets.php');
     }
 
     var_trace(var_export($menu, true), 'admin menu data structure -- after update', $TRACE_ENABLED);
@@ -79,6 +66,10 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
   
   if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_header')) {
+    $allcaps[$cap[0]] = true;
+  }
+
+  if($admin_area === '/wp-admin/widgets.php' and $admin_area_page === '' and $cap[0] === 'edit_theme_options') {
     $allcaps[$cap[0]] = true;
   }
 

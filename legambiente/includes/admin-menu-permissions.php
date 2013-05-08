@@ -39,11 +39,11 @@ function admin_menu_access_for_editors() {
             'legambiente_edit_header',
             'themes.php?page=custom-header');
       add_submenu_page(
-            'widgets.php',
+            'themes.php',
             __('Widgets'),
             __('Widgets'),
-            'read',
-            null);
+            'legambiente_edit_widgets',
+            'widgets.php');
     }
 
     var_trace(var_export($menu, true), 'admin menu data structure -- after update', $TRACE_ENABLED);

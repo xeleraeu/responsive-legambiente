@@ -20,10 +20,14 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 <?php
+
+// toggle to enable/disable just for this file
+$TRACE_ENABLED = false;
+
 function admin_menu_access_for_editors() {
     global $menu, $submenu;
-    var_trace(var_export($menu, true), 'admin menu data structure');
-    var_trace(var_export($submenu, true), 'admin submenu data structure');
+    var_trace(var_export($menu, true), 'admin menu data structure', $TRACE_ENABLED);
+    var_trace(var_export($submenu, true), 'admin submenu data structure', $TRACE_ENABLED);
 
     /*
     if(!current_user_can('switch_themes')) {
@@ -55,8 +59,8 @@ function admin_menu_access_for_editors() {
             'themes.php?page=custom-header');
     }
 
-    var_trace(var_export($menu, true), 'admin menu data structure -- after update');
-    var_trace(var_export($submenu, true), 'admin submenu data structure -- after update');
+    var_trace(var_export($menu, true), 'admin menu data structure -- after update', $TRACE_ENABLED);
+    var_trace(var_export($submenu, true), 'admin submenu data structure -- after update', $TRACE_ENABLED);
 }
    
 add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
@@ -64,11 +68,11 @@ add_action('admin_menu', 'admin_menu_access_for_editors', 1111);
 function page_access_for_editors($allcaps, $cap, $args) {
   $admin_area = $_SERVER['PHP_SELF'];
   $admin_area_page = $_GET['page'];
-  var_trace(var_export($allcaps, true), 'all user capabilities');
-  var_trace(var_export($cap, true), 'required capability');
-  var_trace(var_export($args, true), 'requested capability');
-  var_trace(var_export($admin_area, true), 'PHP_SELF');
-  var_trace(var_export($admin_area_page, true), 'action page');
+  var_trace(var_export($allcaps, true), 'all user capabilities', $TRACE_ENABLED);
+  var_trace(var_export($cap, true), 'required capability', $TRACE_ENABLED);
+  var_trace(var_export($args, true), 'requested capability', $TRACE_ENABLED);
+  var_trace(var_export($admin_area, true), 'PHP_SELF', $TRACE_ENABLED);
+  var_trace(var_export($admin_area_page, true), 'action page', $TRACE_ENABLED);
   
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page === 'custom-header' and $cap[0] === 'edit_theme_options') {
     $allcaps[$cap[0]] = true;
@@ -78,7 +82,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = true;
   }
 
-  var_trace(var_export($allcaps, true), 'all user capabilities -- after');
+  var_trace(var_export($allcaps, true), 'all user capabilities -- after', $TRACE_ENABLED);
   
   return $allcaps;
 }

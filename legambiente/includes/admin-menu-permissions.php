@@ -70,6 +70,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
   
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page !== 'custom-header') {
+    $allcaps[$cap[0]] = false;
     return $allcaps;
   }
   

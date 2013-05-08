@@ -30,7 +30,7 @@ function admin_menu_access_for_editors() {
     var_trace(var_export($submenu, true), 'admin submenu data structure', $TRACE_ENABLED);
     
     if(!current_user_can('switch_themes')) {
-      $menu[60][1] = 'switch_themes';
+      $menu[60][1] = 'legambiente_manage_appearance';
       unset($submenu['themes.php']);
       add_submenu_page(
             'themes.php',

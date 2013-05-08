@@ -61,11 +61,15 @@ function page_access_for_editors($allcaps, $cap, $args) {
   var_trace(var_export($admin_area, true), 'PHP_SELF', $TRACE_ENABLED);
   var_trace(var_export($admin_area_page, true), 'action page', $TRACE_ENABLED);
   
+  if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_header')) {
+    $allcaps[$cap[0]] = true;
+  }
+
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page === 'custom-header' and $cap[0] === 'edit_theme_options') {
     $allcaps[$cap[0]] = true;
   }
   
-  if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_header')) {
+  if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_widgets')) {
     $allcaps[$cap[0]] = true;
   }
 

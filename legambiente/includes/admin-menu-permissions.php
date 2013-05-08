@@ -30,7 +30,7 @@ function admin_menu_access_for_editors() {
     var_trace(var_export($submenu, true), 'admin submenu data structure', $TRACE_ENABLED);
     
     if(!current_user_can('switch_themes')) {
-      $menu[60][1] = 'legambiente_edit_header';
+      $menu[60][1] = 'switch_themes';
       unset($submenu['themes.php']);
       add_submenu_page(
             'themes.php',
@@ -73,7 +73,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = true;
   }
 
-  if($admin_area === '/wp-admin/widgets.php' and $admin_area_page === '' and $cap[0] === 'edit_theme_options') {
+  if($admin_area === '/wp-admin/widgets.php' and $admin_area_page === '' and $cap[0] === 'legambiente_edit_widgets') {
     $allcaps[$cap[0]] = true;
   }
 

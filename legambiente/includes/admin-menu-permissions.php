@@ -198,6 +198,21 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
+
+  if($admin_area === '/wp-admin/options-reading.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/options-media.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/options-permalink.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
   
   /**
    * GRANT ACTIONS

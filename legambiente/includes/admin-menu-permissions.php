@@ -41,7 +41,7 @@ function admin_menu_access_for_editors() {
     */
     
     if(!current_user_can('switch_themes')) {
-      $menu[60][1] = 'antani-manage-header';
+      $menu[60][1] = 'legambiente_edit_header';
       /*
       foreach ($submenu['themes.php'] as $dashboard => $key) {
           var_trace($key[0], 'current submenu item');
@@ -78,7 +78,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = true;
   }
   
-  if($args[0] == 'antani-manage-header' and current_user_can('read')) {
+  if($args[0] == 'legambiente_edit_header' and current_user_can('legambiente_edit_header')) {
     $allcaps[$cap[0]] = true;
   }
 

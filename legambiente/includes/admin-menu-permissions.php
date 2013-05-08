@@ -42,7 +42,7 @@ function admin_menu_access_for_editors() {
             'widgets.php',
             __('Widgets'),
             __('Widgets'),
-            'legambiente_edit_widgets',
+            'read',
             null);
     }
 

@@ -6,8 +6,8 @@ Termini e condizioni contrattuali del servizio di hosting
 
 :author:    Giovanni Biscuolo
 :address:   Giovanni Biscuolo <g@xelera.eu>
-:version:   1.0
-:date:      2013.04.22
+:version:   1.0.1
+:date:      2013.05.09
 :copyright: Copyright © 2013 Xelera
 
 :abstract: Questo documento descrive le caratteristiche e le condizioni contrattuali del servizio di hosting del ``CMS Circoli Legambiente Lombardia``.  Il contenuto di questo documento si basa sull'analisi dei requisiti svolta da Xelera in collaborazione con Legambiente Lombardia.
@@ -83,7 +83,9 @@ Per l'attivazione di un nuovo utente occorre inviare `via fax`_ una richiesta sc
 
 Dopo l'attivazione Xelera fornirà via email al nuovo utente le credenziali per accedere al CMS del circolo.
 
-Ciascun circolo ha a disposizione fino a un **massimo di 20 utenti**
+Ciascun circolo ha a disposizione fino a un **massimo di 20 utenti**.
+
+Per garantire una efficace coordinazione con Legambiente Lombardia e consentire alla sede regionale di fornire supporto ai circoli se necessario o qualora i responsabili di un circolo non fossero raggiungibili per aggiornamenti importanti e urgenti, un responsabile per la comunicazione di Legambiente Lombardia avrà accesso come Editor al sito di ciascun circolo.
 
 .. _`via fax`: http://xelera.eu/it/info/
 

@@ -4,7 +4,7 @@ CMS Circoli Legambiente Lombardia - Guida utente
 
 :author:    Giovanni Biscuolo e Andrea Rota
 :address:   Giovanni Biscuolo <g@xelera.eu>, Andrea Rota <a@xelera.eu>
-:revision:  1.1
+:revision:  1.1.1
 :date:      2013.05.09
 :copyright: Copyright © 2013 Semantica di Giovanni Biscuolo.
 
@@ -290,7 +290,7 @@ Ad esempio, per inserire l'album con permalink `agricoltura`, basterà aggiunger
 Raccolta notizie
 -----------------
 
-La raccolta notizie rappresenta un **gruppo di articoli** che possono essere associati a un articolo o a una pagina.  Le notizie possono essere selezionate tra gli ``Articoli`` pubblicati.
+La raccolta notizie rappresenta un **gruppo di articoli** che possono essere associati a un articolo o a una pagina.  Le notizie possono essere selezionate tra gli ``Articoli`` pubblicati. È possibile aggiungere fino a cinque notizie in ciascun elemento *raccolta notizie*.
 
 .. .. [#] visualizzate in modalità ``Raccolta in evidenza``
 
@@ -320,7 +320,7 @@ Le informazioni visualizzate per ciascun articolo sono prese da ``Titolo`` e ``R
 Raccolta pagine
 ----------------
 
-La raccolta pagine rappresenta un **gruppo di pagine** che possono essere associate a un articolo o a una pagina. Le pagine possono essere selezionate tra quelle pubblicate.
+La raccolta pagine rappresenta un **gruppo di pagine** che possono essere associate a un articolo o a una pagina. Le pagine possono essere selezionate tra quelle pubblicate.  È possibile aggiungere fino a cinque pagine in ciascun elemento *raccolta pagine*.
 
 .. figure:: images/medium/page-pagecollection-view.png
    :target: images/page-pagecollection-view.png
@@ -446,7 +446,7 @@ In questa pagina di gestione dell'aspetto è possibile caricare un'immagine 'ban
 Widgets
 -------
 
-I *Widgets* sono aree di contenuto pre-definito o aggiornato automaticamente da WordPress quando vengono inseriti nuovi articoli o nuove pagine (ad esempio, un widget *Tags* visualizzerà una *`Tag cloud`* aggiornata ogni volta che vengono inseriti nuovi contenuti etichettati con tags.
+I *Widgets* sono aree di contenuto pre-definito o aggiornato automaticamente da WordPress quando vengono inseriti nuovi articoli o nuove pagine (ad esempio, un widget *Tags* visualizzerà una `tag cloud`_ aggiornata ogni volta che vengono inseriti nuovi contenuti etichettati con tags.
 
 Sono disponibili numerosi altri widgets, quali elenchi di pagine recenti, collegamenti a social networks del Circolo, e così via. Alcuni widgets sono pre-configurati all'attivazione del sito di ciascun Circolo e possono poi essere gestiti in autonomia dagli editors del circolo.
 
@@ -472,6 +472,27 @@ Sono disponibili diverse altre impostazioni (ad esempio lo stile dei loghi, la l
    :scale: 100 %
    :align: center
    :alt: Gestione dei widgets per la colonna destra del sito
+
+Indirizzi personalizzati per il sito
+====================================
+
+Ciascun nuovo sito per un circolo Legambiente viene configurato per essere accessibile all'indirizzo ``http://nomecircolo.legambiente.org/``.
+
+È possibile configurare un indirizzo personalizzato per il circolo (ad es. ``http://nomecircolo.it/``), se si desidera promuovere un indirizzo differente da quello standard. La registrazione del relativo dominio è a cura e carico dei circoli [#]_.
+
+Se il dominio non viene registrato tramite Xelera, per attivare un indirizzo personalizzato per il sito è sufficiente *configurare i dati DNS del dominio* tramite l'interfaccia di amministrazione del fornitore del servizio.
+
+Volendo utilizzare ad esempio l'indirizzo ``http://nomecircolo.it/`` è necessario creare un *record CNAME* per ``nomecircolo.it`` indicando ``wp.xelera.eu`` come nome di dominio "destinazione".
+
+Consigliamo di creare anche un *record CNAME* per ``www.nomecircolo.it`` indicando sempre ``wp.xelera.eu`` come nome di dominio "destinazione".
+
+In caso di difficoltà, vi consigliamo di contattare il supporto tecnico del servizio utilizzato per la registrazione del dominio, inoltrando queste note per riferimento. Se il dominio è stato registrato tramite Xelera, ci occuperemo della configurazione per voi.
+
+Una volta configurato il dominio, contattate il `nostro supporto tecnico`_: verificheremo che le impostazioni siano corrette e configureremo il vostro sito in modo che risponda al nuovo indirizzo.
+
+.. _`nostro supporto tecnico`: http://xelera.eu/it/info/
+.. [#] Xelera fornisce il servizio di registrazione di domini, ma potete scegliere qualsiasi servizio di registrazione di domini, purché consenta di configurare le impostazioni DNS del dominio registrato; se desiderate registrare un dominio tramite Xelera `contattateci via posta elettronica`_.
+.. _`contattateci via posta elettronica`: http://xelera.eu/it/info/
 
 .. Ulteriore documentazione
 .. =========================
@@ -506,3 +527,11 @@ permalink
 shortcode
   ove definito, è un codice attraverso il quale alcuni contenuti speciali possono essere inseriti nel corpo degli ``Articoli`` o delle ``Pagine``; esempio di shortcode: ``[la_album id='agricoltura']``. Nel caso la sintassi con il quale è inserito fosse errata, lo shortcode viene ignorato.
 
+Aggiornamenti di questo documento
+---------------------------------
+
+versione 1.1 (2013-05-09)
+  Nuova documentazione relativa alla gestione dell'aspetto del sito (Testata e Widgets).
+
+versione 1.1.1 (2013-05-09)
+  Nuova documentazione relativa all'attivazione di domini personalizzati.

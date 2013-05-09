@@ -144,6 +144,20 @@ function admin_menu_access_for_editors() {
             'manage_options',
             'options-discussion.php');
     }
+
+    /**
+     * Capability required to do dangerous stuff in the Tools menu
+     * is mental (manage_options): let's revoke access to this area.
+     * We do this by setting a very high capability as required,
+     * and only setting it for users who don't have it (koan style).
+     */
+    if(!current_user_can('update_core')) {
+      /**
+       * Change capability required for the menu with hardcoded '75'
+       * index (Tools).
+       */
+      $menu[75][1] = 'update_core';
+    }
     
     /**
      * And that's it. If you need to butcher a menu other than Appearance,

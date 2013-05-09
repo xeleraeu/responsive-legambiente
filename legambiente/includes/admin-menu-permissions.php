@@ -99,6 +99,67 @@ function admin_menu_access_for_editors() {
     }
 
     /**
+     * Again, if users already have switch_themes capabilities,
+     * hacking this part of the menu only smones it for them.
+     * Technically the switch_themes cap doesn't have anything to
+     * do with the Settings menu, but any capability that
+     * lcircoloeditor members shouldn't have would do here.
+     */
+    if(!current_user_can('switch_themes')) {
+      /**
+       * Here we don't need to change capability as we already
+       * grant manage_options to users - we only need to smon
+       * the submenu items and re-add only those we need.
+       */
+      // $menu[80][1] = 'manage_options';
+      /**
+       * Then remove the whole set of submenu items under this.
+       * This only works if we set this action hook so that it is
+       * executed last - other earlier hooks will build the menu
+       * but we smon it all here for our own good.
+       */
+      unset($submenu['options-general.php']);
+      
+      /**
+       * Now add in only the submenu pages we need, setting our own
+       * shadow capability (see documentation at the top of this file)
+       * as required capability for these submenu items to be shown.
+       */
+      add_submenu_page(
+            'options-general.php',
+            __('General'),
+            __('General'),
+            'manage_options',
+            'options-general.php');
+      add_submenu_page(
+            'options-general.php',
+            __('Writing'),
+            __('Writing'),
+            'manage_options',
+            'options-writing.php');
+      add_submenu_page(
+            'options-general.php',
+            __('Discussion'),
+            __('Discussion'),
+            'manage_options',
+            'options-discussion.php');
+    }
+
+    /**
+     * Capability required to do dangerous stuff in the Tools menu
+     * is mental (manage_options): let's revoke access to this area.
+     * We do this by setting a very high capability as required,
+     * and only setting it for users who don't have it (koan style).
+     */
+    if(!current_user_can('update_core')) {
+      /**
+       * Change capability required for the menu with hardcoded '75'
+       * index (Tools).
+       */
+      unset($menu[75]);
+    }
+    
+    /**
      * And that's it. If you need to butcher a menu other than Appearance,
      * you are on your own. Be patient and remember what happened to
      * Molly la foca.
@@ -194,11 +255,18 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * item (which would remove the whole menu and its submenu items).
    * So let's block stuff we can't hide first.
    */
+   
+  /**
+   * Themes menu
+   */
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page !== 'custom-header') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
 
+  /**
+   * Settings menu
+   */
   if($admin_area === '/wp-admin/options-reading.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
@@ -210,6 +278,29 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
 
   if($admin_area === '/wp-admin/options-permalink.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+  
+  /**
+   * Tools menu
+   */
+  if($admin_area === '/wp-admin/tools.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+  
+  if($admin_area === '/wp-admin/ms-delete-site.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/import.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/export.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }

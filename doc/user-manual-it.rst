@@ -4,8 +4,8 @@ CMS Circoli Legambiente Lombardia - Guida utente
 
 :author:    Giovanni Biscuolo e Andrea Rota
 :address:   Giovanni Biscuolo <g@xelera.eu>, Andrea Rota <a@xelera.eu>
-:revision:  1.0
-:date:      2013.04.18
+:revision:  1.1
+:date:      2013.05.09
 :copyright: Copyright © 2013 Semantica di Giovanni Biscuolo.
 
 .. sectnum::    :depth: 4
@@ -29,7 +29,7 @@ Guida in linea
 Trovate la guida in linea - ove disponibile - premendo sul link ``Aiuto`` posto in alto a destra.
 
 .. ATTENTION::
-   Non tutta la guida in linea è stata tradotta in italiano dagli sviluppatori di WordPress ed è disponibile solo in lingua inglese.
+   Non tutta la guida in linea è stata tradotta in italiano dagli sviluppatori di WordPress e per alcune pagine dell'interfaccia di gestione del sito è disponibile solo in lingua inglese.
 
 Impostazioni schermo
 ---------------------
@@ -39,7 +39,7 @@ Per alcuni contenuti, quali ad esempio gli ``Articoli``, è possibile personaliz
 Ove disponibile trovate la funzione ``Impostazioni schermo`` in alto a destra.
 
 .. ATTENTION::
-   Nel caso non vengano visualizzate alcune sezioni nell'interfaccia amministrativa occorre verificare le impostazioni schermo.
+   Nel caso non vengano visualizzate alcune sezioni nell'interfaccia amministrativa occorre verificare le ``Impostazioni schermo``.
 
 Ambiente di lavoro
 ===================
@@ -81,6 +81,7 @@ Nella sezione ``More Fields`` di ``Articoli`` e ``Pagine``, che trovate in fondo
 Media
 ------
 
+L'archivio 
 Immagini in evidenza
 ......................
 

@@ -156,7 +156,7 @@ function admin_menu_access_for_editors() {
        * Change capability required for the menu with hardcoded '75'
        * index (Tools).
        */
-      unset $menu[75];
+      unset($menu[75]);
     }
     
     /**

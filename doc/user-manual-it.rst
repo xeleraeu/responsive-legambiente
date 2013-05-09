@@ -4,8 +4,8 @@ CMS Circoli Legambiente Lombardia - Guida utente
 
 :author:    Giovanni Biscuolo e Andrea Rota
 :address:   Giovanni Biscuolo <g@xelera.eu>, Andrea Rota <a@xelera.eu>
-:revision:  1.0
-:date:      2013.04.18
+:revision:  1.1
+:date:      2013.05.09
 :copyright: Copyright © 2013 Semantica di Giovanni Biscuolo.
 
 .. sectnum::    :depth: 4
@@ -29,7 +29,7 @@ Guida in linea
 Trovate la guida in linea - ove disponibile - premendo sul link ``Aiuto`` posto in alto a destra.
 
 .. ATTENTION::
-   Non tutta la guida in linea è stata tradotta in italiano dagli sviluppatori di WordPress ed è disponibile solo in lingua inglese.
+   Non tutta la guida in linea è stata tradotta in italiano dagli sviluppatori di WordPress e per alcune pagine dell'interfaccia di gestione del sito è disponibile solo in lingua inglese.
 
 Impostazioni schermo
 ---------------------
@@ -39,7 +39,7 @@ Per alcuni contenuti, quali ad esempio gli ``Articoli``, è possibile personaliz
 Ove disponibile trovate la funzione ``Impostazioni schermo`` in alto a destra.
 
 .. ATTENTION::
-   Nel caso non vengano visualizzate alcune sezioni nell'interfaccia amministrativa occorre verificare le impostazioni schermo.
+   Nel caso non vengano visualizzate alcune sezioni nell'interfaccia amministrativa occorre verificare le ``Impostazioni schermo``.
 
 Ambiente di lavoro
 ===================
@@ -80,6 +80,14 @@ Nella sezione ``More Fields`` di ``Articoli`` e ``Pagine``, che trovate in fondo
 
 Media
 ------
+
+La ``Libreria media`` di WordPress è utilizzata per gestire tutte le immagini inserite in pagine o notizie, nonché gli archivi di documenti quali PDF utilizzati nel sito.
+
+È possibile caricare nella ``Libreria media`` documenti con dimensione massima 10MB (megabytes). Lo spazio totale disponibile per l'intera ``Libreria media`` è di 100MB.
+
+Mettendo a disposizione files (ad es. documenti PDF) per i visitatori del sito, è sempre buona pratica considerare che alcuni utenti potrebbero visitare il sito da dispositivi quali smartphones collegati a velocità relativamente basse ad Internet, oppure con limiti alla quantità di dati scaricabili.
+
+In generale, per evitare di rendere lenta la navigazione delle pagine del sito, è consigliabile utilizzare solo immagini in formato JPEG, PNG o GIF ritagliate alla dimensione desiderata tramite un programma di elaborazione di immagini e salvate con un livello di compressione/qualità adeguato a garantire una visualizzazione senza perdita di qualità, limitando il più possibile al tempo stesso la dimensione dei files delle immagini.
 
 Immagini in evidenza
 ......................
@@ -407,6 +415,63 @@ Petizioni inserite nel contenuto
   [signaturelist id="<id_petizione>"]
 
 Gli shortcode delle petizioni sono indicati nell'elenco delle petizioni.
+
+Gestione dell'aspetto del sito
+==============================
+
+Gli utenti con ruolo *Editor* possono personalizzare l'aspetto generale del sito, ad esempio impostando *un'immagine di testata* come intestazione del sito e organizzando i contenuti della colonna di destra di ciascuna pagina.
+
+Per accedere all'area di gestione dell'aspetto del sito, passare con il mouse sopra alla voce di menu 'Aspetto' e selezionare 'Testata' o 'Widget' per accedere alle rispettive pagine di configurazione.
+
+.. figure:: images/medium/admin-theme-menu.png
+   :target: images/admin-theme-menu.png
+   :scale: 100 %
+   :align: center
+   :alt: Accedere all'area di gestione dell'aspetto del sito
+
+.. ATTENTION::
+   Il collegamento *Aspetto* non è accessibile agli utenti *Editor*: solo le voci di menu *Testata* e *Widgets* sono disponibili per le personalizzazioni dell'aspetto del sito.
+
+Testata
+-------
+
+In questa pagina di gestione dell'aspetto è possibile caricare un'immagine 'banner' per la testata del sito, che verrà visualizzata su ciascuna pagina tra il titolo del sito e il menu principale. L'immagine per la testata deve essere in formato JPEG o PNG, larga 960 pixel e alta non più di 200 pixel (meglio se circa 120 pixel al massimo, per non sottrarre spazio ai contenuti principali del sito, sopratutto quando questo viene visualizzato in dispositivi come smartphones e tablets.
+
+.. figure:: images/medium/admin-theme-header.png
+   :target: images/admin-theme-header.png
+   :scale: 100 %
+   :align: center
+   :alt: Gestione della testata del sito
+
+Widgets
+-------
+
+I *Widgets* sono aree di contenuto pre-definito o aggiornato automaticamente da WordPress quando vengono inseriti nuovi articoli o nuove pagine (ad esempio, un widget *Tags* visualizzerà una *`Tag cloud`* aggiornata ogni volta che vengono inseriti nuovi contenuti etichettati con tags.
+
+Sono disponibili numerosi altri widgets, quali elenchi di pagine recenti, collegamenti a social networks del Circolo, e così via. Alcuni widgets sono pre-configurati all'attivazione del sito di ciascun Circolo e possono poi essere gestiti in autonomia dagli editors del circolo.
+
+Per accedere alla gestione dei *Widgets*, passare con il mouse sul menu *Aspetto* e selezionare il sottomenu *Widget*. Qui è possibile trascinare nuovi widgets, scelti tra quelli disponibili nel riquadro principale della pagina, sull'area *Barra laterale principale*.
+
+Per riordinare i widget attivi sulla colonna di destra, è sufficiente trascinarli nella loro nuova posizione.
+
+In modo analogo, per eliminare un widget dalla colonna di destra, è sufficiente trascinarlo sull'area principale con l'elenco dei widgets disponibili.
+
+Social networks
+...............
+
+Tra i widgets a disposizione, *Social Media Widget* consente di aggiungere un riquadro "Seguici su..." alla colonna laterale, con collegamenti ai social networks utilizzati dal circolo e i relativi loghi (e.g. Twitter, Facebook, etc.).
+
+Una volta attivato il widget trascinandolo sull'area *Barra laterale principale*, è possibile configurare il titolo del relativo riquadro e inserire gli indirizzi del circolo sui vari social networks, attivando così solo i social networks desiderati (è sufficiente lasciare il collegamento predefinito ``http://`` alla voce dei social networks da non visualizzare perché i relativi loghi vengano eliminati dal widget).
+
+Sono disponibili diverse altre impostazioni (ad esempio lo stile dei loghi, la loro dimensione, e così via).
+
+.. _`Tag cloud`: https://it.wikipedia.org/wiki/Tag_cloud
+
+.. figure:: images/medium/admin-theme-widgets.png
+   :target: images/admin-theme-widgets.png
+   :scale: 100 %
+   :align: center
+   :alt: Gestione dei widgets per la colonna destra del sito
 
 .. Ulteriore documentazione
 .. =========================

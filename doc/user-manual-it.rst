@@ -446,7 +446,7 @@ In questa pagina di gestione dell'aspetto è possibile caricare un'immagine 'ban
 Widgets
 -------
 
-I *Widgets* sono aree di contenuto pre-definito o aggiornato automaticamente da WordPress quando vengono inseriti nuovi articoli o nuove pagine (ad esempio, un widget *Tags* visualizzerà una *`Tag cloud`* aggiornata ogni volta che vengono inseriti nuovi contenuti etichettati con tags.
+I *Widgets* sono aree di contenuto pre-definito o aggiornato automaticamente da WordPress quando vengono inseriti nuovi articoli o nuove pagine (ad esempio, un widget *Tags* visualizzerà una `tag cloud`_ aggiornata ogni volta che vengono inseriti nuovi contenuti etichettati con tags.
 
 Sono disponibili numerosi altri widgets, quali elenchi di pagine recenti, collegamenti a social networks del Circolo, e così via. Alcuni widgets sono pre-configurati all'attivazione del sito di ciascun Circolo e possono poi essere gestiti in autonomia dagli editors del circolo.
 

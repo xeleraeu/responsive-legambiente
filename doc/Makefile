@@ -23,5 +23,5 @@ pdf:
 
 deploy:
 	scp user-manual-it.html $(WEBDIR)/cms-circoli-user-manual-it.html
-	scp -r images  $(WEBDIR)/images
+	scp -r images  $(WEBDIR)/
 	scp terms+conditions-it.html $(WEBDIR)/cms-circoli-terms+conditions-it.html

@@ -6,7 +6,7 @@ Termini e condizioni contrattuali del servizio di hosting
 
 :author:    Giovanni Biscuolo
 :address:   Giovanni Biscuolo <g@xelera.eu>
-:version:   1.0.1
+:version:   1.0.2
 :date:      2013.05.09
 :copyright: Copyright © 2013 Xelera
 
@@ -94,12 +94,12 @@ Nomi a dominio
 
 Qualora i circoli avessero registrato propri nomi a dominio è possibile impostare il reindirizzamento delle richieste web per tali nomi a dominio verso il sito pubblicato tramite il ``CMS Circoli Legambiente Lombardia``. 
 
-Per attivare questa opzione occorre che il legale rappresentante del circolo - o un suo rappresentante - `invii una email`_ di richiesta a Xelera.
-
-Dopo l'attivazione, Xelera fornirà al circolo le indicazioni necessarie per completare il reindirizzamento: sarà compito e responsabilità di ciascun circolo effettuare le impostazioni dei record DNS_ dei nomi a dominio da loro registrati.
+Per attivare questa opzione occorre che il legale rappresentante del circolo - o un suo rappresentante - segua la procedura indicata nella `Guida utente per i siti dei circoli`_, alla voce `Indirizzi personalizzati per il sito`_.
 
 .. _`invii una email`: http://xelera.eu/it/info/
 .. _DNS: https://it.wikipedia.org/wiki/DNS
+.. _`Guida utente per i siti dei circoli`: http://xelera.eu/static/doc/legambiente-lombardia/cms-circoli-user-manual-it.html
+.. _`Indirizzi personalizzati per il sito`: http://xelera.eu/static/doc/legambiente-lombardia/cms-circoli-user-manual-it.html#indirizzi-personalizzati-per-il-sito
 
 Layout
 .......
@@ -166,3 +166,12 @@ CMS
 
 layout
   è la disposizione e l'aspetto grafico secondo il quale i contenuti vengono visualizzati sullo schermo dei dispositivi utilizzati per accedere al sito, quali ad esempio: browser desktop, tablet o smartphone.
+
+Aggiornamenti di questo documento
+---------------------------------
+
+versione 1.0.1 (2013-05-09)
+  Nuovo paragrafo relativo all'aggiunta di un responsabile per la comunicazione di Legambiente Lombardia come Editor al sito di ciascun circolo.
+
+versione 1.0.2 (2013-05-09)
+  Aggiunto riferimento alla procedura per attivare domini personalizzati.

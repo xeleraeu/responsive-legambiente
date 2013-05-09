@@ -81,7 +81,14 @@ Nella sezione ``More Fields`` di ``Articoli`` e ``Pagine``, che trovate in fondo
 Media
 ------
 
-L'archivio 
+La ``Libreria media`` di WordPress è utilizzata per gestire tutte le immagini inserite in pagine o notizie, nonché gli archivi di documenti quali PDF utilizzati nel sito.
+
+È possibile caricare nella ``Libreria media`` documenti con dimensione massima 10MB (megabytes). Lo spazio totale disponibile per l'intera ``Libreria media`` è di 100MB.
+
+Mettendo a disposizione files (ad es. documenti PDF) per i visitatori del sito, è sempre buona pratica considerare che alcuni utenti potrebbero visitare il sito da dispositivi quali smartphones collegati a velocità relativamente basse ad Internet, oppure con limiti alla quantità di dati scaricabili.
+
+In generale, per evitare di rendere lenta la navigazione delle pagine del sito, è consigliabile utilizzare solo immagini in formato JPEG, PNG o GIF ritagliate alla dimensione desiderata tramite un programma di elaborazione di immagini e salvate con un livello di compressione/qualità adeguato a garantire una visualizzazione senza perdita di qualità, limitando il più possibile al tempo stesso la dimensione dei files delle immagini.
+
 Immagini in evidenza
 ......................
 

@@ -255,11 +255,18 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * item (which would remove the whole menu and its submenu items).
    * So let's block stuff we can't hide first.
    */
+   
+  /**
+   * Themes menu
+   */
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page !== 'custom-header') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
 
+  /**
+   * Settings menu
+   */
   if($admin_area === '/wp-admin/options-reading.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
@@ -271,6 +278,29 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
 
   if($admin_area === '/wp-admin/options-permalink.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+  
+  /**
+   * Tools menu
+   */
+  if($admin_area === '/wp-admin/tools.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+  
+  if($admin_area === '/wp-admin/ms-delete-site.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/import.php') {
+    $allcaps[$cap[0]] = false;
+    return $allcaps;
+  }
+
+  if($admin_area === '/wp-admin/export.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }

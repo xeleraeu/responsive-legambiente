@@ -83,8 +83,8 @@ add_action('responsive_container', 'deprecate_internet_explorer');
  */
 if(function_exists('w3tc_pgcache_flush_url')) {
 	function flush_responsive_front_page() {
-		w3tc_pgcache_flush_url('/');
-		var_trace('flushing front page');
+		//w3tc_pgcache_flush_url('/');
+		var_trace('NOT flushing front page');
 	}
 
 	add_action('save_post', 'flush_responsive_front_page');

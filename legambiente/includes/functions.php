@@ -75,10 +75,24 @@ if(!function_exists('deprecate_internet_explorer')) {
 // hook in responsive container
 add_action('responsive_container', 'deprecate_internet_explorer');
 
+/**
+ * Since responsive theme uses a special setup for the front-page and this
+ * does not get purged by W3TC when it is set to purge the 'front page' (which
+ * would be the one set via WordPress' normal front page settings), we
+ * can force a purge whenever a post is updated.
+ */
+if(function_exists('w3tc_pgcache_flush_url')) {
+	function flush_responsive_front_page() {
+		w3tc_pgcache_flush_url('/');
+	}
+
+	add_action('save_post', 'flush_responsive_front_page');
+}
+
 // Pods component: featured video
 
 if(!function_exists('legambiente_insert_video')) {
-  function legambiente_insert_video($video_id = null) {      
+  function legambiente_insert_video($video_id = null) {
     $featured_video = pods('video', $video_id, true);
     if($featured_video->exists()) {
       error_log('featured_video title: ' . $featured_video->field('name'));
@@ -169,7 +183,7 @@ add_shortcode('la_album', 'legambiente_shortcode_gallery');
 
 /*
  * select posts or pages for a slider
- * 
+ *
  * if no category is provider, use sticky posts
  * otherwise use category
  */
@@ -183,17 +197,17 @@ if(!function_exists('legambiente_insert_collection')) {
       'category_slug' => null,
       'max_items' => 5
     );
-    
+
     $collection_data = array_merge($default_settings, $collection_data);
     error_log('legambiente_insert_collection: collection_data: ' . var_export($collection_data, true));
-    
+
     // if no selection has been set, default to featured posts
     if($collection_data['collection_id'] === null and $collection_data['use_featured_posts'] === false and $collection_data['category_slug'] === null) {
       $collection_data['use_featured_posts'] = true;
     }
-    
+
     $post__in = array();
-    
+
     if($collection_data['use_featured_posts']) {
       $post__in = get_option('sticky_posts');
     } elseif($collection_data['collection_id']) {
@@ -208,27 +222,27 @@ if(!function_exists('legambiente_insert_collection')) {
         }
       }
     } elseif($collection_data['category_slug']) {
-      $category_object = get_category_by_slug($category_slug); 
+      $category_object = get_category_by_slug($category_slug);
       $category_id = $category_object->term_id;
     }
-    
+
     error_log('legambiente_insert_collection: category: ' . $collection_data['category_slug']);
     error_log('legambiente_insert_collection: post__in: ' . var_export($post__in, true));
-    
+
     $args = array(
       'numberposts' => $collection_data['max_items'],
       'category' => $collection_data['category_slug'],
       'post_type' => $item_type,
       'post__in' => $post__in
     );
-  
+
     $slider_posts = get_posts($args);
-   
+
     global $post;
     $original_post = $post;
     set_query_var('la_slider_posts', $slider_posts);
     set_query_var('la_section_title', $section_title);
-    
+
     if($collection_data['widget_type'] === 'sidebar' and count($slider_posts)) {
       locate_template('templates/post-collection-sidebar-widget.php', true, false);
     } elseif($collection_data['widget_type'] === 'slider' and count($slider_posts)) {
@@ -298,7 +312,7 @@ add_shortcode('la_raccolta_pagine', 'legambiente_shortcode_page_collection');
 
 /*
  * select posts for front page, one per category
- * 
+ *
  * @param array $temi_ids list of ids of categories from which to select latest post, or empty array for all top level categories
  * @return array of posts
  */
@@ -320,7 +334,7 @@ function do_temi_news($temi_ids = array()) {
 
 /*
  * select list of Temi
- * 
+ *
  * @param int $parent_page numeric id of parent page of the Temi pages
  * @return array of pages
  */
@@ -328,14 +342,14 @@ function do_temi_index($parent_page) {
   if(!$parent_page) {
     error_log('No parent page ID supplied');
   }
-  
+
   $args = array(
     'child_of' => $parent_page,
     'sort_column' => 'menu_order'
   );
-  
+
   $posts_array = get_pages($args);
-  
+
   return $posts_array;
 }
 

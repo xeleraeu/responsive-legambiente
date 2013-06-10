@@ -29,7 +29,12 @@ if ( !defined('ABSPATH')) exit;
                 
 <?php if (have_posts()) : ?>
 
-		<?php while (have_posts()) : the_post(); ?>
+		<?php while (have_posts()) : the_post();
+          /** 
+           * do not display featured posts as they are already included
+           * in the top slider
+           */
+          if(is_sticky()) continue; ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>

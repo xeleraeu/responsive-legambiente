@@ -196,6 +196,13 @@ if(!function_exists('legambiente_insert_collection')) {
     
     if($collection_data['use_featured_posts']) {
       $post__in = get_option('sticky_posts');
+      /**
+       * if we are after sticky posts, but no posts have been
+       * set as sticky, just return - otherwise WordPress will
+       * return *all* posts via get_posts() when the post__in
+       * query array member is an empty array (WTF)
+       */
+      if(count($post__in) === 0) return;
     } elseif($collection_data['collection_id']) {
       switch($collection_data['item_type']) {
         case 'posts': $item_type = 'post'; $section_title='Articoli in evidenza'; break;

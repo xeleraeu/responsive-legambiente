@@ -83,7 +83,7 @@ add_action('responsive_container', 'deprecate_internet_explorer');
  */
 if(function_exists('w3tc_pgcache_flush_url')) {
 	function flush_responsive_front_page() {
-    $current_site = domain_mapping_siteurl();
+    $current_site = domain_mapping_siteurl(false) . '/';
     var_trace('current_site', var_export($current_site, true));
 		w3tc_pgcache_flush_url($current_site);
 		var_trace('flushing front page: ' . $current_site);

@@ -88,6 +88,7 @@ if(function_exists('w3tc_pgcache_flush_url')) {
 		w3tc_pgcache_flush_url($current_site);
     w3tc_dbcache_flush();
     w3tc_objectcache_flush();
+    w3tc_fragmentcache_flush();
 		var_trace('flushing front page: ' . $current_site);
 	}
 

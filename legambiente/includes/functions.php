@@ -80,19 +80,19 @@ add_action('responsive_container', 'deprecate_internet_explorer');
  * does not get purged by W3TC when it is set to purge the 'front page' (which
  * would be the one set via WordPress' normal front page settings), we
  * can force a purge whenever a post is updated.
+ * 
+ * This function does not actually seem to work with Responsive's
+ * front-page.php so it's disabled below.
+ * To flush the front page, lcircoloeditor should just visit
+ * the root URI appending ?w3tc_note=flush_page
  */
 if(function_exists('w3tc_pgcache_flush_url')) {
 	function flush_responsive_front_page() {
     $current_site = domain_mapping_siteurl(false) . '/';
-    var_trace('current_site', var_export($current_site, true));
 		w3tc_pgcache_flush_url($current_site);
-    w3tc_dbcache_flush();
-    w3tc_objectcache_flush();
-    w3tc_fragmentcache_flush();
-		var_trace('flushing front page: ' . $current_site);
 	}
 
-	add_action('save_post', 'flush_responsive_front_page');
+	// add_action('save_post', 'flush_responsive_front_page');
 }
 
 // Pods component: featured video

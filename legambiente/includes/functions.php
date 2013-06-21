@@ -83,8 +83,9 @@ add_action('responsive_container', 'deprecate_internet_explorer');
  */
 if(function_exists('w3tc_pgcache_flush_url')) {
 	function flush_responsive_front_page() {
+    global $current_blog;
     $current_site = get_current_site();
-    var_trace('current_site', var_export($current_site, true));
+    var_trace('current_blog', var_export($current_blog, true));
     $front_page_url = get_blog_option($current_site->id, 'siteurl'); // get_site_url();
 		w3tc_pgcache_flush_url($front_page_url);
 		var_trace('flushing front page: ' . $front_page_url);

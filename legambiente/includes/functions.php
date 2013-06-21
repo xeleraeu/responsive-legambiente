@@ -86,6 +86,7 @@ if(function_exists('w3tc_pgcache_flush_url')) {
     $current_site = domain_mapping_siteurl(false) . '/';
     var_trace('current_site', var_export($current_site, true));
 		w3tc_pgcache_flush_url($current_site);
+    w3tc_dbcache_flush();
 		var_trace('flushing front page: ' . $current_site);
 	}
 

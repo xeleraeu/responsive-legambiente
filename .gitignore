@@ -1,9 +1,9 @@
-*.aux
-*.html
-*.latex
-*.log
-*.out
-*.pdf
-*.rst.bak
-*.toc
-
+# ignore generated documentation and auxiliary files
+doc/**/.aux
+doc/**/*.html
+doc/**/*.latex
+doc/**/*.log
+doc/**/*.out
+doc/**/*.pdf
+doc/**/*.rst.bak
+doc/**/*.toc

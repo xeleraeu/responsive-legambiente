@@ -21,8 +21,7 @@ html:
 
 pdf:
 	rst2latex --strip-comments -l it --no-section-numbering --use-latex-toc --stylesheet xelera-rst.sty --table-style=booktabs -i utf-8 -o utf-8 $(USERDOC_DIR)/user-manual-it.rst > $(USERDOC_DIR)/user-manual-it.tex
-	cd $(USERDOC_DIR) && xelatex user-manual-it
-	cd $(USERDOC_DIR) && xelatex user-manual-it
+	cd $(USERDOC_DIR) && pdflatex user-manual-it ; pdflatex user-manual-it
 
 deploy:
 	scp $(USERDOC_DIR)/user-manual-it.html $(WEBDIR)/cms-circoli-user-manual-it.html

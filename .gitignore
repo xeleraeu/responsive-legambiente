@@ -1,7 +1,7 @@
 # ignore generated documentation and auxiliary files
-doc/**/.aux
+doc/**/*.aux
 doc/**/*.html
-doc/**/*.latex
+doc/**/*.tex
 doc/**/*.log
 doc/**/*.out
 doc/**/*.pdf

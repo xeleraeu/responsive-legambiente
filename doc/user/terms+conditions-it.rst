@@ -136,6 +136,8 @@ Xelera fornisce supporto via email in merito al **servizio di hosting** e al cor
 
 Al fine di un corretto coordinamento dell'attività di supporto, ciascun circolo può stabilire fino a un **massimo di 3 persone** autorizzate ad inviare le richieste di supporto.
 
+Tali richieste vanno inviate al nostro indirizzo dedicato al supporto tecnico per i circoli: cms-circoli@support.xelera.eu.
+
 Condizioni contrattuali
 -----------------------
 
@@ -175,3 +177,6 @@ versione 1.0.1 (2013-05-09)
 
 versione 1.0.2 (2013-05-09)
   Aggiunto riferimento alla procedura per attivare domini personalizzati.
+
+versione 1.0.3 (2013-11-25)
+  Aggiunto indirizzo email per le richieste di supporto.

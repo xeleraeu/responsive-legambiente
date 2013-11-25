@@ -41,6 +41,22 @@ Ove disponibile trovate la funzione ``Impostazioni schermo`` in alto a destra.
 .. ATTENTION::
    Nel caso non vengano visualizzate alcune sezioni nell'interfaccia amministrativa occorre verificare le ``Impostazioni schermo``.
 
+Supporto tecnico
+================
+
+Per qualsiasi richiesta di aiuto relativa a gestione dei contenuti, configurazione dell'aspetto del sito, pubblicazione dei contenuti e per segnalazione di eventuali problemi durante l'utilizzo del sistema di gestione dei contenuti per il sito web del circolo, vi invitiamo a contattare il supporto tecnico di Xelera scrivendo a cms-circoli@support.xelera.eu.
+
+Per consentirci di fornire risposte rapide e complete alle vostre domande, vi chiediamo di includere nelle email di richiesta di supporto tecnico:
+
+* il nome del circolo o l'indirizzo del sito
+* l'indirizzo della pagina o delle pagine oggetto della richiesta di supporto
+
+Inoltre, se si tratta di una segnalazione di un potenziale problema, è importante includere:
+
+* una breve descrizione delle condizioni in cui si è riscontrato il problema
+* eventuali messaggi di errore
+* browser utilizzato (e.g. Firefox, Chrome, Safari, etc.), sistema operativo e relativa versione (e.g. Ubuntu 13.10, Windows 8, Mac OS X 10.9, iOS 7 etc.)
+
 Ambiente di lavoro
 ===================
 
@@ -488,11 +504,49 @@ Consigliamo di creare anche un *record CNAME* per ``www.nomecircolo.it`` indican
 
 In caso di difficoltà, vi consigliamo di contattare il supporto tecnico del servizio utilizzato per la registrazione del dominio, inoltrando queste note per riferimento. Se il dominio è stato registrato tramite Xelera, ci occuperemo della configurazione per voi.
 
-Una volta configurato il dominio, contattate il `nostro supporto tecnico`_: verificheremo che le impostazioni siano corrette e configureremo il vostro sito in modo che risponda al nuovo indirizzo.
+Una volta configurato il dominio, contattate il nostro `supporto tecnico`_: verificheremo che le impostazioni siano corrette e configureremo il vostro sito in modo che risponda al nuovo indirizzo.
 
-.. _`nostro supporto tecnico`: http://xelera.eu/it/info/
-.. [#] Xelera fornisce il servizio di registrazione di domini, ma potete scegliere qualsiasi servizio di registrazione di domini, purché consenta di configurare le impostazioni DNS del dominio registrato; se desiderate registrare un dominio tramite Xelera `contattateci via posta elettronica`_.
-.. _`contattateci via posta elettronica`: http://xelera.eu/it/info/
+.. [#] Xelera fornisce il servizio di registrazione di domini, ma potete scegliere qualsiasi servizio di registrazione di domini, purché consenta di configurare le impostazioni DNS del dominio registrato; se desiderate registrare un dominio tramite Xelera contattateci scrivendo al nostro indirizzo di `supporto tecnico`_.
+
+Configurazione del sito
+=======================
+
+Motori di ricerca
+-----------------
+
+Ciascun nuovo sito per i circoli di Legambiente viene inizialmente configurato
+in modo che i motori di ricerca (es. Google, Bing, etc.) **non** prendano in
+considerazione i contenuti del sito, in modo da evitare che contenuti
+temporanei o in via di preparazione, durante la fase iniziale di avvio di un
+nuovo sito, vengano inseriti inavvertitamente negli indici dei motori di
+ricerca.
+
+Una volta conclusa la fase iniziale di inserimento dei primi contenuti del sito
+e di configurazione dell'aspetto delle pagine, potete aggiornare la
+configurazione del sito in modo che i motori di ricerca inizino a prendere in
+considerazione i contenuti esistenti. Per far ciò, è necessario utilizzare il
+menu Impostazioni->Lettura, **togliendo** il segno di spunta dall'opzione di
+configurazione "Visibilità ai motori di ricerca: Scoraggia i motori di ricerca
+ad effettuare l'indicizzazione di questo sito".
+
+È possibile in qualsiasi momento cambiare questa impostazione in modo da
+rendere temporaneamente inaccessibile il sito ai motori di ricerca in futuro,
+qualora ciò fosse necessario (ad es. durante una fase di significativa
+ristrutturazione dei contenuti o della struttura del sito).
+
+Una volta reso accessibile un nuovo sito ai motori di ricerca, potrebbero
+essere necessari alcuni giorni prima che il sito venga preso in considerazione.
+
+In ogni caso, rendere il sito accessibile ai motori di ricerca non comporta
+automaticamente l'inclusione nei risultati dei motori di ricerca: per ottenere
+una buona visibilità tra i primi risultati è importante innanzitutto prestare
+attenzione alla qualità dei contenuti di un sito; un buon posizionamento nei
+risultati dei motori di ricerca dipende anche dalla quantità di collegamenti al
+sito da parte di siti esterni e da altri fattori: per maggiori informazioni
+invitiamo a consultare la documentazione `Materiali didattici per i
+webmaster`_ o altre risorse analoghe disponibili in Internet.
+
+.. _`Materiali didattici per i webmaster`: http://www.google.com/intl/it/webmasters/
 
 .. Ulteriore documentazione
 .. =========================
@@ -535,3 +589,7 @@ versione 1.1 (2013-05-09)
 
 versione 1.1.1 (2013-05-09)
   Nuova documentazione relativa all'attivazione di domini personalizzati.
+
+versione 1.1.2 (2013-11-25)
+  Nuova documentazione relativa al supporto tecnico e all'indicizzazione del
+  sito da parte di motori di ricerca.

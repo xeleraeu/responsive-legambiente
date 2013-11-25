@@ -4,8 +4,8 @@ CMS Circoli Legambiente Lombardia - Guida utente
 
 :author:    Giovanni Biscuolo e Andrea Rota
 :address:   Giovanni Biscuolo <g@xelera.eu>, Andrea Rota <a@xelera.eu>
-:revision:  1.1.1
-:date:      2013.05.09
+:revision:  1.1.2
+:date:      2013.11.25
 :copyright: Copyright © 2013 Semantica di Giovanni Biscuolo.
 
 .. sectnum::    :depth: 4

@@ -6,8 +6,8 @@ Termini e condizioni contrattuali del servizio di hosting
 
 :author:    Giovanni Biscuolo
 :address:   Giovanni Biscuolo <g@xelera.eu>
-:version:   1.0.2
-:date:      2013.05.09
+:version:   1.0.3
+:date:      2013.11.25
 :copyright: Copyright © 2013 Xelera
 
 :abstract: Questo documento descrive le caratteristiche e le condizioni contrattuali del servizio di hosting del ``CMS Circoli Legambiente Lombardia``.  Il contenuto di questo documento si basa sull'analisi dei requisiti svolta da Xelera in collaborazione con Legambiente Lombardia.

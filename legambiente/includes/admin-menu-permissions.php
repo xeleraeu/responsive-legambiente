@@ -12,19 +12,19 @@ if ( !defined('ABSPATH')) exit;
  * Do not even think to just look at the code below and update it
  * hoping that it will work if you haven't read the whole #19950
  * turnip and broad bean (la rava e la fava).
- * 
+ *
  * SHADOW PERMISSIONS
  * Document here our own permissions and what is needed to access what
- * 
+ *
  * Appearance: visible to users with legambiente_manage_appearance cap
  * Appearance->Header: visible to users with legambiente_edit_header cap
  * Appearance->Widget: visible to users with legambiente_edit_widgets cap
- * 
- * 
+ *
+ *
  * @file           admin-menu-permissions.php
  * @package        Legambiente
  * @author         Andrea Rota
- * @author         Giovanni Biscuolo 
+ * @author         Giovanni Biscuolo
  * @copyright      2013 Xelera
  * @license        license.txt
  * @version        Release: 1.3
@@ -53,14 +53,14 @@ function admin_menu_access_for_editors() {
      * We need access to some global vars to butcher them mercilessly.
      */
     global $menu, $submenu;
-    
+
     var_trace(var_export($menu, true), 'admin menu data structure', $TRACE_ENABLED);
     var_trace(var_export($submenu, true), 'admin submenu data structure', $TRACE_ENABLED);
-    
+
     /**
      *  Only butcher a menu section if needed.
      */
-    
+
     /**
      * Specifically, if users already have switch_themes capabilities.
      * hacking this part of the menu only smones it for them.
@@ -78,7 +78,7 @@ function admin_menu_access_for_editors() {
        * but we smon it all here for our own good.
        */
       unset($submenu['themes.php']);
-      
+
       /**
        * Now add in only the submenu pages we need, setting our own
        * shadow capability (see documentation at the top of this file)
@@ -119,7 +119,7 @@ function admin_menu_access_for_editors() {
        * but we smon it all here for our own good.
        */
       unset($submenu['options-general.php']);
-      
+
       /**
        * Now add in only the submenu pages we need, setting our own
        * shadow capability (see documentation at the top of this file)
@@ -137,6 +137,12 @@ function admin_menu_access_for_editors() {
             __('Writing'),
             'manage_options',
             'options-writing.php');
+      add_submenu_page(
+            'options-general.php',
+            __('Reading'),
+            __('Reading'),
+            'manage_options',
+            'options-reading.php');
       add_submenu_page(
             'options-general.php',
             __('Discussion'),
@@ -158,7 +164,7 @@ function admin_menu_access_for_editors() {
        */
       unset($menu[75]);
     }
-    
+
     /**
      * And that's it. If you need to butcher a menu other than Appearance,
      * you are on your own. Be patient and remember what happened to
@@ -199,20 +205,20 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * that alone for the moment to preserve some sanity.
    */
   $admin_area = $_SERVER['PHP_SELF'];
-  
+
   /**
    * As some .php files within wp-admin might contain code for different
    * actions, check the 'page' HTTP GET parameter to build the
    * complete context from the URI.
    */
   $admin_area_page = $_GET['page'];
-  
+
   var_trace(var_export($allcaps, true), 'all user capabilities', $TRACE_ENABLED);
   var_trace(var_export($cap, true), 'required capability', $TRACE_ENABLED);
   var_trace(var_export($args, true), 'requested capability', $TRACE_ENABLED);
   var_trace(var_export($admin_area, true), 'PHP_SELF', $TRACE_ENABLED);
   var_trace(var_export($admin_area_page, true), 'action page', $TRACE_ENABLED);
-  
+
   /**
    * Now, the cheating action.
    * The general pattern is: to give access to specific pages/actions,
@@ -242,7 +248,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * passed to this filter function, and the sun will shine.
    * Only, on the other hemisphere.
    */
-  
+
   /**
    * DENY ACTIONS
    * Actually, let's make sure we block what we don't want users to see
@@ -255,7 +261,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * item (which would remove the whole menu and its submenu items).
    * So let's block stuff we can't hide first.
    */
-   
+
   /**
    * Themes menu
    */
@@ -267,11 +273,6 @@ function page_access_for_editors($allcaps, $cap, $args) {
   /**
    * Settings menu
    */
-  if($admin_area === '/wp-admin/options-reading.php') {
-    $allcaps[$cap[0]] = false;
-    return $allcaps;
-  }
-
   if($admin_area === '/wp-admin/options-media.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
@@ -281,7 +282,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
-  
+
   /**
    * Tools menu
    */
@@ -289,7 +290,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
-  
+
   if($admin_area === '/wp-admin/ms-delete-site.php') {
     $allcaps[$cap[0]] = false;
     return $allcaps;
@@ -304,7 +305,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = false;
     return $allcaps;
   }
-  
+
   /**
    * GRANT ACTIONS
    * With the bad boys out of the way, let's be nice and give access
@@ -313,7 +314,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
    * set the pretend-capability, but since we want to give access in any
    * of these cases, there should be no harm in letting the code run
    * until the end and just return at the end of the function.
-   */   
+   */
   if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_header')) {
     $allcaps[$cap[0]] = true;
   }
@@ -321,7 +322,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
   if($admin_area === '/wp-admin/themes.php' and $admin_area_page === 'custom-header' and $cap[0] === 'legambiente_edit_header') {
     $allcaps[$cap[0]] = true;
   }
-  
+
 
   if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_widgets')) {
     $allcaps[$cap[0]] = true;
@@ -332,7 +333,7 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
 
   var_trace(var_export($allcaps, true), 'all user capabilities -- after', $TRACE_ENABLED);
-  
+
   /**
    * That's good. If we had a reason to cheat, we have done so: let's
    * return the array of this user's capabilities, which by now includes

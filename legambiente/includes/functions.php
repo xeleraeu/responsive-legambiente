@@ -80,7 +80,7 @@ add_action('responsive_container', 'deprecate_internet_explorer');
  * does not get purged by W3TC when it is set to purge the 'front page' (which
  * would be the one set via WordPress' normal front page settings), we
  * can force a purge whenever a post is updated.
- * 
+ *
  * This function does not actually seem to work with Responsive's
  * front-page.php so it's disabled below.
  * To flush the front page, lcircoloeditor should just visit
@@ -101,7 +101,7 @@ if(!function_exists('legambiente_insert_video')) {
   function legambiente_insert_video($video_id = null) {
     $featured_video = pods('video', $video_id, true);
     if($featured_video->exists()) {
-      error_log('featured_video title: ' . $featured_video->field('name'));
+      var_trace('featured_video title: ' . $featured_video->field('name'));
       set_query_var('featured_video', $featured_video);
       set_query_var('featured_video_uniqid', uniqid('legambiente-featured-video-' . $featured_video->field('id')));
       locate_template('templates/featured-video.php', true, false);
@@ -121,9 +121,9 @@ if(!function_exists('legambiente_shortcode_video')) {
 if(!function_exists('legambiente_featured_video')) {
   function legambiente_featured_video() {
     $post_type = get_post_type();
-    error_log('legambiente_featured_video: post ID: ' . get_the_ID());
+    var_trace('legambiente_featured_video: post ID: ' . get_the_ID());
     $featured_video_meta = get_post_meta(get_the_ID(), 'featured_video', true);
-    error_log('legambiente_featured_video: featured_video_meta: ' . var_export($featured_video_meta, true));
+    var_trace('legambiente_featured_video: featured_video_meta: ' . var_export($featured_video_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_video_meta['id']) {
       legambiente_insert_video($featured_video_meta['id']);
     }
@@ -132,7 +132,7 @@ if(!function_exists('legambiente_featured_video')) {
 
 if(!function_exists('legambiente_insert_medialementjs_trigger')) {
   function legambiente_insert_medialementjs_trigger() {
-    error_log('legambiente_insert_mediaelementjs_trigger: mediaelementjs_count: ' . $GLOBALS['LEGAMBIENTE']['mediaelementjs_count']);
+    var_trace('legambiente_insert_mediaelementjs_trigger: mediaelementjs_count: ' . $GLOBALS['LEGAMBIENTE']['mediaelementjs_count']);
     if($GLOBALS['LEGAMBIENTE']['mediaelementjs_count'] > 0) {
       locate_template('templates/featured-video-mediaelementjs-trigger.php', true, true);
     }
@@ -171,7 +171,7 @@ if(!function_exists('legambiente_featured_gallery')) {
   function legambiente_featured_gallery() {
     $post_type = get_post_type();
     $featured_gallery_meta = get_post_meta(get_the_ID(), 'featured_photo_gallery', true);
-    error_log('featured_gallery_meta: ' . var_export($featured_gallery_meta, true));
+    var_trace('featured_gallery_meta: ' . var_export($featured_gallery_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_gallery_meta['id']) {
       legambiente_insert_gallery($featured_gallery_meta['id']);
     }
@@ -205,7 +205,7 @@ if(!function_exists('legambiente_insert_collection')) {
     );
 
     $collection_data = array_merge($default_settings, $collection_data);
-    error_log('legambiente_insert_collection: collection_data: ' . var_export($collection_data, true));
+    var_trace('legambiente_insert_collection: collection_data: ' . var_export($collection_data, true));
 
     // if no selection has been set, default to featured posts
     if($collection_data['collection_id'] === null and $collection_data['use_featured_posts'] === false and $collection_data['category_slug'] === null) {
@@ -239,8 +239,8 @@ if(!function_exists('legambiente_insert_collection')) {
       $category_id = $category_object->term_id;
     }
 
-    error_log('legambiente_insert_collection: category: ' . $collection_data['category_slug']);
-    error_log('legambiente_insert_collection: post__in: ' . var_export($post__in, true));
+    var_trace('legambiente_insert_collection: category: ' . $collection_data['category_slug']);
+    var_trace('legambiente_insert_collection: post__in: ' . var_export($post__in, true));
 
     $args = array(
       'numberposts' => $collection_data['max_items'],
@@ -259,7 +259,7 @@ if(!function_exists('legambiente_insert_collection')) {
     if($collection_data['widget_type'] === 'sidebar' and count($slider_posts)) {
       locate_template('templates/post-collection-sidebar-widget.php', true, false);
     } elseif($collection_data['widget_type'] === 'slider' and count($slider_posts)) {
-      error_log('loading post-collection.php template with collection_data: ' . var_export($collection_data, true));
+      var_trace('loading post-collection.php template with collection_data: ' . var_export($collection_data, true));
       locate_template('templates/post-collection.php', true, false);
     }
     $post = $original_post;
@@ -302,7 +302,7 @@ function legambiente_featured_page_collection() {
 if(!function_exists('legambiente_featured_collection')) {
   function legambiente_featured_collection($featured_collection_meta, $item_type) {
     $post_type = get_post_type();
-    error_log('featured_collection_meta: ' . var_export($featured_collection_meta, true));
+    var_trace('featured_collection_meta: ' . var_export($featured_collection_meta, true));
     if(($post_type === 'page' or $post_type === 'post') and $featured_collection_meta['id']) {
       switch($item_type) {
         case 'posts':

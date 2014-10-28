@@ -13,6 +13,8 @@ body.home {
     @include span-columns(8, 12);
     
     #content {
+      margin-bottom: inherit;
+
       .post {
         border-top: 3px dotted #ddd;
         padding-top: 1em;

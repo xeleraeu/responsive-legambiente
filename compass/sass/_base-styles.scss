@@ -16,7 +16,7 @@ body {
 $sidebar-widget-spacing: 20px; // match responsive base theme's value
 
 #container {
-  @include box-shadow(0 0 10px 10px #bbb);
+  @include box-shadow(0 0 3px 3px #bbb);
 }
 
 #logo {

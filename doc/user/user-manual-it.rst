@@ -140,14 +140,14 @@ Questa funzione viene fornita dall'estensione `All-In-One Event Calendar`_ di Ti
 
 .. _`All-In-One Event Calendar`: http://wordpress.org/extend/plugins/all-in-one-event-calendar/
 .. _Timely: http://time.ly/
-.. _`documentazione di Timely`: http://help.time.ly/
+.. _`documentazione di Timely`: https://web.archive.org/web/20140612040854/http://support.time.ly/quickstart-guide/
 
 Inserire eventi in ``Articolo`` o ``Pagina``
 .............................................
 
 È possibile inserire i riferimenti al calendario eventi [#]_ - eventualmente filtrati per ``categoria evento``, ``tag evento`` o ``id evento`` - utilizzando uno degli `shortcode calendario`_ disponibili.
 
-.. _`shortcode calendario`: http://help.time.ly/customer/portal/articles/530440-what-shortcodes-are-available-
+.. _`shortcode calendario`: https://web.archive.org/web/20140612021912/http://support.time.ly/shortcodes/
 
 Per esempio per inserire il calendario in modalità di visualizzazione ``agenda`` occorre inserire il seguente shortcode::
 

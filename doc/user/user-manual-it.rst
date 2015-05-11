@@ -593,3 +593,8 @@ versione 1.1.1 (2013-05-09)
 versione 1.1.2 (2013-11-25)
   Nuova documentazione relativa al supporto tecnico e all'indicizzazione del
   sito da parte di motori di ricerca.
+
+versione 1.1.3 (2015-05-11)
+  Link aggiornati alla documentazione del plugin Eventi (Timely): la
+  documentazione su help.time.ly è stata rimossa da Timely ma è
+  disponibile una copia su archive.org.

@@ -335,7 +335,6 @@ function page_access_for_editors($allcaps, $cap, $args) {
     $allcaps[$cap[0]] = true;
   }
 
-
   if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_widgets')) {
     $allcaps[$cap[0]] = true;
   }

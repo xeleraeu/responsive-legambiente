@@ -92,6 +92,12 @@ function admin_menu_access_for_editors() {
             'themes.php?page=custom-header');
       add_submenu_page(
             'themes.php',
+            __('Menu'),
+            __('Menu'),
+            'legambiente_edit_widgets',
+            'nav-menus.php');
+      add_submenu_page(
+            'themes.php',
             __('Widgets'),
             __('Widgets'),
             'legambiente_edit_widgets',
@@ -325,6 +331,10 @@ function page_access_for_editors($allcaps, $cap, $args) {
 
 
   if($args[0] == 'edit_theme_options' and current_user_can('legambiente_edit_widgets')) {
+    $allcaps[$cap[0]] = true;
+  }
+
+  if($admin_area === '/wp-admin/nav-menus.php' and $admin_area_page === '' and $cap[0] === 'legambiente_edit_widgets') {
     $allcaps[$cap[0]] = true;
   }
 

@@ -374,4 +374,37 @@ function new_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+ * If a Google Analytics tracking ID is configured, retrieve it for use
+ * in the template that generates a Google Analytics snippet
+ *
+ * @since legambiente 1.1.2
+ * @return String The Google Analytics tracking ID configured, if available
+ */
+function get_analytics_ga_tracking_id() {
+  $web_analytics_settings = pods('web_analytics');
+  $web_analytics_settings->find();
+
+  if($web_analytics_settings->total_found()) {
+    return $web_analytics_settings->field('google_analytics_tracking_id');
+  }
+}
+
+/**
+ * Append Google Analytics JS snippet in wp_footer if a Google Analytics
+ * tracking ID is configured; to be used as wp_footer action.
+ *
+ * @since legambiente 1.1.2
+ */
+function generate_analytics_ga_snippet() {
+  include_once(get_stylesheet_directory() . '/templates/web_analytics/google_analytics_snippet.php');
+}
+
+/**
+ * Activate generate_analytics_ga_snippet as wp_footer action
+ *
+ * @since legambiente 1.1.2
+ */
+add_action('wp_footer', 'generate_analytics_ga_snippet');
 ?>

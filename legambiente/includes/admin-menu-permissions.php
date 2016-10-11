@@ -155,6 +155,12 @@ function admin_menu_access_for_editors() {
             __('Discussion'),
             'manage_options',
             'options-discussion.php');
+      add_submenu_page(
+            'options-general.php',
+            __('Web analytics'),
+            __('Web analytics'),
+            'manage_options',
+            'options-general.php?page=pods-settings-web_analytics');
     }
 
     /**
@@ -339,6 +345,10 @@ function page_access_for_editors($allcaps, $cap, $args) {
   }
 
   if($admin_area === '/wp-admin/widgets.php' and $admin_area_page === '' and $cap[0] === 'legambiente_edit_widgets') {
+    $allcaps[$cap[0]] = true;
+  }
+
+  if($admin_area === '/wp-admin/options-general.php' and $admin_area_page === 'pods-settings-web_analytics' and $cap[0] === 'legambiente_edit_widgets') {
     $allcaps[$cap[0]] = true;
   }
 

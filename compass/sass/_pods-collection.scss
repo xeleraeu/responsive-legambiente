@@ -37,8 +37,8 @@
       position: relative;
       min-height: $home-flexslider-blurb-height + ($home-flexslider-blurb-height / 2);
       width: 100%;
-      @include experimental-value(height, calc(width * 0.75));
-      
+      height: calc(width * 0.75);
+
       img {
         margin: 0;
       }

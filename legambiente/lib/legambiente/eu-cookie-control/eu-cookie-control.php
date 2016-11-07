@@ -8,6 +8,11 @@ class EuCookieControlSettings {
   const SETTINGS_PODS_NAME = 'eu_cookie_control';
 
   /**
+   * Default cookie policy version
+   */
+  const DEFAULT_COOKIE_POLICY_VERSION = '0';
+
+  /**
    * Default text for cookie info message if none is set by admins
    */
   const DEFAULT_COOKIE_INFO_TEXT = 'Questo sito utilizza cookies.';
@@ -56,7 +61,7 @@ class EuCookieControlSettings {
       $this->cookie_policy_page_uri = $settings_pod->field('cookie_policy_page') ?
         get_page_uri($settings_pod->field('cookie_policy_page.ID')) :
         '';
-      $this->cookie_policy_version = $settings_pod->field('cookie_policy_version');
+      $this->cookie_policy_version = $settings_pod->field('cookie_policy_version') ? $settings_pod->field('cookie_policy_version') : self::DEFAULT_COOKIE_POLICY_VERSION;
     }
   }
 

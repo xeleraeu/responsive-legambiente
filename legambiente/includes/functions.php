@@ -407,4 +407,21 @@ function generate_analytics_ga_snippet() {
  * @since legambiente 1.1.2
  */
 add_action('wp_footer', 'generate_analytics_ga_snippet');
+
+/**
+ * Handle EU cookie control settings
+ *
+ * @since legambiente 1.1.5
+ */
+function eu_cookie_control() {
+  $cookie_settings = new \LegambienteWPTheme\EuCookieControlSettings();
+  echo $cookie_settings->get_snippet();
+}
+
+/**
+ * Activate eu_cookie_control as wp_footer action
+ *
+ * @since legambiente 1.1.5
+ */
+add_action('wp_footer', 'eu_cookie_control');
 ?>

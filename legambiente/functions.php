@@ -9,6 +9,11 @@ if ( !defined('ABSPATH')) exit;
  *
  * load the theme function files
  */
+
+// theme classes etc.
+require ( get_stylesheet_directory() . '/lib/legambiente/eu-cookie-control/eu-cookie-control.php');
+
+// hooks and theme-specific logic etc.
 require ( get_stylesheet_directory() . '/includes/hooks.php' );
 require ( get_stylesheet_directory() . '/includes/utils.php' );
 require ( get_stylesheet_directory() . '/includes/admin-menu-permissions.php' );

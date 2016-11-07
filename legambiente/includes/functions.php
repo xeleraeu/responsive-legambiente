@@ -415,7 +415,11 @@ add_action('wp_footer', 'generate_analytics_ga_snippet');
  */
 function eu_cookie_control() {
   $cookie_settings = new \LegambienteWPTheme\EuCookieControlSettings();
-  echo $cookie_settings->get_snippet();
+  if($cookie_settings->enable_cookie_control) {
+    wp_enqueue_script('xelera_eu_cookie_control', get_stylesheet_directory_uri() . '/assets/javascripts/eu-cookie-control.js', ['jquery'], '1.1.5', true);
+    wp_localize_script('xelera_eu_cookie_control', 'xelera_eu_cookie_control_vars', [ version => $cookie_settings->cookie_policy_version, expiry => 60]);
+    echo $cookie_settings->get_snippet();
+  }
 }
 
 /**

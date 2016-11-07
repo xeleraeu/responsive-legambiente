@@ -18,6 +18,11 @@ class EuCookieControlSettings {
   const DEFAULT_READ_MORE_TEXT = 'Maggiori informazioni...';
 
   /**
+   * Default 'accept'/dismiss text
+   */
+  const DEFAULT_DISMISS_TEXT = 'Va bene, grazie';
+
+  /**
    * @var Whether to enable the cookie information widget
    */
   public $enable_cookie_control;
@@ -65,6 +70,7 @@ class EuCookieControlSettings {
       if($this->cookie_policy_page_uri) {
         $widget_content .= '<span class="read-more"><a href="' . $this->cookie_policy_page_uri . '">' . self::DEFAULT_READ_MORE_TEXT . '</a></span>';
       }
+      $widget_content .= '<span><button class="dismiss">' . self::DEFAULT_DISMISS_TEXT . '</button></span>';
 
       return '<div class="eu-cookie-control"><div class="content">' . $widget_content . '</div></div>';
     }

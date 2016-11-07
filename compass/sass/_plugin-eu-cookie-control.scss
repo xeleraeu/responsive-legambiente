@@ -1,0 +1,26 @@
+.eu-cookie-control {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $menu-background;
+  text-align: center;
+
+  .read-more {
+    padding: 0 0.5rem;
+  }
+}
+
+
+@media (min-width: 600px) {
+$eu-cookie-control-widget-height: 4rem;
+
+  body {
+    margin-bottom: $eu-cookie-control-widget-height;
+  }
+
+  .eu-cookie-control {
+    min-height: $eu-cookie-control-widget-height;
+  }
+}

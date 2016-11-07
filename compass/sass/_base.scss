@@ -28,3 +28,6 @@ $show-grid-backgrounds  : true;
 @import "pods-collection";
 @import "pods-video";
 @import "pods-photo-gallery";
+
+// our own cookie control plugin (Pods-based)
+@import "plugin-eu-cookie-control";

@@ -7,11 +7,11 @@
       display: block;
       margin-bottom: 1em;
       @include border-radius(5px);
-      @include span-columns(6, 12);
+      @include span(6 of 12);
       background-color: white;
-      
+
       &:nth-of-type(2n) {
-        @include span-columns(6 omega, 12);
+        @include span(last 6 of 12);
       }
       
       h2 {

@@ -2,7 +2,7 @@ $home-flexslider-blurb-height: 90px;
 
 body.home {
   #widgets {
-    @include span-columns(4 omega, 12);
+    @include span(last 4 of 12);
   }
   
   #widgets.home-widgets {
@@ -10,8 +10,8 @@ body.home {
   }
   
   #features {
-    @include span-columns(8, 12);
-    
+    @include span(8 of 12);
+
     #content {
       margin-bottom: inherit;
 
@@ -25,12 +25,12 @@ body.home {
         
         .post-title {
           color: black;
-          @include span-columns(6, 8);
+          @include span(6 of 8);
         }
         
         .post-meta {
           clear: none;
-          @include span-columns(2 omega, 8);
+          @include span(last 2 of 8);
           font-weight: bold;
           color: white;
           background-color: #9f9f9f;

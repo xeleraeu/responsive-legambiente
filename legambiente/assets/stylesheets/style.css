@@ -67,8 +67,9 @@ body.home #features #content .post .post-data, body.home #features #content .pos
 .pods-photo-gallery.fullbleed .galleria-stage { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow: hidden; }
 .pods-photo-gallery.fullbleed .galleria-thumbnails-container { display: none; }
 
-.eu-cookie-control { display: none; position: fixed; left: 0; right: 0; bottom: 0; background-color: #ddd; color: black; text-align: center; padding: 1rem 2rem; }
+.eu-cookie-control { display: none; position: fixed; left: 0; right: 0; bottom: 0; background-color: #4d4d4d; color: white; text-align: center; padding: 1rem 2rem; }
 .eu-cookie-control.active { display: block; }
+.eu-cookie-control a { color: #fc0; }
 .eu-cookie-control .read-more { padding: 0 0.5rem; }
 .eu-cookie-control .dismiss { border: none; border-radius: 0.20rem; cursor: pointer; }
 

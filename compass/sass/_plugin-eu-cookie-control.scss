@@ -4,13 +4,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $menu-background;
-  color: black;
+  background-color: $eu-cookie-control-background;
+  color: white;
   text-align: center;
   padding: 1rem 2rem;
 
   &.active {
     display: block;
+  }
+
+  a {
+    color: $menu-current-item-background;
   }
   
   .read-more {

@@ -48,7 +48,7 @@ class EuCookieControlSettings {
    */
   public $cookie_policy_version;
 
-  function __construct() {
+  function __construct($query_type, $permalink) {
     /**
      * Fetch settings
      */

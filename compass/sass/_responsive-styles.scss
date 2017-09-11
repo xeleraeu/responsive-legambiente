@@ -1,0 +1,7 @@
+@media screen and (max-width: 650px) {
+    // workaround for #28570
+    .js .menu,
+	.js .sub-header-menu {
+		display: inherit;
+    }
+}

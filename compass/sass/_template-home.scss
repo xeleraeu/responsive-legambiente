@@ -44,3 +44,19 @@ body.home {
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  body.home {
+    #widgets {
+      @include span(12 of 12);
+    }
+
+    #widgets.home-widgets {
+      width: 100%;
+    }
+
+    #features {
+      @include span(12 of 12);
+    }
+  }
+}

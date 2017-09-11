@@ -33,6 +33,9 @@ body.home #features #content .post .post-title { color: black; width: 74.35897%;
 body.home #features #content .post .post-meta { clear: none; width: 23.07692%; float: right; margin-right: 0; font-weight: bold; color: white; background-color: #9f9f9f; text-align: center; }
 body.home #features #content .post .post-data, body.home #features #content .post .post-discussion { display: none; }
 
+@media screen and (max-width: 650px) { body.home #widgets { width: 100%; float: left; margin-left: 0; margin-right: 0; }
+  body.home #widgets.home-widgets { width: 100%; }
+  body.home #features { width: 100%; float: left; margin-left: 0; margin-right: 0; } }
 .temi ul { margin-left: inherit; }
 .temi ul li { display: block; margin-bottom: 1em; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 49.15254%; float: left; margin-right: 1.69492%; background-color: white; }
 .temi ul li:nth-of-type(2n) { width: 49.15254%; float: right; margin-right: 0; }

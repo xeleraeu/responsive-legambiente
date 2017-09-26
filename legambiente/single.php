@@ -46,6 +46,12 @@ if ( !defined('ABSPATH')) exit;
                 </div><!-- end of .post-meta -->
                                 
                 <div class="post-entry">
+                    <?php if ( has_post_thumbnail()) : ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                    <?php the_post_thumbnail(); ?>
+                        </a>
+                    <?php endif; ?>
+
                     <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     
                     <?php if ( get_the_author_meta('description') != '' ) : ?>
